@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GameDev Digest</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+  :root {
+    --bg: #12141a; --fg: #d8dce6; --muted: #8a92a6;
+    --accent: #6ea8fe; --card: #1a1d26; --border: #2a2e3d;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --bg: #fafafa; --fg: #23262f; --muted: #6b7280; --accent: #1d63d8; --card: #fff; --border: #e5e7eb; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+  header h1 { font-size: 22px; margin: 0; }
+  header .sub { color: var(--muted); font-size: 14px; }
+  nav { margin: 12px 0 24px; display: flex; gap: 8px; flex-wrap: wrap; }
+  nav button {
+    background: var(--card); color: var(--fg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 4px 12px; font-size: 13px; cursor: pointer;
+  }
+  nav button.active { border-color: var(--accent); color: var(--accent); }
+  #digest { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 8px 28px 20px; }
+  #digest h1 { font-size: 24px; } #digest h2 { font-size: 19px; margin-top: 28px; }
+  #digest h3 { font-size: 16px; }
+  #digest a { color: var(--accent); text-decoration: none; }
+  #digest a:hover { text-decoration: underline; }
+  #digest hr { border: 0; border-top: 1px solid var(--border); }
+  #digest code { background: var(--bg); padding: 1px 5px; border-radius: 4px; font-size: 14px; }
+  #status { color: var(--muted); padding: 24px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>GameDev Digest</h1>
+    <span class="sub">Unity · C# · ежедневно</span>
+  </header>
+  <nav id="issues"></nav>
+  <div id="status">Загружаю последний выпуск…</div>
+  <article id="digest"></article>
+</div>
+<script>
+const REPO = "lekta/gamedev_digest";
+const BRANCH = "master";
+const SHOWN = 10; // сколько последних выпусков в переключателе
+
+async function main() {
+  const status = document.getElementById("status");
+  try {
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/digests?ref=${BRANCH}`);
+    if (!r.ok) throw new Error("GitHub API: " + r.status);
+    const files = (await r.json())
+      .filter(f => /^\d{4}-\d{2}-\d{2}\.md$/.test(f.name))
+      .sort((a, b) => b.name.localeCompare(a.name))
+      .slice(0, SHOWN);
+    if (!files.length) throw new Error("В digests/ пока нет выпусков");
+
+    const nav = document.getElementById("issues");
+    files.forEach((f, i) => {
+      const b = document.createElement("button");
+      const [y, m, d] = f.name.replace(".md", "").split("-");
+      b.textContent = `${d}.${m}`;
+      b.title = f.name;
+      b.onclick = () => show(f, b);
+      nav.appendChild(b);
+      if (i === 0) show(f, b);
+    });
+
+    async function show(file, btn) {
+      nav.querySelectorAll("button").forEach(x => x.classList.remove("active"));
+      btn.classList.add("active");
+      status.textContent = "Загружаю " + file.name + "…";
+      const md = await (await fetch(file.download_url)).text();
+      document.getElementById("digest").innerHTML = marked.parse(md);
+      status.textContent = "";
+    }
+  } catch (e) {
+    status.textContent = "Не получилось загрузить выпуск: " + e.message;
+  }
+}
+main();
+</script>
+</body>
+</html>
