@@ -8,10 +8,11 @@
 
 ## 2026-07-17
 - Moss: The Forgotten Relic (16.07): Polyarc сняла VR-эксклюзив Moss (Unity) с VR на плоский экран — Switch/PS5/Xbox/Steam, «умная камера» держит четвёртую стену; OpenCritic 80, 94% рекомендуют. [Tech Times](https://www.techtimes.com/articles/320694/20260716/moss-forgotten-relic-launches-consoles-today-after-8-years-vr-smart-camera-makes-it-work.htm)
+- По диагонали: ZeniMax Online (16.07) — 379 увольнений по Xbox-волне, вся верхушка студии ESO снесена (Берба/Кат/Диаз/Ламберт), QA -89 человек. [Game Developer](https://www.gamedeveloper.com/business/zenimax-online-studios-leadership-is-part-of-the-379-laid-off-workers)
 - По диагонали: The Mermaid Mask (16.07) — детектив от SFB Games (Unity, авторы Tangle Tower), рецензий ещё нет. [Nintendo Life](https://www.nintendolife.com/games/nintendo-switch-2/mermaids-mask)
-- По диагонали: Scopely «реорганизует» команду Stumble Guys — сокращён небольшой состав поддержки крупного мобильного Unity-хита. [Game Developer](https://www.gamedeveloper.com/business/pokemon-go-owner-scopely-reorganizes-stumble-guys-team)
 - По диагонали: Blender 5.2 LTS вышла (14.07) — XPBD-симуляция ткани/волос в Geometry Nodes, узел Mesh Bevel, аудио-реактивные узлы. [Blender.org](https://www.blender.org/press/blender-5-2-lts-release/)
-- Проверено и отброшено как несвежее: Unity 6.3 LTS (дек 2025), дюп Dune: Awakening (июль 2025), Burst 1.8.25 «cross-CPU determinism» (нет такого; 1.8.25 — сен 2025).
+- По диагонали: Unity Cloud Build — дедлайн 21.08 по устаревшим зависимостям CI (Xcode/Android SDK/старые LTS), V1 API отключат 21.12. [Unity Discussions](https://discussions.unity.com/t/unity-devops-build-automation-2026-dependency-deprecation-cycle/1724029)
+- Проверено и отброшено как несвежее: обзоры Steam Machine (реально эмбарго конца июня к запуску 30.06, не эта неделя), Rostelecom Games (похоже на дубль новости 2025 года), Unity 6.3 LTS (дек 2025), дюп Dune: Awakening (июль 2025), Burst 1.8.25 «cross-CPU determinism» (нет такого; 1.8.25 — сен 2025).
 
 ## 2026-07-16
 - Rider 2026.2 RC (15.07): agent skills открывают аналитику IDE (покрытие/профайлер/инспекции) внешним AI-агентам, нативный GitHub Copilot, ветки в Roslyn 2–3× быстрее, старт отладчика −2.8с, Natvis на Linux/macOS. GA скоро. [JetBrains](https://blog.jetbrains.com/dotnet/2026/07/15/rider-2026-2-release-candidate-is-out/)
