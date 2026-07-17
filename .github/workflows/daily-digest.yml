@@ -1,0 +1,40 @@
+name: Daily GameDev Digest
+
+on:
+  schedule:
+    - cron: "0 7 * * *" # 07:00 UTC = 10:00 МСК; поменяй, если другой пояс
+  workflow_dispatch: {} # ручной запуск: GitHub → Actions → Run workflow (работает и из мобильного приложения)
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Собрать выпуск
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          claude_args: '--allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(grep:*),Bash(date:*),Bash(ls:*)"'
+          prompt: |
+            Собери сегодняшний выпуск GameDev Digest — ежедневной сводки новостей геймдева для Unity/C#-разработчика. Ты находишься в корне репозитория дайджеста.
+
+            1. Прочитай config.md — это единственный источник правил: тематика, структура «новость → вывод → детали», объём, язык (только русский), антиповторы и 3-дневный кулдаун, проверка фактов на истинность, первоисточники.
+            2. Прочитай memory/covered.md (что уже освещено), memory/to_explore.md (очередь тем), memory/sources.md (реестр источников).
+            3. Собери дайджест строго по config.md, дата выпуска — сегодняшняя (UTC+3).
+            4. Запиши результат в файлы:
+               - digests/ГГГГ-ММ-ДД.md — новый выпуск;
+               - memory/covered.md — добавь сегодняшний день, убери выпавший из окна 3 дней;
+               - memory/to_explore.md — обнови при необходимости.
+            5. Git-команд не выполняй — коммит сделает следующий шаг workflow.
+            6. Если digests/ГГГГ-ММ-ДД.md за сегодня уже существует — пересобери его заново с учётом свежих новостей и перезапиши.
+
+      - name: Закоммитить выпуск
+        run: |
+          git config user.name "digest-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add digests memory
+          git diff --cached --quiet || git commit -m "Выпуск $(TZ=Europe/Moscow date +%F)"
+          git push
