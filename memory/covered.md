@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-19
+- Escape from Tarkov (14.07): Battlestate запустила ивент Blackout перед первым сезоном Kord Breach; Arena уже на Unity 6, основная игра тестирует движок на ETS, переезд — Q3 2026. [X/Буянов](https://x.com/nikgeneburn/status/2038653370940994003)
+- По диагонали: Godot 4.8 Dev1 (06.07) — встроенный игровой вид по умолчанию, псевдолокализация в редакторе, touch в TextEdit/CodeEdit, fuzzy-search в GDScript API. [GameFromScratch](https://gamefromscratch.com/godot-4-8-dev1-released/)
+- По диагонали: C# 15 union types — комьюнити нашло боксинг value-типов через object? в union-структурах (превью, GA в ноябре). [Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/unions)
+- По диагонали: Todd Howard/Obsidian (17.07) — официально подтвердили совместную новую игру по Fallout, 16 лет после New Vegas. [Game Developer](https://www.gamedeveloper.com/business/todd-howard-says-the-timing-is-right-for-a-collaboration-with-obsidian)
+- Проверено и отброшено: «обвал онлайна Battlefield 6» (750К→30-90К) — реально январская волна 2026, свежие данные показывают стабилизацию.
+
 ## 2026-07-18
 - Subnautica 2 (08.07): Adaptive Measures — первый крупный EA-патч, 5 млн копий с 14.05, 91% Positive; кейс Unity→UE5 (co-op/Nanite/Lumen). [Outlook Respawn](https://respawn.outlookindia.com/gaming/gaming-news/subnautica-2-hits-5-million-sales-milestone-during-early-access)
 - По диагонали: ZA/UM (17.07) — до 32 сокращений (~1/3 студии) несмотря на хорошие рецензии Zero Parades: For Dead Spies. [PC Gamer](https://www.pcgamer.com/games/rpg/2-months-after-releasing-zero-parades-studio-za-um-is-laying-off-employees-its-commercial-performance-has-not-enabled-us-to-sustain-a-studio-of-our-current-size/)
@@ -22,11 +29,3 @@
 - По диагонали: Blender 5.2 LTS вышла (14.07) — XPBD-симуляция ткани/волос в Geometry Nodes, узел Mesh Bevel, аудио-реактивные узлы. [Blender.org](https://www.blender.org/press/blender-5-2-lts-release/)
 - По диагонали: Unity Cloud Build — дедлайн 21.08 по устаревшим зависимостям CI (Xcode/Android SDK/старые LTS), V1 API отключат 21.12. [Unity Discussions](https://discussions.unity.com/t/unity-devops-build-automation-2026-dependency-deprecation-cycle/1724029)
 - Проверено и отброшено как несвежее: обзоры Steam Machine (реально эмбарго конца июня к запуску 30.06, не эта неделя), Rostelecom Games (похоже на дубль новости 2025 года), Unity 6.3 LTS (дек 2025), дюп Dune: Awakening (июль 2025), Burst 1.8.25 «cross-CPU determinism» (нет такого; 1.8.25 — сен 2025).
-
-## 2026-07-16
-- Rider 2026.2 RC (15.07): agent skills открывают аналитику IDE (покрытие/профайлер/инспекции) внешним AI-агентам, нативный GitHub Copilot, ветки в Roslyn 2–3× быстрее, старт отладчика −2.8с, Natvis на Linux/macOS. GA скоро. [JetBrains](https://blog.jetbrains.com/dotnet/2026/07/15/rider-2026-2-release-candidate-is-out/)
-- Fields of Mistria v0.16.2 (07.07): уход с GameMaker на внутренний движок Mistria SDK перед 1.0 (05.08); нативные Linux/SteamOS через steamrt4, интегрированная графика, два старых бага закрыты, старые моды отвалились. [Patch Notes](https://www.fieldsofmistria.com/post/new-engine-v0-16-2-patch-notes)
-- По диагонали: ReSharper 2026.2 RC (15.07) — отладчик впервые в расширении для VS Code/Cursor (движок Rider) + первый шаг к ACP-агентам в VS (Junie превью). [JetBrains](https://blog.jetbrains.com/dotnet/2026/07/13/rs-vsc-debugging/)
-- По диагонали: спор о маркировке AI на Steam разгорелся заново (кейс ARPG Bahast); AI-метка ≈ вдвое меньше отзывов, продажи −40–60%. Сигнал Unity-инди с Inference Engine/AI-ассетами. [GamesRadar](https://www.gamesradar.com/games/devs-dont-buy-steam-disclosure-claiming-gen-ai-was-a-necessity-im-literally-unemployed-and-i-still-make-all-of-my-assets-by-hand/)
-- По диагонали: .NET июльское сервисное обновление (14.07) — заплатки безопасности для .NET 8/9/10, по фичам без нового. [.NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-july-2026-servicing-updates/)
-- По диагонали: Palworld вышла из EA (1.0, 10.07), 40+ млн игроков, 94% положительных; путь движка Unity → UE5 (пара к Mistria). [Steam](https://store.steampowered.com/app/1623730/Palworld/)
