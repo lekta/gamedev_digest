@@ -19,7 +19,7 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          claude_args: '--allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(grep:*),Bash(date:*),Bash(ls:*)"'
+          claude_args: '--model claude-opus-4-8 --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(grep:*),Bash(date:*),Bash(ls:*)"'
           prompt: |
             Собери сегодняшний выпуск GameDev Digest — ежедневной сводки новостей геймдева для Unity/C#-разработчика. Ты находишься в корне репозитория дайджеста.
 

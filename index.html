@@ -44,6 +44,7 @@
   #digest a:hover { text-decoration: underline; }
   #digest hr { border: 0; border-top: 1px solid var(--border); }
   #digest code { background: var(--bg); padding: 1px 5px; border-radius: 4px; font-size: 14px; }
+  #digest img { display: block; width: 100%; max-height: 220px; object-fit: cover; border-radius: 10px; margin: 12px 0 6px; }
   #status { color: var(--muted); padding: 24px 0; }
   footer { margin-top: 28px; color: var(--muted); font-size: 13px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   footer button {
@@ -118,8 +119,19 @@ async function main() {
       nav.querySelectorAll("button").forEach(x => x.classList.remove("active"));
       btn.classList.add("active");
       status.textContent = "Загружаю " + file.name + "…";
-      const md = await (await fetch(file.download_url)).text();
+      let md;
+      try { // сначала относительный путь (на Pages — тот же сайт, всегда свежее)
+        const r = await fetch("digests/" + file.name, { cache: "no-store" });
+        if (!r.ok) throw new Error();
+        md = await r.text();
+      } catch { // локальный file:// или сбой — забрать с GitHub напрямую
+        md = await (await fetch(file.download_url)).text();
+      }
       document.getElementById("digest").innerHTML = marked.parse(md);
+      document.querySelectorAll("#digest img").forEach(img => {
+        img.loading = "lazy";
+        img.onerror = () => img.remove(); // не загрузилась — тихо убрать, без битых квадратов
+      });
       status.textContent = "";
     }
   } catch (e) {
