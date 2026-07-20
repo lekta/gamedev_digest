@@ -8,7 +8,7 @@
 
 ## 2026-07-20
 - Dinolords (19.07): инди-RTS Northplay (Копенгаген) посреди разработки переходит с MonoBehaviour на DOTS/ECS, пропустила Q2 EA-окно без новой даты. [Tech Times](https://www.techtimes.com/articles/320979/20260719/dinosaur-rts-dinolords-misses-q2-window-now-overhauling-its-game-engine.htm)
-- По диагонали: MonoGame 3.8.5 (17.07) — единая нативная C/C++ платформенная прослойка, таргеты DesktopVK (Vulkan) и WindowsDX12, ARM64. [GameFromScratch](https://gamefromscratch.com/monogame-3-8-5-released/)
+- MonoGame 3.8.5 (15.07): единая нативная C/C++ прослойка вместо C#-обёрток, таргеты DesktopVK (Vulkan, ex-Stadia) и WindowsDX12 (GDK/Game Pass), ARM64, code-first Content Builder. [MonoGame Blog](https://monogame.net/blog/2026-07-15-3.8.5-release-2026/)
 - По диагонали: Roblox Build (16.07) — AI-генерация игр по тексту в мобильном Roblox, паблик-альфа в Новой Зеландии. [TechCrunch](https://techcrunch.com/2026/07/16/roblox-launches-an-ai-powered-game-creation-feature-in-its-mobile-app/)
 - По диагонали: Steam AI-disclosure тренд (19.07, GameDiscoverCo) — 30,8% релизов 2026 года с AI-маркировкой, к 2027-28 может перевалить за половину. [PC Gamer](https://www.pcgamer.com/gaming-industry/steam-week-in-review-take-cover-because-it-looks-like-more-than-half-of-steam-games-will-have-an-ai-disclosure-by-2027-2028/)
 - По диагонали: Dear Passengers (14.07, FLEXUS, Украина) — кооп-«friend-sim» про авиахаос, 1 млн+ вишлистов за 2 дня. [DTF](https://dtf.ru/games/5190842-igra-dear-passengers-vishlist-steam)
