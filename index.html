@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GameDev Digest</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:title" content="GameDev Digest">
+<meta property="og:description" content="Ежедневная сводка новостей геймдева для Unity/C#-разработчика: движок, язык, инженерные кейсы студий — коротко и по делу, на русском.">
+<meta name="description" content="Ежедневная сводка новостей геймдева для Unity/C#-разработчика: движок, язык, инженерные кейсы студий — коротко и по делу, на русском.">
+<link rel="alternate" type="application/rss+xml" title="GameDev Digest" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <style>
   :root {
@@ -16,10 +24,11 @@
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--bg); color: var(--fg);
-    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, sans-serif;
+    font: 16px/1.6 "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
   }
   .wrap { max-width: 760px; margin: 0 auto; padding: 24px 20px 60px; }
-  header { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+  header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+  header img { width: 28px; height: 28px; border-radius: 7px; }
   header h1 { font-size: 22px; margin: 0; }
   header .sub { color: var(--muted); font-size: 14px; }
   nav { margin: 12px 0 24px; display: flex; gap: 8px; flex-wrap: wrap; }
@@ -36,17 +45,47 @@
   #digest hr { border: 0; border-top: 1px solid var(--border); }
   #digest code { background: var(--bg); padding: 1px 5px; border-radius: 4px; font-size: 14px; }
   #status { color: var(--muted); padding: 24px 0; }
+  footer { margin-top: 28px; color: var(--muted); font-size: 13px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  footer button {
+    background: none; color: var(--muted); border: 1px solid var(--border);
+    border-radius: 8px; padding: 3px 10px; font-size: 13px; cursor: pointer;
+  }
+  footer button:hover { color: var(--accent); border-color: var(--accent); }
+  footer a.rss { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--muted); }
+  footer a.rss:hover { color: var(--accent); border-color: var(--accent); }
+  dialog#about {
+    max-width: 560px; padding: 24px 28px; font-size: 14.5px; line-height: 1.6;
+    background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 14px;
+  }
+  dialog#about::backdrop { background: rgba(0,0,0,.55); }
+  dialog#about h2 { margin-top: 0; font-size: 18px; }
+  dialog#about a { color: var(--accent); }
+  dialog#about .close { float: right; background: none; border: 0; color: var(--muted); font-size: 20px; cursor: pointer; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
+    <img src="favicon.png" alt="">
     <h1>GameDev Digest</h1>
-    <span class="sub">Unity · C# · ежедневно</span>
   </header>
   <nav id="issues"></nav>
   <div id="status">Загружаю последний выпуск…</div>
   <article id="digest"></article>
+  <footer>
+    <span>© <span id="year">2026</span> GameDev Digest — Lekta</span>
+    <button id="aboutBtn" type="button">О проекте</button>
+    <a class="rss" href="feed.xml">RSS</a>
+  </footer>
+  <dialog id="about">
+    <button class="close" type="button" aria-label="Закрыть">✕</button>
+    <h2>О проекте</h2>
+    <p><strong>GameDev Digest</strong> — ежедневная сводка новостей геймдева для Unity/C#-разработчика. Коротко, по делу, на русском.</p>
+    <p><strong>Темы:</strong> Unity (релизы, DOTS/ECS, поведение на новом железе, политика компании), C#/.NET, инженерные кейсы студий и постмортемы, заметные события в играх и сообществах, AI-инструменты в разработке.</p>
+    <p><strong>Источники:</strong> официальные блоги и патчноуты, посты разработчиков, релизы на GitHub, отраслевая пресса, SteamDB и сообщества. Приоритет — первоисточники, а не пересказы.</p>
+    <p><strong>Как собирается:</strong> у каждой новости проверяется дата события (не старая ли волна подана как свежая) и правдоподобие фактов; к главным новостям — вывод «что это значит для разработчика»; повторы отсекаются трёхдневным кулдауном. Выпуск собирает автоматика (Claude + GitHub Actions) каждое утро.</p>
+    <p>Архив и устройство проекта — <a href="https://github.com/lekta/gamedev_digest">в репозитории</a>. Подписка — <a href="feed.xml">RSS</a>.</p>
+  </dialog>
 </div>
 <script>
 const REPO = "lekta/gamedev_digest";
@@ -88,6 +127,12 @@ async function main() {
   }
 }
 main();
+
+document.getElementById("year").textContent = new Date().getFullYear();
+const about = document.getElementById("about");
+document.getElementById("aboutBtn").onclick = () => about.showModal();
+about.querySelector(".close").onclick = () => about.close();
+about.onclick = e => { if (e.target === about) about.close(); };
 </script>
 </body>
 </html>
