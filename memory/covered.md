@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-21
+- Unity 7 (21.07): на Unite Seoul анонсирован движок след. поколения на CoreCLR; апгрейд с Unity 6 без пересборки/нового языка, near-instant Play Mode, шейдеры до 90% быстрее, Surface Cache GI; бета дек.2026, релиз Q1 2027. [Unity](https://unity.com/news/unity-7-roadmap-revealed-at-unite-seoul)
+- Unite Seoul (21.07): к Unity 7 показали CLI + публичный API (валидация ассетов/пуш сборок без полного редактора) и бесплатный MCP для кодовых агентов; ИИ — опция. [Game Developer](https://www.gamedeveloper.com/programming/unity-unveils-unity-7-roadmap-with-update-path-that-won-t-break-your-build)
+- По диагонали: Unite Seoul монетизация — Unity Vector + нативные прямые платежи мимо комиссий + no-code витрины, данные о покупках кормят Vector. [GamesBeat](https://gamesbeat.com/unity-says-ai-enabled-unity-7-game-engine-coming-in-q1-2027/)
+- По диагонали: Houdini 22 (сер. июля) — нативные 3D Gaussian Splats (GA), KineFX/APEX, новый UI, рендер в Karma. [80.lv](https://80.lv/articles/houdini-22-is-out-now-bringing-native-gaussian-splats-new-ui-and-more)
+- По диагонали: Аркадий Набиренков — пайплайн «естественный язык → HLSL» для Unity + проект Toxic Cannon (по сводке Suvitruf #287, 19.07). [Хабр](https://habr.com/ru/articles/1061000/)
+
 ## 2026-07-20
 - Dinolords (19.07): инди-RTS Northplay (Копенгаген) посреди разработки переходит с MonoBehaviour на DOTS/ECS, пропустила Q2 EA-окно без новой даты. [Tech Times](https://www.techtimes.com/articles/320979/20260719/dinosaur-rts-dinolords-misses-q2-window-now-overhauling-its-game-engine.htm)
 - MonoGame 3.8.5 (15.07): единая нативная C/C++ прослойка вместо C#-обёрток, таргеты DesktopVK (Vulkan, ex-Stadia) и WindowsDX12 (GDK/Game Pass), ARM64, code-first Content Builder. [MonoGame Blog](https://monogame.net/blog/2026-07-15-3.8.5-release-2026/)
@@ -19,13 +26,4 @@
 - По диагонали: C# 15 union types — комьюнити нашло боксинг value-типов через object? в union-структурах (превью, GA в ноябре). [Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/unions)
 - По диагонали: Todd Howard/Obsidian (17.07) — официально подтвердили совместную новую игру по Fallout, 16 лет после New Vegas. [Game Developer](https://www.gamedeveloper.com/business/todd-howard-says-the-timing-is-right-for-a-collaboration-with-obsidian)
 - Проверено и отброшено: «обвал онлайна Battlefield 6» (750К→30-90К) — реально январская волна 2026, свежие данные показывают стабилизацию.
-
-## 2026-07-18
-- Subnautica 2 (08.07): Adaptive Measures — первый крупный EA-патч, 5 млн копий с 14.05, 91% Positive; кейс Unity→UE5 (co-op/Nanite/Lumen). [Outlook Respawn](https://respawn.outlookindia.com/gaming/gaming-news/subnautica-2-hits-5-million-sales-milestone-during-early-access)
-- По диагонали: ZA/UM (17.07) — до 32 сокращений (~1/3 студии) несмотря на хорошие рецензии Zero Parades: For Dead Spies. [PC Gamer](https://www.pcgamer.com/games/rpg/2-months-after-releasing-zero-parades-studio-za-um-is-laying-off-employees-its-commercial-performance-has-not-enabled-us-to-sustain-a-studio-of-our-current-size/)
-- По диагонали: Compulsion Games и Double Fine (06.07) — независимость от Microsoft, сохранили IP (We Happy Few/South of Midnight, Psychonauts/Keeper); уточнение к нашей заметке 07.07 про «закрытие». [Push Square](https://www.pushsquare.com/news/2026/07/newly-independent-devs-thank-xbox-and-keep-ip-rights-to-their-games)
-- По диагонали: Unity 6000.6.0b4 (16.07) — OculusXR/Sentis/Barracuda официально неподдерживаемые в 6.6, миграция на com.unity.ai.inference/OpenXR: Meta обязательна. [Unity Discussions](https://discussions.unity.com/t/planned-breaking-changes-in-unity-6-6/1715134)
-- По диагонали: Unite Seoul (анонс на 21.07) — кейноут обещает первый показ CoreCLR/графики/2D. [Unity Discussions](https://discussions.unity.com/t/join-us-live-on-youtube-for-the-unite-seoul-keynote-on-on-jul-21-2026/1731253)
-- По диагонали: VK продала RuStore (16.07) — 100% магазина приложений гендиректору Дмитрию Панкрушеву, сумма не раскрыта. [Ведомости](https://www.vedomosti.ru/technology/news/2026/07/16/1214137-vk-prodast-rustore)
-- Проверено и отброшено: «новый» дюп-эксплойт ARC Raiders (Familiar Duck) — тот же эпизод, что уже разобран 13.07, не новость.
 
