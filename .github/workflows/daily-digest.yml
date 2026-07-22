@@ -2,8 +2,13 @@ name: Daily GameDev Digest
 
 on:
   schedule:
-    - cron: "43 6 * * *" # 06:43 UTC = 08:43 UTC+2; нестандартная минута — меньше очередь, обычно стартует в течение часа
+    - cron: "17 5 * * *" # 05:17 UTC = 07:17 UTC+2 (Сербия); с учётом задержки GitHub ~2–2.5 ч выпуск готов к ~10:00 местного. Нестандартная минута — короче очередь
   workflow_dispatch: {} # ручной запуск: GitHub → Actions → Run workflow (работает и из мобильного приложения)
+
+# Плановый и ручной запуски не выполняются одновременно: второй ждёт первого
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
 
 jobs:
   digest:
@@ -15,7 +20,21 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Проверить, не собран ли уже сегодняшний выпуск
+        id: guard
+        run: |
+          TODAY=$(TZ=Europe/Moscow date +%F)
+          # Плановый запуск пропускаем, если выпуск за сегодня уже есть (например, собран вручную).
+          # Ручной запуск (workflow_dispatch) всегда пересобирает — для правок.
+          if [ "${{ github.event_name }}" = "schedule" ] && [ -f "digests/${TODAY}.md" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::Выпуск за ${TODAY} уже собран — плановый запуск пропущен."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Собрать выпуск
+        if: steps.guard.outputs.skip != 'true'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -34,11 +53,13 @@ jobs:
             6. Если digests/ГГГГ-ММ-ДД.md за сегодня уже существует — пересобери его заново с учётом свежих новостей и перезапиши.
 
       - name: Собрать RSS-фид
+        if: steps.guard.outputs.skip != 'true'
         run: |
           pip install --quiet markdown
           python3 scripts/build_feed.py
 
       - name: Закоммитить выпуск
+        if: steps.guard.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
