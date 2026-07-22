@@ -64,6 +64,20 @@
   dialog#about h2 { margin-top: 0; font-size: 18px; }
   dialog#about a { color: var(--accent); }
   dialog#about .close { float: right; background: none; border: 0; color: var(--muted); font-size: 20px; cursor: pointer; }
+  .votes { display: flex; gap: 8px; margin: 2px 0 22px; }
+  .votes .v {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--bg); color: var(--muted);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 3px 11px; font-size: 14px; line-height: 1; cursor: pointer;
+    transition: border-color .15s, color .15s;
+  }
+  .votes .v:hover { border-color: var(--accent); color: var(--fg); }
+  .votes .v .n { font-variant-numeric: tabular-nums; min-width: 8px; text-align: left; }
+  .votes .like.on { color: #3fb950; border-color: #3fb950; }
+  .votes .dislike.on { color: #e5534b; border-color: #e5534b; }
+  #digest p:has(+ .votes) { margin-bottom: 3px; } /* прижать оценку к тексту новости «Главное» */
+  #digest li .votes { margin-bottom: 14px; }       /* в диагональных пунктах отступ чуть меньше */
 </style>
 </head>
 <body>
@@ -94,6 +108,86 @@
 const REPO = "lekta/gamedev_digest";
 const BRANCH = "master";
 const SHOWN = 10; // сколько последних выпусков в переключателе
+const VOTE_API = "https://likes-api.zopa.workers.dev"; // API лайков/дизлайков
+
+// Короткий стабильный хеш заголовка (djb2) → id новости "дата_хеш".
+// Переживает перестановку новостей; меняется, только если переписать сам заголовок.
+function voteId(date, headline) {
+  let h = 5381;
+  const s = headline.trim();
+  for (let i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0;
+  return date + "_" + h.toString(36);
+}
+
+// Вешает 👍/👎 со счётчиками под каждую новость выпуска: и «Главное» (h3), и «по диагонали» (пункты списка).
+async function attachVotes(date) {
+  const digest = document.getElementById("digest");
+  const bars = {};
+  const paint = (id, likes, dislikes, my) => {
+    const b = bars[id];
+    if (!b) return;
+    b.like.querySelector(".n").textContent = likes;
+    b.dislike.querySelector(".n").textContent = dislikes;
+    b.like.classList.toggle("on", my === 1);
+    b.dislike.classList.toggle("on", my === -1);
+  };
+
+  const addBar = (headline, place) => {
+    const id = voteId(date, headline);
+    const bar = document.createElement("div");
+    bar.className = "votes";
+    bar.innerHTML =
+      '<button class="v like" type="button"><span class="ic">👍</span><span class="n">0</span></button>' +
+      '<button class="v dislike" type="button"><span class="ic">👎</span><span class="n">0</span></button>';
+    place(bar);
+    const like = bar.querySelector(".like"), dislike = bar.querySelector(".dislike");
+    bars[id] = { like, dislike };
+    const vote = async value => {
+      try {
+        const r = await fetch(VOTE_API + "/vote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ itemId: id, value })
+        });
+        if (!r.ok) return;
+        const d = await r.json();
+        paint(id, d.likes, d.dislikes, d.my);
+      } catch {}
+    };
+    like.onclick = () => vote(1);
+    dislike.onclick = () => vote(-1);
+  };
+
+  // «Главное» — заголовки h3: бар в конец блока, перед следующим заголовком/разделителем
+  digest.querySelectorAll("h3").forEach(h => {
+    addBar(h.textContent, bar => {
+      let stop = null;
+      for (let el = h.nextElementSibling; el; el = el.nextElementSibling) {
+        if (el.tagName === "H3" || el.tagName === "H2" || el.tagName === "HR") { stop = el; break; }
+      }
+      stop ? digest.insertBefore(bar, stop) : digest.appendChild(bar);
+    });
+  });
+
+  // «По диагонали» — пункты верхнего списка: заголовок в жирном, бар внутрь пункта
+  digest.querySelectorAll(":scope > ul > li").forEach(li => {
+    const headline = (li.querySelector("strong") || li).textContent;
+    addBar(headline, bar => li.appendChild(bar));
+  });
+
+  if (!Object.keys(bars).length) return;
+
+  // подтянуть текущие счётчики и мой голос одним запросом на весь выпуск
+  try {
+    const r = await fetch(VOTE_API + "/counts?date=" + date, { cache: "no-store" });
+    if (!r.ok) return;
+    const d = await r.json();
+    for (const id in bars) {
+      const it = d.items[id] || { likes: 0, dislikes: 0, my: 0 };
+      paint(id, it.likes, it.dislikes, it.my);
+    }
+  } catch {}
+}
 
 async function main() {
   const status = document.getElementById("status");
@@ -138,6 +232,7 @@ async function main() {
       const hz = [...document.querySelectorAll("#digest h2")]
         .find(h => /горизонте|разбор/i.test(h.textContent));
       for (let el = hz; el; el = el.nextElementSibling) el.classList.add("outro");
+      attachVotes(file.name.replace(".md", ""));
       status.textContent = "";
     }
   } catch (e) {
