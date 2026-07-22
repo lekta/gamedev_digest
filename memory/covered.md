@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-22
+- Rider 2026.2 (RC 15.07): «навыки агента» открывают ИИ-агентам покрытие тестов/профайлер/анализ кода Rider; Copilot встроен нативно; отладчик +2.8с быстрее, индексация UE ×2, память −7-8%; категория Game Development в new project. [JetBrains](https://blog.jetbrains.com/dotnet/2026/07/15/rider-2026-2-release-candidate-is-out/)
+- AutoRemesher 1.0 (20.07): бесплатный авторетополог Джереми Ху (Dust3D) сменил GPLv3→MIT (можно в коммерцию); Win/Linux/macOS, только OBJ, без UV; мост для Blender 4.2+. [CG Channel](https://www.cgchannel.com/2026/07/get-free-retopology-tool-autoremesher-and-its-blender-bridge/)
+- По диагонали: VS 2026 18.8 (21.07) — встроенные «навыки агента», 5 сценариев .NET/Azure, выключены по умолчанию, включат по телеметрии. [Microsoft](https://devblogs.microsoft.com/visualstudio/built-in-agent-skills-in-visual-studio/)
+- По диагонали: 1047 Games (21.07) — 3-я волна сокращений через месяц после Empulse (UE5); отзывы «в осн. положительные», но пик ~2860 CCU (по пересказу) — план vs реальность. [Game Developer](https://www.gamedeveloper.com/business/report-splitgate-dev-1047-games-lays-off-staff)
+- По диагонали: When Tides Turn (21.07) — ветераны Burnout/Criterion (Фиона Сперри) анонсировали Wreckreation 2, аркадный рейсер, разработка с сообществом, релиз 2027. [PC Gamer](https://www.pcgamer.com/games/racing/developer-of-burnout-spiritual-successor-wreckreation-has-formed-a-new-studio-working-on-a-sequel/)
+
 ## 2026-07-21
 - Unity 7 (21.07): на Unite Seoul анонсирован движок след. поколения на CoreCLR; апгрейд с Unity 6 без пересборки/нового языка, near-instant Play Mode, шейдеры до 90% быстрее, Surface Cache GI; бета дек.2026, релиз Q1 2027. [Unity](https://unity.com/news/unity-7-roadmap-revealed-at-unite-seoul)
 - Unite Seoul (21.07): к Unity 7 показали CLI + публичный API (валидация ассетов/пуш сборок без полного редактора) и бесплатный MCP для кодовых агентов; ИИ — опция. [Game Developer](https://www.gamedeveloper.com/programming/unity-unveils-unity-7-roadmap-with-update-path-that-won-t-break-your-build)
@@ -19,11 +26,3 @@
 - По диагонали: Roblox Build (16.07) — AI-генерация игр по тексту в мобильном Roblox, паблик-альфа в Новой Зеландии. [TechCrunch](https://techcrunch.com/2026/07/16/roblox-launches-an-ai-powered-game-creation-feature-in-its-mobile-app/)
 - По диагонали: Steam AI-disclosure тренд (19.07, GameDiscoverCo) — 30,8% релизов 2026 года с AI-маркировкой, к 2027-28 может перевалить за половину. [PC Gamer](https://www.pcgamer.com/gaming-industry/steam-week-in-review-take-cover-because-it-looks-like-more-than-half-of-steam-games-will-have-an-ai-disclosure-by-2027-2028/)
 - По диагонали: Dear Passengers (14.07, FLEXUS, Украина) — кооп-«friend-sim» про авиахаос, 1 млн+ вишлистов за 2 дня. [DTF](https://dtf.ru/games/5190842-igra-dear-passengers-vishlist-steam)
-
-## 2026-07-19
-- Escape from Tarkov (14.07): Battlestate запустила ивент Blackout перед первым сезоном Kord Breach; Arena уже на Unity 6, основная игра тестирует движок на ETS, переезд — Q3 2026. [X/Буянов](https://x.com/nikgeneburn/status/2038653370940994003)
-- По диагонали: Godot 4.8 Dev1 (06.07) — встроенный игровой вид по умолчанию, псевдолокализация в редакторе, touch в TextEdit/CodeEdit, fuzzy-search в GDScript API. [GameFromScratch](https://gamefromscratch.com/godot-4-8-dev1-released/)
-- По диагонали: C# 15 union types — комьюнити нашло боксинг value-типов через object? в union-структурах (превью, GA в ноябре). [Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/unions)
-- По диагонали: Todd Howard/Obsidian (17.07) — официально подтвердили совместную новую игру по Fallout, 16 лет после New Vegas. [Game Developer](https://www.gamedeveloper.com/business/todd-howard-says-the-timing-is-right-for-a-collaboration-with-obsidian)
-- Проверено и отброшено: «обвал онлайна Battlefield 6» (750К→30-90К) — реально январская волна 2026, свежие данные показывают стабилизацию.
-
