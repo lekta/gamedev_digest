@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-23
+- CULTIC (23.07): Unity-шутер Джейсона Смита (Jasozz/3D Realms) вышел на PS5/Xbox/Switch 2 единым изданием ($19.98, 23 карты); на 1-м Switch порт сорвался о Tegra X1 + Unity-физику, Switch 2 (Ampere+DLSS) вытянул. [Steam](https://store.steampowered.com/app/1684930/CULTIC/)
+- Godot 4.8 dev2 (21.07): VCS-friendly сериализация (свойства по строкам → читаемые диффы/слияние сцен), Jolt Physics 5.6, .NET/C#; 197 фиксов. Стабильная 4.7.1 — 14.07. [Godot](https://godotengine.org/article/dev-snapshot-godot-4-8-dev-2/)
+- По диагонали: Ready or Not (15.07) — VOID вырезала контент под консольную сертификацию, ревью-бомба, но онлайн +120% → рекорд 24 870 CCU, топ предзаказов PS. Движок Unreal. [PC Gamer](https://www.pcgamer.com/games/fps/ready-or-nots-review-bomb-campaign-may-have-been-short-lived-as-player-count-subsequently-doubles-on-steam-and-it-tops-playstations-pre-order-list/)
+- По диагонали: Alpha Dog Games (22.07) — mobile-студия Mighty DOOM вернулась к независимости после закрытия Microsoft (2024); паттерн «отпущен из Xbox, команда цела» вслед за Double Fine/Compulsion. [Game Developer](https://www.gamedeveloper.com/business/alpha-dog-games-returns-to-independence-two-years-after-being-shuttered-by-xbox)
+- По диагонали: Warface (июль) — Astrum открыла классический Warface в Steam на все регионы (было только СНГ) + англ. локализация под ивент Golden Trail; отдельно от закрытого в мае Warface: Clutch. [Astrum](https://astrum-entertainment.ru/en/news/81-warface-now-available-on-steam-worldwide)
+
 ## 2026-07-22
 - Rider 2026.2 (RC 15.07): «навыки агента» открывают ИИ-агентам покрытие тестов/профайлер/анализ кода Rider; Copilot встроен нативно; отладчик +2.8с быстрее, индексация UE ×2, память −7-8%; категория Game Development в new project. [JetBrains](https://blog.jetbrains.com/dotnet/2026/07/15/rider-2026-2-release-candidate-is-out/)
 - AutoRemesher 1.0 (20.07): бесплатный авторетополог Джереми Ху (Dust3D) сменил GPLv3→MIT (можно в коммерцию); Win/Linux/macOS, только OBJ, без UV; мост для Blender 4.2+. [CG Channel](https://www.cgchannel.com/2026/07/get-free-retopology-tool-autoremesher-and-its-blender-bridge/)
@@ -19,10 +26,3 @@
 - По диагонали: Unite Seoul монетизация — Unity Vector + нативные прямые платежи мимо комиссий + no-code витрины, данные о покупках кормят Vector. [GamesBeat](https://gamesbeat.com/unity-says-ai-enabled-unity-7-game-engine-coming-in-q1-2027/)
 - По диагонали: Houdini 22 (сер. июля) — нативные 3D Gaussian Splats (GA), KineFX/APEX, новый UI, рендер в Karma. [80.lv](https://80.lv/articles/houdini-22-is-out-now-bringing-native-gaussian-splats-new-ui-and-more)
 - По диагонали: Аркадий Набиренков — пайплайн «естественный язык → HLSL» для Unity + проект Toxic Cannon (по сводке Suvitruf #287, 19.07). [Хабр](https://habr.com/ru/articles/1061000/)
-
-## 2026-07-20
-- Dinolords (19.07): инди-RTS Northplay (Копенгаген) посреди разработки переходит с MonoBehaviour на DOTS/ECS, пропустила Q2 EA-окно без новой даты. [Tech Times](https://www.techtimes.com/articles/320979/20260719/dinosaur-rts-dinolords-misses-q2-window-now-overhauling-its-game-engine.htm)
-- MonoGame 3.8.5 (15.07): единая нативная C/C++ прослойка вместо C#-обёрток, таргеты DesktopVK (Vulkan, ex-Stadia) и WindowsDX12 (GDK/Game Pass), ARM64, code-first Content Builder. [MonoGame Blog](https://monogame.net/blog/2026-07-15-3.8.5-release-2026/)
-- По диагонали: Roblox Build (16.07) — AI-генерация игр по тексту в мобильном Roblox, паблик-альфа в Новой Зеландии. [TechCrunch](https://techcrunch.com/2026/07/16/roblox-launches-an-ai-powered-game-creation-feature-in-its-mobile-app/)
-- По диагонали: Steam AI-disclosure тренд (19.07, GameDiscoverCo) — 30,8% релизов 2026 года с AI-маркировкой, к 2027-28 может перевалить за половину. [PC Gamer](https://www.pcgamer.com/gaming-industry/steam-week-in-review-take-cover-because-it-looks-like-more-than-half-of-steam-games-will-have-an-ai-disclosure-by-2027-2028/)
-- По диагонали: Dear Passengers (14.07, FLEXUS, Украина) — кооп-«friend-sim» про авиахаос, 1 млн+ вишлистов за 2 дня. [DTF](https://dtf.ru/games/5190842-igra-dear-passengers-vishlist-steam)
