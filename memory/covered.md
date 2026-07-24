@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-24
+- Кастомный рендер дождя на Unity URP (Мирза Бейг, 23.07): буфер четвертного разрешения копит частицы аддитивно, нормали из яркости → screen-space distortion; дешёвый ливень. [80 Level](https://80.lv/articles/check-out-this-heavy-rain-scene-built-with-a-custom-unity-urp-renderer)
+- 3ds Max 2027.2 (22.07): нативные редактируемые Gaussian Splats — импорт PLY/SPZ/LCC, Point Object/модификаторы, деформация штатными инструментами, рендер Arnold 5.9.3.0. [CGPress](https://cgpress.org/archives/3ds-max-2027-2-released.html)
+- По диагонали: Steam/Valve (22.07) — апдейт вишлистов (категории/уведомления/поиск/шаринг) и подарков (гостевая оплата, по email, межрегионально, авто-возврат 30 дней). [Steam](https://steamcommunity.com/ogg/593110/announcements/detail/710028372767410960)
+- По диагонали: SmartUndo+ (kunemann, 23.07) — Blender-аддон: своя история отмены на каждый объект/дерево нод/композитор. [80 Level](https://80.lv/articles/this-tool-gives-every-blender-object-its-own-undo-history)
+- По диагонали: Mesa 26.2 RC (июль) — открытый Vulkan-драйвер NVK догоняет проприетарный NVIDIA + экспериментальный DLSS; стабильная в августе. [Phoronix](https://www.phoronix.com/news/NVK-Mesa-26.2-Performance)
+
 ## 2026-07-23
 - CULTIC (23.07): Unity-шутер Джейсона Смита (Jasozz/3D Realms) вышел на PS5/Xbox/Switch 2 единым изданием ($19.98, 23 карты); на 1-м Switch порт сорвался о Tegra X1 + Unity-физику, Switch 2 (Ampere+DLSS) вытянул. [Steam](https://store.steampowered.com/app/1684930/CULTIC/)
 - Godot 4.8 dev2 (21.07): VCS-friendly сериализация (свойства по строкам → читаемые диффы/слияние сцен), Jolt Physics 5.6, .NET/C#; 197 фиксов. Стабильная 4.7.1 — 14.07. [Godot](https://godotengine.org/article/dev-snapshot-godot-4-8-dev-2/)
@@ -19,10 +26,3 @@
 - По диагонали: VS 2026 18.8 (21.07) — встроенные «навыки агента», 5 сценариев .NET/Azure, выключены по умолчанию, включат по телеметрии. [Microsoft](https://devblogs.microsoft.com/visualstudio/built-in-agent-skills-in-visual-studio/)
 - По диагонали: 1047 Games (21.07) — 3-я волна сокращений через месяц после Empulse (UE5); отзывы «в осн. положительные», но пик ~2860 CCU (по пересказу) — план vs реальность. [Game Developer](https://www.gamedeveloper.com/business/report-splitgate-dev-1047-games-lays-off-staff)
 - По диагонали: When Tides Turn (21.07) — ветераны Burnout/Criterion (Фиона Сперри) анонсировали Wreckreation 2, аркадный рейсер, разработка с сообществом, релиз 2027. [PC Gamer](https://www.pcgamer.com/games/racing/developer-of-burnout-spiritual-successor-wreckreation-has-formed-a-new-studio-working-on-a-sequel/)
-
-## 2026-07-21
-- Unity 7 (21.07): на Unite Seoul анонсирован движок след. поколения на CoreCLR; апгрейд с Unity 6 без пересборки/нового языка, near-instant Play Mode, шейдеры до 90% быстрее, Surface Cache GI; бета дек.2026, релиз Q1 2027. [Unity](https://unity.com/news/unity-7-roadmap-revealed-at-unite-seoul)
-- Unite Seoul (21.07): к Unity 7 показали CLI + публичный API (валидация ассетов/пуш сборок без полного редактора) и бесплатный MCP для кодовых агентов; ИИ — опция. [Game Developer](https://www.gamedeveloper.com/programming/unity-unveils-unity-7-roadmap-with-update-path-that-won-t-break-your-build)
-- По диагонали: Unite Seoul монетизация — Unity Vector + нативные прямые платежи мимо комиссий + no-code витрины, данные о покупках кормят Vector. [GamesBeat](https://gamesbeat.com/unity-says-ai-enabled-unity-7-game-engine-coming-in-q1-2027/)
-- По диагонали: Houdini 22 (сер. июля) — нативные 3D Gaussian Splats (GA), KineFX/APEX, новый UI, рендер в Karma. [80.lv](https://80.lv/articles/houdini-22-is-out-now-bringing-native-gaussian-splats-new-ui-and-more)
-- По диагонали: Аркадий Набиренков — пайплайн «естественный язык → HLSL» для Unity + проект Toxic Cannon (по сводке Suvitruf #287, 19.07). [Хабр](https://habr.com/ru/articles/1061000/)
