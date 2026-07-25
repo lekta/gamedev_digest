@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-25
+- MonoGame Hub (23.07): настольное приложение для C#-проектов на MonoGame — мастер проверки .NET/IDE, официальные шаблоны, список проектов, запуск в IDE; ранний доступ спонсорам SpriteBatch+. [MonoGame](https://monogame.net/blog/2026-07-23-monogamehub/)
+- Let's Build a Dungeon (Springloaded, 25.07): движок внутри игры про разработку MMO — весь UGC (предметы/квесты/диалоги) как данные по схемам, ИИ-NPC автономно проходят чужой контент; движок не назван, релиз 2026. [80 Level](https://80.lv/articles/building-a-game-development-simulator-with-a-game-engine-inside-it)
+- По диагонали: Ubisoft (24.07) — ремастер AC IV Black Flag Resynced 3,5 млн копий за 2 недели, выше годового плана, на фоне закрытий (Виннипег/Белград) и сокращений; движок Anvil. [Game Developer](https://www.gamedeveloper.com/business/black-flag-resynced-beats-annual-sales-expectations-in-two-weeks)
+- По диагонали: Vermila Studios (23.07) — уволены все 19, закрытие «вероятно» через 5 мес. после Crisol: Theater of Idols (изд. Blumhouse); паттерн студии одной игры. [Game Developer](https://www.gamedeveloper.com/business/vermila-studios-lays-off-staff-studio-closure-a-feasible-possibility-in-coming-months)
+- По диагонали: EA (23.07) — Еврокомиссия одобрила выкуп $55 млрд группой PIF (93,4%, $210/акция), закрытие Q1 2027, в США просят FTC присмотреться. [OpenCritic](https://opencritic.com/news/34965/eas-acquisition-by-public-investment-fund-of-saudi-arabia-officially-approved-by-eu-commission)
+
 ## 2026-07-24
 - Кастомный рендер дождя на Unity URP (Мирза Бейг, 23.07): буфер четвертного разрешения копит частицы аддитивно, нормали из яркости → screen-space distortion; дешёвый ливень. [80 Level](https://80.lv/articles/check-out-this-heavy-rain-scene-built-with-a-custom-unity-urp-renderer)
 - 3ds Max 2027.2 (22.07): нативные редактируемые Gaussian Splats — импорт PLY/SPZ/LCC, Point Object/модификаторы, деформация штатными инструментами, рендер Arnold 5.9.3.0. [CGPress](https://cgpress.org/archives/3ds-max-2027-2-released.html)
@@ -19,10 +26,3 @@
 - По диагонали: Ready or Not (15.07) — VOID вырезала контент под консольную сертификацию, ревью-бомба, но онлайн +120% → рекорд 24 870 CCU, топ предзаказов PS. Движок Unreal. [PC Gamer](https://www.pcgamer.com/games/fps/ready-or-nots-review-bomb-campaign-may-have-been-short-lived-as-player-count-subsequently-doubles-on-steam-and-it-tops-playstations-pre-order-list/)
 - По диагонали: Alpha Dog Games (22.07) — mobile-студия Mighty DOOM вернулась к независимости после закрытия Microsoft (2024); паттерн «отпущен из Xbox, команда цела» вслед за Double Fine/Compulsion. [Game Developer](https://www.gamedeveloper.com/business/alpha-dog-games-returns-to-independence-two-years-after-being-shuttered-by-xbox)
 - По диагонали: Warface (июль) — Astrum открыла классический Warface в Steam на все регионы (было только СНГ) + англ. локализация под ивент Golden Trail; отдельно от закрытого в мае Warface: Clutch. [Astrum](https://astrum-entertainment.ru/en/news/81-warface-now-available-on-steam-worldwide)
-
-## 2026-07-22
-- Rider 2026.2 (RC 15.07): «навыки агента» открывают ИИ-агентам покрытие тестов/профайлер/анализ кода Rider; Copilot встроен нативно; отладчик +2.8с быстрее, индексация UE ×2, память −7-8%; категория Game Development в new project. [JetBrains](https://blog.jetbrains.com/dotnet/2026/07/15/rider-2026-2-release-candidate-is-out/)
-- AutoRemesher 1.0 (20.07): бесплатный авторетополог Джереми Ху (Dust3D) сменил GPLv3→MIT (можно в коммерцию); Win/Linux/macOS, только OBJ, без UV; мост для Blender 4.2+. [CG Channel](https://www.cgchannel.com/2026/07/get-free-retopology-tool-autoremesher-and-its-blender-bridge/)
-- По диагонали: VS 2026 18.8 (21.07) — встроенные «навыки агента», 5 сценариев .NET/Azure, выключены по умолчанию, включат по телеметрии. [Microsoft](https://devblogs.microsoft.com/visualstudio/built-in-agent-skills-in-visual-studio/)
-- По диагонали: 1047 Games (21.07) — 3-я волна сокращений через месяц после Empulse (UE5); отзывы «в осн. положительные», но пик ~2860 CCU (по пересказу) — план vs реальность. [Game Developer](https://www.gamedeveloper.com/business/report-splitgate-dev-1047-games-lays-off-staff)
-- По диагонали: When Tides Turn (21.07) — ветераны Burnout/Criterion (Фиона Сперри) анонсировали Wreckreation 2, аркадный рейсер, разработка с сообществом, релиз 2027. [PC Gamer](https://www.pcgamer.com/games/racing/developer-of-burnout-spiritual-successor-wreckreation-has-formed-a-new-studio-working-on-a-sequel/)
