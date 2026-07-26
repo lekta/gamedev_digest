@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-26
+- Unity Surface Cache GI (23.07): превью real-time GI в URP в 6.7 alpha — без запекания лайтмапов, диффузное, HW/SW ray tracing (UnifiedRayTracing), ~1,5 мс Sponza; LTS в 6.7. [Unity Discussions](https://discussions.unity.com/t/surface-cache-gi-preview/1720494)
+- Goose Goose Duck / Gaggle (24.07): студия ~30 чел. на Unity держит крупнейшую social-deduction; встроенные voice+netcode как ядро (против Discord у Among Us), ~50 апдейтов/год, отказ от 8-значной инвестиции. [80.lv](https://80.lv/articles/staying-lean-how-we-built-the-world-s-biggest-social-deduction-game)
+- По диагонали: Blender Draw-Hair (Sa9_NR, 25.07) — бесплатный аддон, рисование прядей по гайд-мешу во вьюпорте с автопривязкой; университетский WIP. [booth.pm](https://sa9nr.booth.pm/items/8640216)
+- По диагонали: Шон Лэйден (23.07) — экс-глава PlayStation собирает издательство для AA-игр между инди и AAA; критика модели «сиквел или крупное IP», конкретики нет. [GamesBeat](https://gamesbeat.com/how-former-playstation-boss-views-gamings-tumultuous-time-shawn-layden-interview/)
+- По диагонали: Tomb Raider: Legacy of Atlantis (25.07) — мини-док Flying Wild Hog + Crystal Dynamics (UE5, фев 2027): динамическая анимация ради «узнаваемой» Лары; AI-ассеты были, заменены/доработаны людьми. [80.lv](https://80.lv/articles/check-out-these-behind-the-scenes-details-of-tomb-raider-legacy-of-atlantis)
+
 ## 2026-07-25
 - MonoGame Hub (23.07): настольное приложение для C#-проектов на MonoGame — мастер проверки .NET/IDE, официальные шаблоны, список проектов, запуск в IDE; ранний доступ спонсорам SpriteBatch+. [MonoGame](https://monogame.net/blog/2026-07-23-monogamehub/)
 - Let's Build a Dungeon (Springloaded, 25.07): движок внутри игры про разработку MMO — весь UGC (предметы/квесты/диалоги) как данные по схемам, ИИ-NPC автономно проходят чужой контент; движок не назван, релиз 2026. [80 Level](https://80.lv/articles/building-a-game-development-simulator-with-a-game-engine-inside-it)
@@ -19,10 +26,3 @@
 - По диагонали: Steam/Valve (22.07) — апдейт вишлистов (категории/уведомления/поиск/шаринг) и подарков (гостевая оплата, по email, межрегионально, авто-возврат 30 дней). [Steam](https://steamcommunity.com/ogg/593110/announcements/detail/710028372767410960)
 - По диагонали: SmartUndo+ (kunemann, 23.07) — Blender-аддон: своя история отмены на каждый объект/дерево нод/композитор. [80 Level](https://80.lv/articles/this-tool-gives-every-blender-object-its-own-undo-history)
 - По диагонали: Mesa 26.2 RC (июль) — открытый Vulkan-драйвер NVK догоняет проприетарный NVIDIA + экспериментальный DLSS; стабильная в августе. [Phoronix](https://www.phoronix.com/news/NVK-Mesa-26.2-Performance)
-
-## 2026-07-23
-- CULTIC (23.07): Unity-шутер Джейсона Смита (Jasozz/3D Realms) вышел на PS5/Xbox/Switch 2 единым изданием ($19.98, 23 карты); на 1-м Switch порт сорвался о Tegra X1 + Unity-физику, Switch 2 (Ampere+DLSS) вытянул. [Steam](https://store.steampowered.com/app/1684930/CULTIC/)
-- Godot 4.8 dev2 (21.07): VCS-friendly сериализация (свойства по строкам → читаемые диффы/слияние сцен), Jolt Physics 5.6, .NET/C#; 197 фиксов. Стабильная 4.7.1 — 14.07. [Godot](https://godotengine.org/article/dev-snapshot-godot-4-8-dev-2/)
-- По диагонали: Ready or Not (15.07) — VOID вырезала контент под консольную сертификацию, ревью-бомба, но онлайн +120% → рекорд 24 870 CCU, топ предзаказов PS. Движок Unreal. [PC Gamer](https://www.pcgamer.com/games/fps/ready-or-nots-review-bomb-campaign-may-have-been-short-lived-as-player-count-subsequently-doubles-on-steam-and-it-tops-playstations-pre-order-list/)
-- По диагонали: Alpha Dog Games (22.07) — mobile-студия Mighty DOOM вернулась к независимости после закрытия Microsoft (2024); паттерн «отпущен из Xbox, команда цела» вслед за Double Fine/Compulsion. [Game Developer](https://www.gamedeveloper.com/business/alpha-dog-games-returns-to-independence-two-years-after-being-shuttered-by-xbox)
-- По диагонали: Warface (июль) — Astrum открыла классический Warface в Steam на все регионы (было только СНГ) + англ. локализация под ивент Golden Trail; отдельно от закрытого в мае Warface: Clutch. [Astrum](https://astrum-entertainment.ru/en/news/81-warface-now-available-on-steam-worldwide)
