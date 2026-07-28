@@ -4,6 +4,19 @@
 
 ---
 
+## 2026-07-28
+- Два главных: Halo: Campaign Evolved (config #6 графика/смежный движок, вывод — планка MegaLights+Lumen как референс для URP/HDRP; релиз сегодня, first-party событие) + .NET MSBuild Binlog Analyzer для VS Code (config #2/#5, C#+AI+MCP, 27.07 devblogs). Unity-core главного чистого нет — всё свежее под кулдауном/инерцией (см. ниже).
+- Halo: app 2806050, релиз 28.07, Halo Studios / Xbox Game Studios, $49.99, Steam 71% из ~3,4k (Mostly Positive). MegaLights+аппаратный Lumen — по тех-разборам (Playfront/Neowin), подано как «по тех-разборам» (сам не замерял). Кулдаун: «Halo» в 25/26/27 не было (covered.md чист); 7-дн инерция снята релизом (ожидаемое событие из to_explore). Slipspace на покой — подтверждено несколькими разборами.
+- Картинка Halo: взял screenshot-URL со страницы Steam (store_item_assets/.../2806050/<хеш>/ss_...1920x1080.jpg), прочитан из тела страницы; как og:meta НЕ подтверждён (WebFetch не увидел явного тега) — риск 404, страница дайджеста скроет при недоступности. Header по шаблону не конструировал.
+- Картинка ко 2-му главному (.NET) не ставилась: og:image блога — баннер/лого, по правилу не берём.
+- ОТКЛОНЕНО по кулдауну: Unity 6.7 alpha a3 (23.07: CoreCLR Player builds для Win/Mac/Linux из редактора, URP on-tile deferred + SSR, Shader Graph Set-mode) — «Unity 6.7 alpha» мелькал 26.07 (Surface Cache GI). Сильный Unity-core кандидат, но кулдаун строго — придержал, апдейт записан в to_explore.
+- ОТКЛОНЕНО по инерции (7 дней, нет крит.сдвига): Godot 4.8/Jolt (главное 23.07), Rider 2026.2 (главное 22.07, GA не подтверждён), .NET 11 Preview 6 / C# 15 unions (15/19.07). ML-Agents 27.07 на GitHub — только коммит, не релиз (последний релиз 09.2025), снял.
+- РФ: свежего события на 28.07 не нашёл — пропустил.
+- Домены разведены: store.steampowered.com + playfront.de (Halo), devblogs.microsoft.com + marketplace.visualstudio.com (.NET), gamefromscratch.com (GodotHub), 80.lv (BlendCap), x.com (noio). gamedeveloper.com не использован. gamesindustry.biz — WebFetch не отдаёт (недоступен), обошёлся.
+- Первоисточники: Halo — Steam (первоисточник релиза/отзывов) + Playfront (тех-claim); .NET — devblogs (первоисточник) + Marketplace; GodotHub — gamefromscratch (пересказ; первоисточник = github.com/godothub, не фетчил в лимите); noio — X-пост автора (первоисточник); BlendCap — 80.lv (пересказ; продукт на Superhive/Blender Market).
+- 3 диагонали (нижняя граница нормы 3-5): день не забит, но каждая свежая (27.07) и реальная; 4-й крепкий свежий кандидат вне кулдауна не нашёлся (индюшные релизы недели — движок неизвестен, ценности Unity-читателю мало).
+- Репортёр — Василиса Сасная (последние 3: Палыч 25 / Фома 26 / Геннадий 27 заняты; свободны Валера/Ником/Пётр/Игорь/Мирча/Василиса). Выбрана Василиса — новый персонаж из недавнего коммита, вне окна. Дозировка вступления: 1 рамочная фраза + 2 новостных + хвост, тик-маска. reporters.md в корне.
+
 ## 2026-07-27
 - Тонкий понедельник. Два главных: Netcode for GameObjects 2.13.1 (config #1, Unity, заметный апдейт библиотеки, 24.07) + Khronos Shader Ecosystem Survey 2026 (config #6, graphics, отчёт 21.07). Ядро под кулдауном: URP-дождь/Gaussian Splats/Steam/Mesa (24), MonoGame/LBD/EA/Ubisoft (25), SCGI/GGD/Blender/Layden/Tomb Raider (26). Godot off-cooldown (23.07), но dev3 не вышел (dev1 06.07, dev2 21.07). Rider 2026.2 GA (22.07) — 5 дней, RC уже отыграли 22.07, инертно, не брал.
 - NGO 2.13.1: релиз тегнут ~24.07 (v2.13.1 в списке 24.07; на странице тега модель дала «July 19, released July 24» — взял 24.07). Факты сверены по github releases/тегу: FastBufferReader краш на недочитанных строках, миграция сцен distributed authority, NullRef на не-authority спавне, NetworkAnimator bounds, Rigidbody2D rotation, AnticipatedNetworkTransform InLocalSpace, новый раздел SinglePlayerTransport (одиночная↔сетевая). Картинки нет (GitHub release, осмысленного og:image нет) — по правилу допустимо.
