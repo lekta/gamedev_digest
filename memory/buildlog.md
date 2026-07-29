@@ -4,6 +4,18 @@
 
 ---
 
+## 2026-07-29
+- Тонкий день, Unity-core почти весь под кулдауном. Два главных: MCP C# SDK v2.0 (config #2/#5, C#+AI+MCP, 28.07 devblogs — сильный якорь) + EverQuest Legends (config #3-adjacent, кейс пайплайна, запуск сегодня 28.07). Чистого свежего Unity-engine главного нет — всё под кулдауном/инерцией.
+- MCP C# SDK: v2.0.0, Microsoft (Jeff Handley), NuGet ModelContextProtocol/.AspNetCore/.Core/.Extensions.*, таргеты .NET 8/9/10 + netstandard2.0. Факты сверены по devblogs: HttpServerTransportOptions.Stateless=true по умолчанию, убраны initialize (SEP-2575) и Mcp-Session-Id (SEP-2567), Multi Round-Trip Requests (SEP-2322) через InputRequiredException, заголовки Mcp-Method/Mcp-Name/Mcp-Param-*, backward-compat с v1 (кроме экспериментального Tasks). Реализует спеку 2026-07-28. Tie-in к Unity (MCP-мосты редактора, бесплатный MCP Unity 7) — контекст, не приписывал новых фактов. Картинки нет: og блога — лого/баннер, по правилу не берём.
+- EQ Legends: запуск 28.07 12pm PT, Daybreak + Game Jawn, direct download (НЕ Steam), $19.99 + $9.99/мес, соло-дружелюбно (группы до 4, рейды до 8). Пайплайн/факты по 80.lv (Moth McCoy): свой конвертер старых форматов, Blender/3ds Max, реэкспорт в родные форматы; ~1250 вершин, восстановленные партикл-эффекты со скейлом по уровню. ДВИЖОК НЕ НАЗВАН — в тексте прямо оговорено, вывод engine-agnostic. Проверял engine отдельно: официальный не подтверждён; фан-проекты LanternEQ (Unity) и EQR (UE5) — ДРУГИЕ проекты, не путать. Картинки нет: 80.lv og не достаётся (WebFetch не отдал head), everquestlegends.com — только logo.png; по лимиту усилий без картинки.
+- ОТКЛОНЕНО по кулдауну (26–28): Unity 6.7 alpha (SCGI 26.07) → CoreCLR Player builds придержаны второй день, в to_explore; Godot (GodotHub 28.07) → occlusion-система 80.lv 28.07 не взял; Blender (BlendCap 28.07, Draw-Hair 26.07) → Damped Track / Geo-Nodes fur 80.lv 28.07 не взял; Unity Netcode (27.07); Khronos shaders (27.07); Goose Goose Duck (26.07).
+- ОТКЛОНЕНО по инерции (7 дней, нет крит.сдвига): Unity 7 (21.07), Rider 2026.2 GA (22.07 — GA-блог 2026/07/22, RC отыгран 22.07), .NET 11 Preview 6 / C# 15 unions (09–19.07), MonoGame 3.8.5 (15.07), Unity CLI (20.07), 3ds Max GS / Mesa-NVK (24.07). .NET 11 Preview 7 — блога ещё НЕТ (последний Preview 6 от 09.07), только build/issue-заготовки, снял.
+- ОТКЛОНЕНО прочее: WotC president stepping down (28.07) + RE Requiem 8M (28.07) — чистые бизнес/майлстоун, config hard-ignore/финансы; Unity 6.6 beta b5 — тред стухший, свежего заметного триггера нет.
+- Диагонали 4 (норма 3-5): free assets round-up (gamefromscratch, Unity/tools), SpiritVale боты/RMT (massivelyop, #4; дата 21.07 — 8 дней, не прошлая волна, дату проставил), side-work clauses (gamedeveloper, dev-life), obituary İpek Yavuz (gamedeveloper, уважительная строка). gamedeveloper ×2 — на лимите, допустимо.
+- Домены разведены: devblogs.microsoft.com, 80.lv, gamefromscratch.com, massivelyop.com, gamedeveloper.com ×2. gamesindustry.biz/gamespress — WebFetch 401/недоступны, обошёлся.
+- РФ: свежего события на 29.07 не нашёл — пропустил (как в прошлых тонких днях).
+- Репортёр — Мирча Мортяну (последние 3: Фома 26 / Геннадий 27 / Василиса 28 заняты; свободны Валера/Ником/Пётр/Игорь/Мирча/Палыч). Выбран Мирча тематически: патологоанатом проектов ложится на MMO 1999-го, «ожившую на столе» (EQ Legends), и «работу по протоколу» (MCP-спека). Последний раз ~20.07, вне окна. reporters.md в корне.
+
 ## 2026-07-28
 - Два главных: Halo: Campaign Evolved (config #6 графика/смежный движок, вывод — планка MegaLights+Lumen как референс для URP/HDRP; релиз сегодня, first-party событие) + .NET MSBuild Binlog Analyzer для VS Code (config #2/#5, C#+AI+MCP, 27.07 devblogs). Unity-core главного чистого нет — всё свежее под кулдауном/инерцией (см. ниже).
 - Halo: app 2806050, релиз 28.07, Halo Studios / Xbox Game Studios, $49.99, Steam 71% из ~3,4k (Mostly Positive). MegaLights+аппаратный Lumen — по тех-разборам (Playfront/Neowin), подано как «по тех-разборам» (сам не замерял). Кулдаун: «Halo» в 25/26/27 не было (covered.md чист); 7-дн инерция снята релизом (ожидаемое событие из to_explore). Slipspace на покой — подтверждено несколькими разборами.
@@ -73,14 +85,5 @@
 - RF: Warface глобально в Steam (Astrum, июль 2026) — первоисточник astrum-entertainment.ru. Off-core, но реальное свежее событие, взял одной строкой в диагональ.
 - Репортёр — Ником Дарков (последние 3: Мирча 20 / Валера 21 / Пётр 22 — заняты; свободны Ником 17.07 и Геннадий 19.07, выбран Ником). reporters.md как файл в репозитории отсутствует — воссоздал голос по подписям в digests/ (Ником: спокойный «журнал смены», закрытие «спокойной смены»).
 
-## 2026-07-22
-- Два главных блока (Rider 2026.2 RC + AutoRemesher 1.0) — оба не Unity-engine, но с инженерным выводом; Unity 7 / Unite Seoul / Godot / C# 15 unions / MonoGame / Houdini на кулдауне (все в окне 19-21.07). Свежего Unity-engine-события вне кулдауна на 22.07 не нашёл.
-- Картинка блока 1 (Rider): взял featured-ассет из тела блога JetBrains (wp-content/.../RS-releases-BlogFeatured-1280x720-1-1.png) — реально прочитанный URL, WebFetch не увидел явного og:image-тега. Блок 2 (AutoRemesher): og:image не нашёлся ни у CG Channel, ни у gamefromscratch — без картинки.
-- Rider факты сверены по блогу JetBrains (RC 15.07): agent skills (покрытие/профайлер/анализ), нативный Copilot, отладчик +2.8с Windows, ветки Roslyn ×2-3, индексация UE C++ ×2, память −7-8%, категория Game Development. GA ещё не вышел — подано как «на подходе».
-- AutoRemesher: 1.0 — реально новость (было 3 года в alpha под GPL), ключевое — GPLv3→MIT (CG Channel + gamefromscratch согласны). Только OBJ, без UV. Не «зомби».
-- Empulse/1047 (диагональ): CCU ~2860 и «в осн. положительные» — из пересказа gameworldobserver/pcgamer, в тексте помечено «по пересказу». Game Developer (21.07) числа не даёт, но подтверждает 3-ю волну и роли. Волна 14.07 и репорт 21.07 — трактую как один сюжет, дата свежая.
-- RF-рубрика: свежего события на 22.07 не нашёл (только вечнозелёные Astrum/VK Play/Throne and Liberty) — не форсил, пропустил.
-- Репортёр — Пётр Омонов (последние 3: Геннадий/Мирча/Валера; Пётр свободен). reporters.md в корне есть, использован.
-
-<!-- 2026-07-21 секции удалены: вышли из окна 7 дней -->
+<!-- 2026-07-21/22 секции удалены: вышли из окна 7 дней -->
 

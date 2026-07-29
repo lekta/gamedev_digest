@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-07-29
+- MCP C# SDK 2.0 (28.07): официальный C#-набор для Model Context Protocol; HTTP-транспорт по умолчанию безсессионный (убраны initialize и Mcp-Session-Id), Multi Round-Trip Requests, стандартизированы заголовки; NuGet ModelContextProtocol* под .NET 8/9/10 + netstandard2.0; реализует редакцию спеки 2026-07-28; v1-код совместим. [.NET Blog](https://devblogs.microsoft.com/dotnet/announcing-v20-of-the-official-mcp-csharp-sdk/)
+- EverQuest Legends (28.07): Daybreak + Game Jawn перезапустили MMORPG 1999; свой двусторонний конвертер старых форматов, правка в Blender/3ds Max с реэкспортом в родные форматы; ~1250 вершин, восстановлены заклинательные партиклы; $19.99 + $9.99/мес; движок не назван. [80.lv](https://80.lv/articles/interview-how-everquest-legends-recreates-classic-everquest-s-iconic-visual-style)
+- По диагонали: бесплатные ассеты (28.07–11.08) — Fab (Surface Forge 1.1/Dragon Cave/Atlantis Ruins, 1 под Unity) + Unity Asset Store (RPG-анимации код DOUBLEL2026, Bunny Blitz 2D/3D). [GameFromScratch](https://gamefromscratch.com/august-2026-free-gamedev-asset-round-up/)
+- По диагонали: SpiritVale (21.07) — инди-MMO ~20k CCU, студия Baikun воюет с ботоводством/RMT через открытое демо; урок про server-authoritative экономику. [Massively OP](https://massivelyop.com/2026/07/21/indie-mmorpg-spiritvale-sees-20000-concurrent-players-as-the-dev-fights-economy-wrecking-bots/)
+- По диагонали: side-work clauses (28.07) — Game Developer о давлении HR/юристов студий из-за сторонних проектов сотрудников. [Game Developer](https://www.gamedeveloper.com/business/i-have-been-hunted-down-by-hr-reps-lawyers-and-comms-people-developers-discuss-the-pain-and-prevalence-of-side-work-clauses)
+- По диагонали: умерла соосновательница TaleWorlds Ипек Явуз (28.07) — студия Mount & Blade/Bannerlord. [Game Developer](https://www.gamedeveloper.com/business/obituary-taleworlds-entertainment-co-founder-ipek-yavuz-has-passed-away)
+
 ## 2026-07-28
 - Halo: Campaign Evolved (28.07): ремейк кампании Halo CE на Unreal 5, Slipspace на покой; дебют MegaLights + аппаратный Lumen в большой игре, впервые Halo на PS5; Steam 71% из ~3,4k. [Steam](https://store.steampowered.com/app/2806050/Halo_Campaign_Evolved)
 - .NET MSBuild Binlog Analyzer для VS Code (27.07): Copilot читает .binlog, объясняет/чинит падения сборки в 1 клик, ранжирует медленные цели/критический путь; MCP-сервер Microsoft.AITools.BinlogMcp, сравнение с базовым логом. [.NET Blog](https://devblogs.microsoft.com/dotnet/msbuild-binlog-analyzer-vscode/)
@@ -19,10 +27,3 @@
 - По диагонали: Critter Crosser (Dan W, 27.07) — соло-RPG про ловлю/разведение монстров, процедурный генератор существ через скрещивание; движок не назван. [Steam](https://store.steampowered.com/app/2792320/)
 - По диагонали: QR из пиксель-арта (Humble-Guard9853, 27.07) — туториал по фану: минимум QR-данных поверх арта в Photoshop/Affinity + авто-инструмент. [80.lv](https://80.lv/articles/tutorial-create-a-qr-code-out-of-your-pixel-style-artwork)
 - Из прошлого: C#/.NET Framework 1.0 (2002), автор языка Андерс Хейлсберг (Turbo Pascal/Delphi/TypeScript).
-
-## 2026-07-26
-- Unity Surface Cache GI (23.07): превью real-time GI в URP в 6.7 alpha — без запекания лайтмапов, диффузное, HW/SW ray tracing (UnifiedRayTracing), ~1,5 мс Sponza; LTS в 6.7. [Unity Discussions](https://discussions.unity.com/t/surface-cache-gi-preview/1720494)
-- Goose Goose Duck / Gaggle (24.07): студия ~30 чел. на Unity держит крупнейшую social-deduction; встроенные voice+netcode как ядро (против Discord у Among Us), ~50 апдейтов/год, отказ от 8-значной инвестиции. [80.lv](https://80.lv/articles/staying-lean-how-we-built-the-world-s-biggest-social-deduction-game)
-- По диагонали: Blender Draw-Hair (Sa9_NR, 25.07) — бесплатный аддон, рисование прядей по гайд-мешу во вьюпорте с автопривязкой; университетский WIP. [booth.pm](https://sa9nr.booth.pm/items/8640216)
-- По диагонали: Шон Лэйден (23.07) — экс-глава PlayStation собирает издательство для AA-игр между инди и AAA; критика модели «сиквел или крупное IP», конкретики нет. [GamesBeat](https://gamesbeat.com/how-former-playstation-boss-views-gamings-tumultuous-time-shawn-layden-interview/)
-- По диагонали: Tomb Raider: Legacy of Atlantis (25.07) — мини-док Flying Wild Hog + Crystal Dynamics (UE5, фев 2027): динамическая анимация ради «узнаваемой» Лары; AI-ассеты были, заменены/доработаны людьми. [80.lv](https://80.lv/articles/check-out-these-behind-the-scenes-details-of-tomb-raider-legacy-of-atlantis)
