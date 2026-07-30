@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-30
+- Unity 6.7 Alpha a3 (23.07): редактор собирает экспериментальные CoreCLR Player builds (Win/macOS/Linux); +URP on-tile deferred, SSR renderer feature, Shader Graph Set-mode; Mono уходит в 6.8. [Unity Releases](https://unityreleases.com/releases/6000.7.0a3)
+- Steamworks SDK 1.65 (23.07, переизд. 27.07): удалён IsRunningOnSteamDeck(), добавлен IsRunningOnSteamHardware()→ESteamHardwareType; поддержка Steam Frame; пересобранные Win32 steam_api. [Steamworks](https://steamcommunity.com/groups/steamworks/announcements/detail/678504885369439021)
+- По диагонали: Люк Дикен (экс-Head of AI Take-Two, 29.07) — ИИ уместен в адаптивном опыте, не в генерации контента; риски недетерминизма/деградации/цены, GenAI как «леса». [80.lv](https://80.lv/articles/game-ai-expert-explains-where-ai-actually-belongs-in-game-development-and-the-risks)
+- По диагонали: Double Fine (28.07) — 23 увольнения (~25%) сразу после выхода из-под Microsoft независимой; Тим Шафер. [Game Informer](https://gameinformer.com/2026/07/28/double-fine-announces-layoffs-following-split-from-xbox)
+- Из прошлого: Mono (2001, Мигель де Икаса / Ximian) — рантайм скриптинга Unity, теперь заменяется на CoreCLR.
+
 ## 2026-07-29
 - MCP C# SDK 2.0 (28.07): официальный C#-набор для Model Context Protocol; HTTP-транспорт по умолчанию безсессионный (убраны initialize и Mcp-Session-Id), Multi Round-Trip Requests, стандартизированы заголовки; NuGet ModelContextProtocol* под .NET 8/9/10 + netstandard2.0; реализует редакцию спеки 2026-07-28; v1-код совместим. [.NET Blog](https://devblogs.microsoft.com/dotnet/announcing-v20-of-the-official-mcp-csharp-sdk/)
 - EverQuest Legends (28.07): Daybreak + Game Jawn перезапустили MMORPG 1999; свой двусторонний конвертер старых форматов, правка в Blender/3ds Max с реэкспортом в родные форматы; ~1250 вершин, восстановлены заклинательные партиклы; $19.99 + $9.99/мес; движок не назван. [80.lv](https://80.lv/articles/interview-how-everquest-legends-recreates-classic-everquest-s-iconic-visual-style)
@@ -20,10 +27,3 @@
 - По диагонали: GodotHub (27.07) — open-source кросс-платформенный лаунчер Godot: версии движка, проекты, шаблоны. [GameFromScratch](https://gamefromscratch.com/godothub-awesome-new-launcher-for-godot/)
 - По диагонали: BlendCap (27.07) — Blender-аддон мокапа тела/рук/лица из одного видео, локально/офлайн, ретаргет на Rigify/Auto-Rig Pro/Mixamo/CloudRig. [80.lv](https://80.lv/articles/full-body-hand-facial-motion-capture-from-any-video-in-blender)
 - По диагонали: noio fake tube interior (27.07) — параллакс-интерьер на цилиндре одним шейдером, дёшево фейкнуть объём. [X](https://x.com/noio_games/status/2080550601188880595)
-
-## 2026-07-27
-- Unity Netcode for GameObjects 2.13.1 (24.07): патч официального сетевого пакета — фикс краша FastBufferReader на строках с недочитанным счётчиком символов, исключения при миграции сцен в distributed authority, раздел про SinglePlayerTransport (один код для одиночной/сетевой сессии). [GitHub](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/v2.13.1)
-- Khronos Shader Ecosystem Survey 2026 (21.07): отладка шейдеров — боль №1 (топ-3 у 53%), перенос между платформами/API у 64%; GLSL 60/HLSL 41/Slang 34; балл боли отладки 52/100. [Khronos](https://www.khronos.org/blog/shader-ecosystem-survey-results-2026)
-- По диагонали: Critter Crosser (Dan W, 27.07) — соло-RPG про ловлю/разведение монстров, процедурный генератор существ через скрещивание; движок не назван. [Steam](https://store.steampowered.com/app/2792320/)
-- По диагонали: QR из пиксель-арта (Humble-Guard9853, 27.07) — туториал по фану: минимум QR-данных поверх арта в Photoshop/Affinity + авто-инструмент. [80.lv](https://80.lv/articles/tutorial-create-a-qr-code-out-of-your-pixel-style-artwork)
-- Из прошлого: C#/.NET Framework 1.0 (2002), автор языка Андерс Хейлсберг (Turbo Pascal/Delphi/TypeScript).
