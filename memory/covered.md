@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-31
+- Unity → Netflix Games (30.07): выделенная поддержка движка для доставки на мобилки/ТВ + оптимизация под облачный гейминг Netflix; каталог уже частично на Unity (Unhinged, Minigolf). [GamesBeat](https://gamesbeat.com/unity-rolls-out-dedicated-engine-support-to-netflix-games/)
+- Doriax (30.07): открытый 2D/3D ECS/data-oriented движок (экс-Supernova) под MIT, v0.6 (тег 24.07), настольный редактор, скриптинг C++/Lua. [GameFromScratch](https://gamefromscratch.com/doriax-game-engine-hands-on/)
+- По диагонали: Poinpy (30.07) — Одзиро Фумото/Devolver, эксклюзив Netflix истёк, релиз на мобилки бесплатно (тип-джар, без IAP/рекламы). [Game Developer](https://www.gamedeveloper.com/business/the-truth-behind-the-resurrection-of-poinpy)
+- По диагонали: HDR10+ Gaming (30.07) — тон-маппинг на стороне движка со знанием дисплея, авторская картинка; интервью 80.lv (контекст Unreal). [80.lv](https://80.lv/articles/interview-how-hdr10-can-help-game-devs-preserve-their-artistic-vision)
+- По диагонали: Don't Lose Aggro (31.07) — MMO-танкинг в соло-рогалик; соло-дев Орен Корен, интервью 80.lv (EA c 15.04). [80.lv](https://80.lv/articles/how-don-t-lose-aggro-reimagines-mmo-tanking-as-a-solo-roguelite)
+
 ## 2026-07-30
 - Unity 6.7 Alpha a3 (23.07): редактор собирает экспериментальные CoreCLR Player builds (Win/macOS/Linux); +URP on-tile deferred, SSR renderer feature, Shader Graph Set-mode; Mono уходит в 6.8. [Unity Releases](https://unityreleases.com/releases/6000.7.0a3)
 - Steamworks SDK 1.65 (23.07, переизд. 27.07): удалён IsRunningOnSteamDeck(), добавлен IsRunningOnSteamHardware()→ESteamHardwareType; поддержка Steam Frame; пересобранные Win32 steam_api. [Steamworks](https://steamcommunity.com/groups/steamworks/announcements/detail/678504885369439021)
@@ -20,10 +27,3 @@
 - По диагонали: SpiritVale (21.07) — инди-MMO ~20k CCU, студия Baikun воюет с ботоводством/RMT через открытое демо; урок про server-authoritative экономику. [Massively OP](https://massivelyop.com/2026/07/21/indie-mmorpg-spiritvale-sees-20000-concurrent-players-as-the-dev-fights-economy-wrecking-bots/)
 - По диагонали: side-work clauses (28.07) — Game Developer о давлении HR/юристов студий из-за сторонних проектов сотрудников. [Game Developer](https://www.gamedeveloper.com/business/i-have-been-hunted-down-by-hr-reps-lawyers-and-comms-people-developers-discuss-the-pain-and-prevalence-of-side-work-clauses)
 - По диагонали: умерла соосновательница TaleWorlds Ипек Явуз (28.07) — студия Mount & Blade/Bannerlord. [Game Developer](https://www.gamedeveloper.com/business/obituary-taleworlds-entertainment-co-founder-ipek-yavuz-has-passed-away)
-
-## 2026-07-28
-- Halo: Campaign Evolved (28.07): ремейк кампании Halo CE на Unreal 5, Slipspace на покой; дебют MegaLights + аппаратный Lumen в большой игре, впервые Halo на PS5; Steam 71% из ~3,4k. [Steam](https://store.steampowered.com/app/2806050/Halo_Campaign_Evolved)
-- .NET MSBuild Binlog Analyzer для VS Code (27.07): Copilot читает .binlog, объясняет/чинит падения сборки в 1 клик, ранжирует медленные цели/критический путь; MCP-сервер Microsoft.AITools.BinlogMcp, сравнение с базовым логом. [.NET Blog](https://devblogs.microsoft.com/dotnet/msbuild-binlog-analyzer-vscode/)
-- По диагонали: GodotHub (27.07) — open-source кросс-платформенный лаунчер Godot: версии движка, проекты, шаблоны. [GameFromScratch](https://gamefromscratch.com/godothub-awesome-new-launcher-for-godot/)
-- По диагонали: BlendCap (27.07) — Blender-аддон мокапа тела/рук/лица из одного видео, локально/офлайн, ретаргет на Rigify/Auto-Rig Pro/Mixamo/CloudRig. [80.lv](https://80.lv/articles/full-body-hand-facial-motion-capture-from-any-video-in-blender)
-- По диагонали: noio fake tube interior (27.07) — параллакс-интерьер на цилиндре одним шейдером, дёшево фейкнуть объём. [X](https://x.com/noio_games/status/2080550601188880595)
