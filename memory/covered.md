@@ -6,6 +6,15 @@
 
 ---
 
+## 2026-08-01
+- Unity внутри Unreal / PolySpatial (21.07, догоняющая): Fantasy Kingdom считается в Unity, рисуется в Unreal; безголовый Unity-сервер, только URP+Shader Graph, цель — Fortnite как целевая платформа, ранний доступ не раньше 2027. [Unity Discussions](https://discussions.unity.com/t/unity-x-fortnite-how-unity-runs-inside-unreal-engine/1731630)
+- Веб-платформа Unity (28.07): WebAssembly64 в бете 6.6 снимает потолок памяти 2–4 ГБ (указатели 4→8 байт, Safari не поддерживает), прогрессивная загрузка по сценам; в 6.5 — Wasm2023 по умолчанию, стили UI Toolkit в неуправляемой памяти. [Unity Discussions](https://discussions.unity.com/t/web-platform-what-shipped-in-6-5-and-whats-coming-in-6-6/1732387)
+- Unity 6000.5.6f1 (29.07): ScheduleUpdateBroadphase затирал дескриптор задачи динамического дерева (ошибки безопасности заданий при ручном вызове Unity.Physics); SortingCriteria.OptimizeStateChanges не ломает SRP-батчи; Resolution/RefreshRate без мусора. [Unity Releases](https://unityreleases.com/releases/6000.5.6f1)
+- По диагонали: Multiplayer Services 2.3.0 (28.07) — SessionConnector умеет Join по коду/идентификатору; обработчики распределённой ответственности и реле не пишут неперехватываемый LogError перед SessionException. [Unity Discussions](https://discussions.unity.com/t/multiplayer-service-package-v2-3-0-is-now-publicly-available/1732363)
+- По диагонали: Unity Hub 3.20.0 (29.07) — проверка загрузок до установки, повторы, помодульная установка; закрыты внедрение команд через путь установки и подсадка библиотек на macOS. [Unity](https://unity.com/unity-hub/release-notes#3.20.0)
+- По диагонали: Input System 1.20.0 (21.07) — устройства не пропадают после обновления пакета при открытом редакторе; InputSystemProvider не выключает общепроектные действия. [Документация Unity](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.20/changelog/CHANGELOG.html)
+- Из прошлого: Unity Web Player (2005–2015) — умер вместе с NPAPI в Chrome, отсюда путь asm.js → WebAssembly.
+
 ## 2026-07-31
 - Unity → Netflix Games (30.07): выделенная поддержка движка для доставки на мобилки/ТВ + оптимизация под облачный гейминг Netflix; каталог уже частично на Unity (Unhinged, Minigolf). [GamesBeat](https://gamesbeat.com/unity-rolls-out-dedicated-engine-support-to-netflix-games/)
 - Doriax (30.07): открытый 2D/3D ECS/data-oriented движок (экс-Supernova) под MIT, v0.6 (тег 24.07), настольный редактор, скриптинг C++/Lua. [GameFromScratch](https://gamefromscratch.com/doriax-game-engine-hands-on/)
@@ -19,11 +28,3 @@
 - По диагонали: Люк Дикен (экс-Head of AI Take-Two, 29.07) — ИИ уместен в адаптивном опыте, не в генерации контента; риски недетерминизма/деградации/цены, GenAI как «леса». [80.lv](https://80.lv/articles/game-ai-expert-explains-where-ai-actually-belongs-in-game-development-and-the-risks)
 - По диагонали: Double Fine (28.07) — 23 увольнения (~25%) сразу после выхода из-под Microsoft независимой; Тим Шафер. [Game Informer](https://gameinformer.com/2026/07/28/double-fine-announces-layoffs-following-split-from-xbox)
 - Из прошлого: Mono (2001, Мигель де Икаса / Ximian) — рантайм скриптинга Unity, теперь заменяется на CoreCLR.
-
-## 2026-07-29
-- MCP C# SDK 2.0 (28.07): официальный C#-набор для Model Context Protocol; HTTP-транспорт по умолчанию безсессионный (убраны initialize и Mcp-Session-Id), Multi Round-Trip Requests, стандартизированы заголовки; NuGet ModelContextProtocol* под .NET 8/9/10 + netstandard2.0; реализует редакцию спеки 2026-07-28; v1-код совместим. [.NET Blog](https://devblogs.microsoft.com/dotnet/announcing-v20-of-the-official-mcp-csharp-sdk/)
-- EverQuest Legends (28.07): Daybreak + Game Jawn перезапустили MMORPG 1999; свой двусторонний конвертер старых форматов, правка в Blender/3ds Max с реэкспортом в родные форматы; ~1250 вершин, восстановлены заклинательные партиклы; $19.99 + $9.99/мес; движок не назван. [80.lv](https://80.lv/articles/interview-how-everquest-legends-recreates-classic-everquest-s-iconic-visual-style)
-- По диагонали: бесплатные ассеты (28.07–11.08) — Fab (Surface Forge 1.1/Dragon Cave/Atlantis Ruins, 1 под Unity) + Unity Asset Store (RPG-анимации код DOUBLEL2026, Bunny Blitz 2D/3D). [GameFromScratch](https://gamefromscratch.com/august-2026-free-gamedev-asset-round-up/)
-- По диагонали: SpiritVale (21.07) — инди-MMO ~20k CCU, студия Baikun воюет с ботоводством/RMT через открытое демо; урок про server-authoritative экономику. [Massively OP](https://massivelyop.com/2026/07/21/indie-mmorpg-spiritvale-sees-20000-concurrent-players-as-the-dev-fights-economy-wrecking-bots/)
-- По диагонали: side-work clauses (28.07) — Game Developer о давлении HR/юристов студий из-за сторонних проектов сотрудников. [Game Developer](https://www.gamedeveloper.com/business/i-have-been-hunted-down-by-hr-reps-lawyers-and-comms-people-developers-discuss-the-pain-and-prevalence-of-side-work-clauses)
-- По диагонали: умерла соосновательница TaleWorlds Ипек Явуз (28.07) — студия Mount & Blade/Bannerlord. [Game Developer](https://www.gamedeveloper.com/business/obituary-taleworlds-entertainment-co-founder-ipek-yavuz-has-passed-away)

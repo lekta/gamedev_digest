@@ -24,6 +24,7 @@ jobs:
         id: guard
         run: |
           TODAY=$(TZ=Europe/Moscow date +%F)
+          echo "today=${TODAY}" >> "$GITHUB_OUTPUT"
           # Плановый запуск пропускаем, если выпуск за сегодня уже есть (например, собран вручную).
           # Ручной запуск (workflow_dispatch) всегда пересобирает — для правок.
           if [ "${{ github.event_name }}" = "schedule" ] && [ -f "digests/${TODAY}.md" ]; then
@@ -34,23 +35,73 @@ jobs:
           fi
 
       - name: Собрать выпуск
+        id: claude
         if: steps.guard.outputs.skip != 'true'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          claude_args: '--model claude-opus-4-8 --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(grep:*),Bash(date:*),Bash(ls:*)"'
+          # Bash(TZ=Europe/Moscow date:*) — без него команда с префиксом TZ= не попадает
+          # под шаблон Bash(date:*) и упирается в отказ по правам
+          claude_args: '--model claude-opus-4-8 --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(grep:*),Bash(date:*),Bash(ls:*),Bash(TZ=Europe/Moscow date:*)"'
           prompt: |
             Собери сегодняшний выпуск GameDev Digest — ежедневной сводки новостей геймдева для Unity/C#-разработчика. Ты находишься в корне репозитория дайджеста.
 
+            Дата выпуска — ${{ steps.guard.outputs.today }} (сегодня, UTC+3). Определять дату самостоятельно не нужно.
+
             1. Прочитай config.md — это единственный источник правил: тематика, структура «новость → вывод → детали», объём, язык (только русский), антиповторы и 3-дневный кулдаун, проверка фактов на истинность, первоисточники.
             2. Прочитай memory/covered.md (что уже освещено), memory/to_explore.md (очередь тем), memory/sources.md (реестр источников).
-            3. Собери дайджест строго по config.md, дата выпуска — сегодняшняя (UTC+3).
+            3. Собери дайджест строго по config.md.
             4. Запиши результат в файлы:
-               - digests/ГГГГ-ММ-ДД.md — новый выпуск;
+               - digests/${{ steps.guard.outputs.today }}.md — новый выпуск;
                - memory/covered.md — добавь сегодняшний день, убери выпавший из окна 3 дней;
                - memory/to_explore.md — обнови при необходимости.
             5. Git-команд не выполняй — коммит сделает следующий шаг workflow.
-            6. Если digests/ГГГГ-ММ-ДД.md за сегодня уже существует — пересобери его заново с учётом свежих новостей и перезапиши.
+            6. Если digests/${{ steps.guard.outputs.today }}.md уже существует — пересобери его заново с учётом свежих новостей и перезапиши.
+
+            ВАЖНО: выпуск обязан быть записан на диск. Файл digests/${{ steps.guard.outputs.today }}.md
+            должен существовать к концу твоей работы — иначе прогон считается провалившимся.
+            Если собрать выпуск по правилам не получается (нечего брать, упёрся в отказ по правам,
+            не хватает данных) — не завершайся молча: запиши причину в memory/buildlog.md
+            отдельной секцией «## ${{ steps.guard.outputs.today }} — сборка не удалась»
+            и подробно объясни её в финальном сообщении.
+
+      # Полный вывод Claude в лог не печатается, поэтому без этого шага причина пустого
+      # прогона теряется вместе с раннером
+      - name: Подготовить лог сборки
+        if: always() && steps.guard.outputs.skip != 'true'
+        run: |
+          mkdir -p _logs
+          SRC="${{ steps.claude.outputs.execution_file }}"
+          if [ ! -f "$SRC" ]; then SRC="${RUNNER_TEMP}/claude-execution-output.json"; fi
+          if [ -f "$SRC" ]; then
+            cp "$SRC" "_logs/claude-${{ steps.guard.outputs.today }}.json"
+          else
+            echo "Лог сборки не найден ни по outputs.execution_file, ни в RUNNER_TEMP" \
+              > "_logs/claude-${{ steps.guard.outputs.today }}.txt"
+          fi
+
+      - name: Сохранить лог сборки
+        if: always() && steps.guard.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-log-${{ steps.guard.outputs.today }}
+          path: _logs/
+          retention-days: 14
+          if-no-files-found: warn
+
+      # Claude может завершиться «успешно», не записав ни одного файла (так пропал выпуск 01.08.2026):
+      # тогда коммитить нечего, а job остаётся зелёным. Ловим это явно.
+      - name: Проверить, что выпуск записан
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          TODAY="${{ steps.guard.outputs.today }}"
+          if [ ! -s "digests/${TODAY}.md" ]; then
+            echo "::error::Claude отработал, но digests/${TODAY}.md не создан или пуст. Смотри артефакт claude-log-${TODAY}."
+            echo "--- что вообще изменилось в рабочей копии ---"
+            git status --porcelain
+            exit 1
+          fi
+          echo "digests/${TODAY}.md: $(wc -c < "digests/${TODAY}.md") байт"
 
       - name: Собрать RSS-фид
         if: steps.guard.outputs.skip != 'true'
