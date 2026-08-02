@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Статистика оценок</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+  :root {
+    --bg: #12141a; --fg: #d8dce6; --muted: #8a92a6;
+    --accent: #6ea8fe; --card: #1a1d26; --border: #2a2e3d;
+    --good: #3fb950; --bad: #e5534b; --warn: #d29922;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --bg: #fafafa; --fg: #23262f; --muted: #6b7280; --accent: #1d63d8; --card: #fff; --border: #e5e7eb; --good: #1a7f37; --bad: #cf222e; --warn: #9a6700; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 "Inter", -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; }
+  header .sub { color: var(--muted); font-size: 13.5px; }
+  h2 { font-size: 16px; margin: 32px 0 10px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 14px; }
+  .cards .card { padding: 12px 14px; }
+  .cards .k { color: var(--muted); font-size: 12.5px; }
+  .cards .v { font-size: 21px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
+  #warn {
+    margin-top: 16px; border: 1px solid var(--warn); border-left-width: 4px; border-radius: 10px;
+    padding: 11px 14px; font-size: 14px; background: var(--card); color: var(--fg);
+  }
+  #warn b { color: var(--warn); }
+  #warn .why { color: var(--muted); font-size: 13px; display: block; margin-top: 3px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12.5px; white-space: nowrap; }
+  th.s { cursor: pointer; user-select: none; }
+  th.s:hover { color: var(--accent); }
+  th.s::after { content: "\2003"; }
+  th.s.asc::after { content: " \2191"; }
+  th.s.desc::after { content: " \2193"; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:hover { background: rgba(127,127,127,.06); }
+  .up { color: var(--good); } .down { color: var(--bad); } .zero { color: var(--muted); }
+  .tag { display: inline-block; font-size: 11.5px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
+  .tag.main { border-color: var(--accent); color: var(--accent); }
+  .date { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bar { height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; display: flex; min-width: 60px; }
+  .bar i { display: block; height: 100%; }
+  .bar i.l { background: var(--good); } .bar i.d { background: var(--bad); }
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+  input[type=search], select {
+    background: var(--card); color: var(--fg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 5px 10px; font-size: 14px; font-family: inherit;
+  }
+  input[type=search] { min-width: 240px; }
+  label.chk { color: var(--muted); font-size: 13.5px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  button.btn {
+    background: var(--card); color: var(--fg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 5px 12px; font-size: 13.5px; cursor: pointer; font-family: inherit;
+  }
+  button.btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+  button.btn:disabled { opacity: .4; cursor: default; }
+  .pager { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 10px; color: var(--muted); font-size: 13.5px; }
+  .pager select { padding: 3px 8px; font-size: 13.5px; }
+  .pager .nav { display: flex; gap: 4px; margin-left: auto; align-items: center; }
+  .pager .nav button { padding: 2px 10px; }
+  #status { color: var(--muted); padding: 14px 0; font-size: 14px; }
+  .note { color: var(--muted); font-size: 13px; margin-top: 10px; }
+  footer { margin-top: 34px; color: var(--muted); font-size: 12.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Статистика оценок</h1>
+    <span class="sub">GameDev Digest</span>
+  </header>
+  <div id="status">Собираю выпуски и голоса…</div>
+
+  <div id="app" hidden>
+    <div id="warn" hidden></div>
+
+    <div class="cards" id="totals"></div>
+
+    <h2>Топ и антитоп</h2>
+    <div class="cols">
+      <div class="card"><table id="top"><thead><tr><th>Больше всего 👍</th><th class="n">👍</th><th class="n">👎</th></tr></thead><tbody></tbody></table></div>
+      <div class="card"><table id="anti"><thead><tr><th>Больше всего 👎</th><th class="n">👍</th><th class="n">👎</th></tr></thead><tbody></tbody></table></div>
+    </div>
+
+    <h2>По выпускам</h2>
+    <div class="card">
+      <table id="byIssue">
+        <thead><tr>
+          <th class="s" data-k="date">Выпуск</th>
+          <th class="s n" data-k="items">Новостей</th>
+          <th class="s n" data-k="likes">👍</th>
+          <th class="s n" data-k="dislikes">👎</th>
+          <th class="s n" data-k="score">Баланс</th>
+          <th>Соотношение</th>
+          <th class="s" data-k="reporter">Репортёр</th>
+        </tr></thead><tbody></tbody>
+      </table>
+      <div class="pager" id="byIssuePager"></div>
+    </div>
+
+    <div class="cols" style="margin-top:14px">
+      <div>
+        <h2>Главное против «по диагонали»</h2>
+        <div class="card"><table id="byType">
+          <thead><tr><th>Тип</th><th class="n">Новостей</th><th class="n">👍</th><th class="n">👎</th><th class="n">👍 на новость</th></tr></thead><tbody></tbody>
+        </table></div>
+      </div>
+      <div>
+        <h2>По репортёрам</h2>
+        <div class="card"><table id="byReporter">
+          <thead><tr><th>Кто вёл</th><th class="n">Выпусков</th><th class="n">👍</th><th class="n">👎</th><th class="n">👍 на выпуск</th></tr></thead><tbody></tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <h2>Все новости</h2>
+    <div class="controls">
+      <input type="search" id="q" placeholder="Поиск по заголовку…" autocomplete="off">
+      <select id="type">
+        <option value="">Все типы</option>
+        <option value="main">Только главное</option>
+        <option value="diag">Только по диагонали</option>
+      </select>
+      <label class="chk"><input type="checkbox" id="onlyVoted"> только с оценками</label>
+      <button class="btn" id="reload" type="button">Обновить</button>
+      <button class="btn" id="csv" type="button">Скачать CSV</button>
+    </div>
+    <div class="card">
+      <table id="all">
+        <thead><tr>
+          <th class="s" data-k="date">Дата</th>
+          <th>Тип</th>
+          <th class="s" data-k="headline">Заголовок</th>
+          <th class="s n" data-k="likes">👍</th>
+          <th class="s n" data-k="dislikes">👎</th>
+          <th class="s n" data-k="score">Баланс</th>
+        </tr></thead><tbody></tbody>
+      </table>
+      <div class="pager" id="allPager"></div>
+    </div>
+
+    <div id="orphans"></div>
+
+    <footer><span id="meta"></span></footer>
+  </div>
+</div>
+
+<script>
+const REPO = "lekta/gamedev_digest";
+const BRANCH = "master";
+const VOTE_API = "https://likes-api.zopa.workers.dev";
+const PAGE_SIZES = [20, 50, 100, 0]; // 0 = все
+
+// Тот же хеш, что и на главной: id голоса = "дата_хеш(заголовок)".
+function voteId(date, headline) {
+  let h = 5381;
+  const s = headline.trim();
+  for (let i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0;
+  return date + "_" + h.toString(36);
+}
+
+const num = n => (n === 0 ? '<span class="zero">0</span>' : String(n));
+const signed = n => n > 0 ? '<span class="up">+' + n + '</span>' : n < 0 ? '<span class="down">' + n + '</span>' : '<span class="zero">0</span>';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const ddmm = d => d.slice(8, 10) + "." + d.slice(5, 7) + "." + d.slice(0, 4);
+
+// Разбор одного выпуска: те же селекторы, что и в attachVotes() на главной,
+// иначе id голосов разойдутся с теми, что записаны в базе.
+function parseIssue(date, md) {
+  const box = document.createElement("div");
+  box.innerHTML = marked.parse(md);
+  const items = [];
+  box.querySelectorAll("h3").forEach(h => items.push({ date, type: "main", headline: h.textContent.trim() }));
+  box.querySelectorAll(":scope > ul > li").forEach(li => {
+    const el = li.querySelector("strong") || li;
+    items.push({ date, type: "diag", headline: el.textContent.trim() });
+  });
+  let reporter = "";
+  const ems = [...box.querySelectorAll("em")];
+  for (let i = ems.length - 1; i >= 0; i--) {
+    const t = ems[i].textContent.trim();
+    if (/^[—–-]\s*\S/.test(t)) { reporter = t.replace(/^[—–-]\s*/, "").trim(); break; }
+  }
+  items.forEach(it => { it.reporter = reporter; it.id = voteId(date, it.headline); });
+  return { items, reporter };
+}
+
+// Ограниченная параллельность, чтобы не устраивать залп из полусотни запросов.
+async function pool(list, limit, fn) {
+  const out = new Array(list.length);
+  let i = 0;
+  await Promise.all(Array.from({ length: Math.min(limit, list.length) }, async () => {
+    while (i < list.length) { const k = i++; out[k] = await fn(list[k], k); }
+  }));
+  return out;
+}
+
+let DATA = { items: [], issues: [], orphans: [] };
+
+async function load() {
+  const status = document.getElementById("status");
+  const app = document.getElementById("app");
+  status.hidden = false;
+  status.textContent = "Собираю список выпусков…";
+
+  const r = await fetch(`https://api.github.com/repos/${REPO}/contents/digests?ref=${BRANCH}`, { cache: "no-store" });
+  if (!r.ok) throw new Error("GitHub API: " + r.status + (r.status === 403 ? " (лимит запросов, подожди немного)" : ""));
+  const files = (await r.json())
+    .filter(f => /^\d{4}-\d{2}-\d{2}\.md$/.test(f.name))
+    .sort((a, b) => b.name.localeCompare(a.name));
+  if (!files.length) throw new Error("В digests/ нет выпусков");
+
+  status.textContent = `Читаю ${files.length} выпусков…`;
+  const parsed = await pool(files, 6, async f => {
+    const date = f.name.replace(".md", "");
+    let md;
+    try {
+      const rr = await fetch("../digests/" + f.name, { cache: "no-store" });
+      if (!rr.ok) throw new Error();
+      md = await rr.text();
+    } catch { md = await (await fetch(f.download_url)).text(); }
+    return { date, ...parseIssue(date, md) };
+  });
+
+  let done = 0, failed = 0, firstError = "";
+  status.textContent = `Забираю оценки… 0 / ${parsed.length}`;
+  const counts = await pool(parsed, 6, async p => {
+    let items = null;
+    try {
+      const rr = await fetch(VOTE_API + "/counts?date=" + p.date, { cache: "no-store" });
+      if (rr.ok) items = (await rr.json()).items || {};
+      else { failed++; firstError = firstError || ("API ответил " + rr.status); }
+    } catch (e) {
+      failed++;
+      firstError = firstError || (e && e.message ? e.message : "запрос не прошёл");
+    }
+    status.textContent = `Забираю оценки… ${++done} / ${parsed.length}`;
+    return items || {};
+  });
+
+  const items = [], issues = [], orphans = [];
+  parsed.forEach((p, i) => {
+    const c = counts[i] || {};
+    const seen = new Set();
+    let likes = 0, dislikes = 0;
+    p.items.forEach(it => {
+      const v = c[it.id] || { likes: 0, dislikes: 0 };
+      it.likes = v.likes || 0; it.dislikes = v.dislikes || 0;
+      it.score = it.likes - it.dislikes;
+      likes += it.likes; dislikes += it.dislikes;
+      seen.add(it.id);
+      items.push(it);
+    });
+    for (const id in c) {
+      if (!seen.has(id)) orphans.push({ date: p.date, id, likes: c[id].likes || 0, dislikes: c[id].dislikes || 0 });
+    }
+    issues.push({ date: p.date, items: p.items.length, likes, dislikes, score: likes - dislikes, reporter: p.reporter || "без подписи" });
+  });
+
+  DATA = { items, issues, orphans };
+  showWarning(failed, parsed.length, firstError);
+  render();
+  status.hidden = true;
+  app.hidden = false;
+  document.getElementById("meta").textContent =
+    "Обновлено " + new Date().toLocaleString("ru-RU") + " · выпусков " + issues.length + ", новостей " + items.length;
+}
+
+// Если API оценок не ответил — об этом надо сказать вслух, иначе нули читаются как «никто не голосовал».
+function showWarning(failed, total, why) {
+  const box = document.getElementById("warn");
+  if (!failed) { box.hidden = true; return; }
+  const all = failed === total;
+  const local = location.protocol === "file:";
+  box.innerHTML =
+    "<b>Оценки не загрузились" + (all ? "" : " по " + failed + " выпускам из " + total) + ".</b> " +
+    (all ? "Все счётчики ниже показывают нули — это не «никто не голосовал», а «данные не пришли»."
+         : "По этим выпускам показаны нули, итоговые суммы занижены.") +
+    '<span class="why">Причина: ' + esc(why || "нет ответа от API") +
+    (local ? ". Страница открыта с диска (file://) — браузер режет запросы к чужому адресу. Со страницы на сайте всё загрузится."
+           : ". Проверь, что API оценок жив и отвечает этому домену.") + "</span>";
+  box.hidden = false;
+}
+
+function render() {
+  const { items, issues, orphans } = DATA;
+  const sum = k => items.reduce((a, b) => a + b[k], 0);
+  const likes = sum("likes"), dislikes = sum("dislikes");
+  const voted = items.filter(i => i.likes || i.dislikes).length;
+
+  document.getElementById("totals").innerHTML = [
+    ["Выпусков", issues.length],
+    ["Новостей", items.length],
+    ["Оценок всего", likes + dislikes],
+    ["👍", likes],
+    ["👎", dislikes],
+    ["Новостей с оценкой", voted + " / " + items.length]
+  ].map(([k, v]) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("");
+
+  const row = it => `<tr><td><span class="date">${ddmm(it.date)}</span> ${esc(it.headline)}</td><td class="n">${num(it.likes)}</td><td class="n">${num(it.dislikes)}</td></tr>`;
+  const top = [...items].filter(i => i.likes > 0).sort((a, b) => b.likes - a.likes || b.score - a.score).slice(0, 10);
+  const anti = [...items].filter(i => i.dislikes > 0).sort((a, b) => b.dislikes - a.dislikes || a.score - b.score).slice(0, 10);
+  const empty = t => `<tr><td colspan="3" class="zero">${t}</td></tr>`;
+  document.querySelector("#top tbody").innerHTML = top.length ? top.map(row).join("") : empty("Пока никто не поставил 👍");
+  document.querySelector("#anti tbody").innerHTML = anti.length ? anti.map(row).join("") : empty("Пока никто не поставил 👎");
+
+  issuesTable.setRows(issues);
+
+  const byType = ["main", "diag"].map(t => {
+    const g = items.filter(i => i.type === t);
+    const l = g.reduce((a, b) => a + b.likes, 0), d = g.reduce((a, b) => a + b.dislikes, 0);
+    return { name: t === "main" ? "Главное" : "По диагонали", n: g.length, likes: l, dislikes: d, per: g.length ? (l / g.length) : 0 };
+  });
+  document.querySelector("#byType tbody").innerHTML = byType.map(g =>
+    `<tr><td>${g.name}</td><td class="n">${g.n}</td><td class="n">${num(g.likes)}</td><td class="n">${num(g.dislikes)}</td><td class="n">${g.per.toFixed(2)}</td></tr>`).join("");
+
+  const reps = {};
+  issues.forEach(i => {
+    const k = i.reporter;
+    reps[k] = reps[k] || { n: 0, likes: 0, dislikes: 0 };
+    reps[k].n++; reps[k].likes += i.likes; reps[k].dislikes += i.dislikes;
+  });
+  document.querySelector("#byReporter tbody").innerHTML = Object.entries(reps)
+    .sort((a, b) => b[1].likes - a[1].likes || b[1].n - a[1].n)
+    .map(([k, v]) => `<tr><td>${esc(k)}</td><td class="n">${v.n}</td><td class="n">${num(v.likes)}</td><td class="n">${num(v.dislikes)}</td><td class="n">${(v.likes / v.n).toFixed(2)}</td></tr>`).join("");
+
+  document.getElementById("orphans").innerHTML = orphans.length
+    ? `<h2>Потерянные голоса</h2><div class="card"><table><thead><tr><th>Выпуск</th><th>Идентификатор</th><th class="n">👍</th><th class="n">👎</th></tr></thead><tbody>` +
+      orphans.map(o => `<tr><td><span class="date">${ddmm(o.date)}</span></td><td><code>${esc(o.id)}</code></td><td class="n">${num(o.likes)}</td><td class="n">${num(o.dislikes)}</td></tr>`).join("") +
+      `</tbody></table><p class="note">Голоса есть, а новости с таким заголовком в выпуске больше нет: заголовок переписали уже после публикации — идентификатор считается от его текста. Чтобы вернуть голоса, нужно вернуть прежний заголовок дословно.</p></div>`
+    : "";
+
+  allTable.setRows(DATA.items);
+}
+
+// ——— сортируемая таблица со страницами ———
+function makeTable({ tableId, pagerId, rowHtml, sortKey, sortDir = "desc", pageSize = 20, filter = null, emptyText = "Ничего не нашлось" }) {
+  const table = document.getElementById(tableId);
+  const pager = document.getElementById(pagerId);
+  const cols = table.querySelectorAll("th").length;
+  let rows = [], sort = { k: sortKey, dir: sortDir }, size = pageSize, page = 1;
+
+  const view = () => {
+    const list = (filter ? rows.filter(filter) : rows.slice());
+    const { k, dir } = sort;
+    list.sort((a, b) => {
+      let v = typeof a[k] === "string" ? a[k].localeCompare(b[k], "ru") : a[k] - b[k];
+      if (v === 0 && k !== "date") v = b.date.localeCompare(a.date);
+      return dir === "asc" ? v : -v;
+    });
+    return list;
+  };
+
+  const draw = () => {
+    const list = view();
+    const per = size || list.length || 1;
+    const pages = Math.max(1, Math.ceil(list.length / per));
+    if (page > pages) page = pages;
+    const from = (page - 1) * per;
+    const slice = list.slice(from, from + per);
+
+    table.querySelector("tbody").innerHTML = slice.length
+      ? slice.map(rowHtml).join("")
+      : `<tr><td colspan="${cols}" class="zero">${emptyText}</td></tr>`;
+
+    table.querySelectorAll("th.s").forEach(th => {
+      th.classList.toggle("asc", th.dataset.k === sort.k && sort.dir === "asc");
+      th.classList.toggle("desc", th.dataset.k === sort.k && sort.dir === "desc");
+    });
+
+    const shown = list.length ? `${from + 1}–${Math.min(from + per, list.length)} из ${list.length}` : "0 из 0";
+    pager.innerHTML =
+      `<span>Показывать</span><select class="size">` +
+      PAGE_SIZES.map(n => `<option value="${n}"${n === size ? " selected" : ""}>${n || "все"}</option>`).join("") +
+      `</select><span class="shown">${shown}</span>` +
+      `<span class="nav"><button class="btn prev" type="button"${page <= 1 ? " disabled" : ""}>‹</button>` +
+      `<span class="pp">${page} / ${pages}</span>` +
+      `<button class="btn next" type="button"${page >= pages ? " disabled" : ""}>›</button></span>`;
+
+    pager.querySelector(".size").onchange = e => { size = +e.target.value; page = 1; draw(); };
+    pager.querySelector(".prev").onclick = () => { if (page > 1) { page--; draw(); } };
+    pager.querySelector(".next").onclick = () => { if (page < pages) { page++; draw(); } };
+  };
+
+  table.querySelectorAll("th.s").forEach(th => {
+    th.onclick = () => {
+      const k = th.dataset.k;
+      sort = { k, dir: sort.k === k && sort.dir === "desc" ? "asc" : "desc" };
+      page = 1;
+      draw();
+    };
+  });
+
+  return {
+    setRows(r) { rows = r; page = 1; draw(); },
+    refilter() { page = 1; draw(); },
+    view
+  };
+}
+
+const issuesTable = makeTable({
+  tableId: "byIssue", pagerId: "byIssuePager", sortKey: "date", pageSize: 20,
+  emptyText: "Нет выпусков",
+  rowHtml: it => {
+    const tot = it.likes + it.dislikes;
+    const bar = tot
+      ? `<span class="bar"><i class="l" style="width:${(it.likes / tot * 100).toFixed(0)}%"></i><i class="d" style="width:${(it.dislikes / tot * 100).toFixed(0)}%"></i></span>`
+      : '<span class="zero">—</span>';
+    return `<tr><td><span class="date">${ddmm(it.date)}</span></td><td class="n">${it.items}</td><td class="n">${num(it.likes)}</td><td class="n">${num(it.dislikes)}</td><td class="n">${signed(it.score)}</td><td>${bar}</td><td>${esc(it.reporter)}</td></tr>`;
+  }
+});
+
+const allTable = makeTable({
+  tableId: "all", pagerId: "allPager", sortKey: "date", pageSize: 20,
+  filter: i => {
+    const q = document.getElementById("q").value.trim().toLowerCase();
+    const t = document.getElementById("type").value;
+    const onlyVoted = document.getElementById("onlyVoted").checked;
+    return (!q || i.headline.toLowerCase().includes(q)) &&
+           (!t || i.type === t) &&
+           (!onlyVoted || i.likes || i.dislikes);
+  },
+  rowHtml: i =>
+    `<tr><td><span class="date">${ddmm(i.date)}</span></td>` +
+    `<td><span class="tag ${i.type === "main" ? "main" : ""}">${i.type === "main" ? "главное" : "диагональ"}</span></td>` +
+    `<td>${esc(i.headline)}</td>` +
+    `<td class="n">${num(i.likes)}</td><td class="n">${num(i.dislikes)}</td><td class="n">${signed(i.score)}</td></tr>`
+});
+
+["q", "type", "onlyVoted"].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener(el.tagName === "INPUT" && el.type === "search" ? "input" : "change", () => allTable.refilter());
+});
+
+document.getElementById("csv").onclick = () => {
+  const rows = [["дата", "тип", "заголовок", "лайки", "дизлайки", "баланс", "репортёр", "id"]]
+    .concat(allTable.view().map(i => [i.date, i.type === "main" ? "главное" : "диагональ", i.headline, i.likes, i.dislikes, i.score, i.reporter, i.id]));
+  const csv = "\uFEFF" + rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(";")).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+  a.download = "gamedev-digest-votes.csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+};
+
+document.getElementById("reload").onclick = () => { document.getElementById("app").hidden = true; run(); };
+
+async function run() {
+  try { await load(); }
+  catch (e) {
+    const s = document.getElementById("status");
+    s.hidden = false;
+    s.textContent = "Не получилось собрать статистику: " + e.message;
+  }
+}
+run();
+</script>
+</body>
+</html>
