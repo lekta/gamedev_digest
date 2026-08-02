@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-02
+- ИИ-агент тестов Microsoft (31.07): открытый плагин dotnet-test в репо dotnet/skills пишет юнит-тесты и сам проверяет мутационно; Copilot CLI/VS Code, .NET+десяток языков; 92,1% vs 78,9% Copilot, −67% провалов на туманных заданиях. [.NET Blog](https://devblogs.microsoft.com/dotnet/polyglot-unit-testing-agent)
+- Honami Animation System (кон. июля): MIT-замена Animator'у Unity 6, свой PlayableGraph без аллокаций в кадре, нодовый граф+Timeline, процедурный риггинг, повесочные маски 0–1; бета, 243★, крутит анимацию в Steam-экшене Daisen. [GitHub](https://github.com/loyal-studio/Honami-Animation-System)
+- По диагонали: Lazy3D Physical Fog (01.08) — аддон объёмного тумана для Blender, автодомены/пресеты/физрассеяние. [Superhive](https://superhivemarket.com/products/physical-fog-addon)
+- По диагонали: Fab free asset round-up (28.07–11.08) — Epic раздаёт 3 UE + 1 кросс-платформенный ассет, окно открыто. [GameFromScratch](https://gamefromscratch.com/august-2026-free-gamedev-asset-round-up/)
+- По диагонали: ретро-LCD про робота и опухоль (01.08, по фану) — эстетика карманных LCD, кивок на Сатоси Кона. [80.lv](https://80.lv/articles/this-retro-lcd-game-will-have-you-playing-as-a-robot-and-its-tumor)
+- Из прошлого: Mecanim — технология монреальской компании, купленной Unity в 2011; дебют в Unity 4.0 (2012) как Animator Controller.
+
 ## 2026-08-01
 - Unity внутри Unreal / PolySpatial (21.07, догоняющая): Fantasy Kingdom считается в Unity, рисуется в Unreal; безголовый Unity-сервер, только URP+Shader Graph, цель — Fortnite как целевая платформа, ранний доступ не раньше 2027. [Unity Discussions](https://discussions.unity.com/t/unity-x-fortnite-how-unity-runs-inside-unreal-engine/1731630)
 - Веб-платформа Unity (28.07): WebAssembly64 в бете 6.6 снимает потолок памяти 2–4 ГБ (указатели 4→8 байт, Safari не поддерживает), прогрессивная загрузка по сценам; в 6.5 — Wasm2023 по умолчанию, стили UI Toolkit в неуправляемой памяти. [Unity Discussions](https://discussions.unity.com/t/web-platform-what-shipped-in-6-5-and-whats-coming-in-6-6/1732387)
@@ -21,10 +29,3 @@
 - По диагонали: Poinpy (30.07) — Одзиро Фумото/Devolver, эксклюзив Netflix истёк, релиз на мобилки бесплатно (тип-джар, без IAP/рекламы). [Game Developer](https://www.gamedeveloper.com/business/the-truth-behind-the-resurrection-of-poinpy)
 - По диагонали: HDR10+ Gaming (30.07) — тон-маппинг на стороне движка со знанием дисплея, авторская картинка; интервью 80.lv (контекст Unreal). [80.lv](https://80.lv/articles/interview-how-hdr10-can-help-game-devs-preserve-their-artistic-vision)
 - По диагонали: Don't Lose Aggro (31.07) — MMO-танкинг в соло-рогалик; соло-дев Орен Корен, интервью 80.lv (EA c 15.04). [80.lv](https://80.lv/articles/how-don-t-lose-aggro-reimagines-mmo-tanking-as-a-solo-roguelite)
-
-## 2026-07-30
-- Unity 6.7 Alpha a3 (23.07): редактор собирает экспериментальные CoreCLR Player builds (Win/macOS/Linux); +URP on-tile deferred, SSR renderer feature, Shader Graph Set-mode; Mono уходит в 6.8. [Unity Releases](https://unityreleases.com/releases/6000.7.0a3)
-- Steamworks SDK 1.65 (23.07, переизд. 27.07): удалён IsRunningOnSteamDeck(), добавлен IsRunningOnSteamHardware()→ESteamHardwareType; поддержка Steam Frame; пересобранные Win32 steam_api. [Steamworks](https://steamcommunity.com/groups/steamworks/announcements/detail/678504885369439021)
-- По диагонали: Люк Дикен (экс-Head of AI Take-Two, 29.07) — ИИ уместен в адаптивном опыте, не в генерации контента; риски недетерминизма/деградации/цены, GenAI как «леса». [80.lv](https://80.lv/articles/game-ai-expert-explains-where-ai-actually-belongs-in-game-development-and-the-risks)
-- По диагонали: Double Fine (28.07) — 23 увольнения (~25%) сразу после выхода из-под Microsoft независимой; Тим Шафер. [Game Informer](https://gameinformer.com/2026/07/28/double-fine-announces-layoffs-following-split-from-xbox)
-- Из прошлого: Mono (2001, Мигель де Икаса / Ximian) — рантайм скриптинга Unity, теперь заменяется на CoreCLR.
