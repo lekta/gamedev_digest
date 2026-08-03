@@ -6,6 +6,12 @@
 
 ---
 
+## 2026-08-03
+- Vulkan 1.4.358 (31.07): расширение VK_EXT_image_tiling_control — попиксельный выбор раскладки текстуры в памяти (память vs скорость доступа GPU); делали AMD/Valve/Samsung/NVIDIA/Intel/Nintendo; уровень API/драйвера. [Phoronix](https://www.phoronix.com/news/Vulkan-1.4.358)
+- Steam на Linux (июль): доля игроков 4,01% (+0,32 к июню 3,69%), ~22% систем — SteamOS Holo; рекорд был март 5,33%. [GamingOnLinux](https://www.gamingonlinux.com/2026/08/linux-back-over-4-percent-in-the-july-2026-steam-survey/)
+- По диагонали: Nouveau/NVK (31.07) — патч включает Vulkan Video поверх аппаратного NVDEC в открытом драйвере NVIDIA; путь к аппаратному декоду FMV под Linux. [Phoronix](https://www.phoronix.com/news/NVK-NVDEC-Vulkan-Video)
+- Из прошлого: Vulkan вырос из Mantle (AMD+DICE, 2013), переданного Khronos в 2015; Vulkan 1.0 — февраль 2016.
+
 ## 2026-08-02
 - ИИ-агент тестов Microsoft (31.07): открытый плагин dotnet-test в репо dotnet/skills пишет юнит-тесты и сам проверяет мутационно; Copilot CLI/VS Code, .NET+десяток языков; 92,1% vs 78,9% Copilot, −67% провалов на туманных заданиях. [.NET Blog](https://devblogs.microsoft.com/dotnet/polyglot-unit-testing-agent)
 - Honami Animation System (кон. июля): MIT-замена Animator'у Unity 6, свой PlayableGraph без аллокаций в кадре, нодовый граф+Timeline, процедурный риггинг, повесочные маски 0–1; бета, 243★, крутит анимацию в Steam-экшене Daisen. [GitHub](https://github.com/loyal-studio/Honami-Animation-System)
@@ -23,9 +29,3 @@
 - По диагонали: Input System 1.20.0 (21.07) — устройства не пропадают после обновления пакета при открытом редакторе; InputSystemProvider не выключает общепроектные действия. [Документация Unity](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.20/changelog/CHANGELOG.html)
 - Из прошлого: Unity Web Player (2005–2015) — умер вместе с NPAPI в Chrome, отсюда путь asm.js → WebAssembly.
 
-## 2026-07-31
-- Unity → Netflix Games (30.07): выделенная поддержка движка для доставки на мобилки/ТВ + оптимизация под облачный гейминг Netflix; каталог уже частично на Unity (Unhinged, Minigolf). [GamesBeat](https://gamesbeat.com/unity-rolls-out-dedicated-engine-support-to-netflix-games/)
-- Doriax (30.07): открытый 2D/3D ECS/data-oriented движок (экс-Supernova) под MIT, v0.6 (тег 24.07), настольный редактор, скриптинг C++/Lua. [GameFromScratch](https://gamefromscratch.com/doriax-game-engine-hands-on/)
-- По диагонали: Poinpy (30.07) — Одзиро Фумото/Devolver, эксклюзив Netflix истёк, релиз на мобилки бесплатно (тип-джар, без IAP/рекламы). [Game Developer](https://www.gamedeveloper.com/business/the-truth-behind-the-resurrection-of-poinpy)
-- По диагонали: HDR10+ Gaming (30.07) — тон-маппинг на стороне движка со знанием дисплея, авторская картинка; интервью 80.lv (контекст Unreal). [80.lv](https://80.lv/articles/interview-how-hdr10-can-help-game-devs-preserve-their-artistic-vision)
-- По диагонали: Don't Lose Aggro (31.07) — MMO-танкинг в соло-рогалик; соло-дев Орен Корен, интервью 80.lv (EA c 15.04). [80.lv](https://80.lv/articles/how-don-t-lose-aggro-reimagines-mmo-tanking-as-a-solo-roguelite)
