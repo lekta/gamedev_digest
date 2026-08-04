@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-04
+- Grabbit 2 (03.08): редакторный плагин Unity — физика Unity прямо в сцене без запуска игры, коллайдеры выпуклой декомпозицией (воксель/точность/скорость), 5 режимов, bake в рантайм, обход «только выпуклое» PhysX; Уильям Беснар/Jungle, Unity 6, Built-in/URP/HDRP, $40. [80.lv](https://80.lv/articles/how-grabbit-2-simulates-physics-inside-the-unity-editor)
+- Sedulous Engine (03.08): открытый 3D-движок с редактором на языке Beef (гибрид C#/C++), MIT; Jolt-физика, Vulkan 1.3/DX12, Forward PBR, ECS-сцена, Recast/Detour, SDL3, UI на XML+CSS; 74★, в активной разработке. [GitHub](https://github.com/SedulousWorks/SedulousEngine)
+- По диагонали: Refactor Games / Delphi Interactive (03.08) — студия FIFA World Cup: Launch Edition для Netflix закрыта через 8 недель после релиза; финансирование свёрнуто, Netflix называл «успехом». [Game Developer](https://www.gamedeveloper.com/production/report-refactor-games-shuttered-by-delphi-interactive)
+- По диагонали: Big Walk (04.08) — House House (Untitled Goose Game на Unity), кооп-«гулялка» с proximity voice chat (затухание/эхо/стены/рации); PS5/Switch 2/PC, изд. Panic, день 1 в PS Plus Essential. [Big Walk](https://bigwalk.game/)
+- По диагонали: Houdini (03.08) — симуляция лесного ручья на GPU-солвере Paradigm, разбор пайплайна жидкости (Энрике Де ла Гарса). [80.lv](https://80.lv/articles/stunning-forest-stream-simulation-made-with-houdini)
+- Из прошлого: PhysX (Ageia, плата-ускоритель сер.2000-х → NVIDIA 2008) — штатный 3D-физдвижок Unity, отсюда «только выпуклые коллайдеры» для динамики.
+
 ## 2026-08-03
 - Vulkan 1.4.358 (31.07): расширение VK_EXT_image_tiling_control — попиксельный выбор раскладки текстуры в памяти (память vs скорость доступа GPU); делали AMD/Valve/Samsung/NVIDIA/Intel/Nintendo; уровень API/драйвера. [Phoronix](https://www.phoronix.com/news/Vulkan-1.4.358)
 - Steam на Linux (июль): доля игроков 4,01% (+0,32 к июню 3,69%), ~22% систем — SteamOS Holo; рекорд был март 5,33%. [GamingOnLinux](https://www.gamingonlinux.com/2026/08/linux-back-over-4-percent-in-the-july-2026-steam-survey/)
@@ -19,13 +27,4 @@
 - По диагонали: Fab free asset round-up (28.07–11.08) — Epic раздаёт 3 UE + 1 кросс-платформенный ассет, окно открыто. [GameFromScratch](https://gamefromscratch.com/august-2026-free-gamedev-asset-round-up/)
 - По диагонали: ретро-LCD про робота и опухоль (01.08, по фану) — эстетика карманных LCD, кивок на Сатоси Кона. [80.lv](https://80.lv/articles/this-retro-lcd-game-will-have-you-playing-as-a-robot-and-its-tumor)
 - Из прошлого: Mecanim — технология монреальской компании, купленной Unity в 2011; дебют в Unity 4.0 (2012) как Animator Controller.
-
-## 2026-08-01
-- Unity внутри Unreal / PolySpatial (21.07, догоняющая): Fantasy Kingdom считается в Unity, рисуется в Unreal; безголовый Unity-сервер, только URP+Shader Graph, цель — Fortnite как целевая платформа, ранний доступ не раньше 2027. [Unity Discussions](https://discussions.unity.com/t/unity-x-fortnite-how-unity-runs-inside-unreal-engine/1731630)
-- Веб-платформа Unity (28.07): WebAssembly64 в бете 6.6 снимает потолок памяти 2–4 ГБ (указатели 4→8 байт, Safari не поддерживает), прогрессивная загрузка по сценам; в 6.5 — Wasm2023 по умолчанию, стили UI Toolkit в неуправляемой памяти. [Unity Discussions](https://discussions.unity.com/t/web-platform-what-shipped-in-6-5-and-whats-coming-in-6-6/1732387)
-- Unity 6000.5.6f1 (29.07): ScheduleUpdateBroadphase затирал дескриптор задачи динамического дерева (ошибки безопасности заданий при ручном вызове Unity.Physics); SortingCriteria.OptimizeStateChanges не ломает SRP-батчи; Resolution/RefreshRate без мусора. [Unity Releases](https://unityreleases.com/releases/6000.5.6f1)
-- По диагонали: Multiplayer Services 2.3.0 (28.07) — SessionConnector умеет Join по коду/идентификатору; обработчики распределённой ответственности и реле не пишут неперехватываемый LogError перед SessionException. [Unity Discussions](https://discussions.unity.com/t/multiplayer-service-package-v2-3-0-is-now-publicly-available/1732363)
-- По диагонали: Unity Hub 3.20.0 (29.07) — проверка загрузок до установки, повторы, помодульная установка; закрыты внедрение команд через путь установки и подсадка библиотек на macOS. [Unity](https://unity.com/unity-hub/release-notes#3.20.0)
-- По диагонали: Input System 1.20.0 (21.07) — устройства не пропадают после обновления пакета при открытом редакторе; InputSystemProvider не выключает общепроектные действия. [Документация Unity](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.20/changelog/CHANGELOG.html)
-- Из прошлого: Unity Web Player (2005–2015) — умер вместе с NPAPI в Chrome, отсюда путь asm.js → WebAssembly.
 
