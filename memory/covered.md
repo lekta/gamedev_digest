@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-08-06
+- SEED (Klang, 05.08): симулятор общества без прописанных NPC — каждый житель игрок или автономный ИИ-«сидлинг»; модель на базе Google Gemma дообучена и крутится на своём железе, облачный Gemini 2.0 Flash для латентных ответов, у каждого свой Knowledge Graph (память/связи субъективны), «социальная батарейка»; EA стартовал 21.07, Steam осенью; рецензии бьют по диалогам. [80.lv](https://80.lv/articles/this-new-24-7-society-simulator-is-powered-by-thousands-of-ai-controlled-npcs)
+- Unity 6000.5.7f1 (05.08): сервисный патч 6.5 LTS, 25 фиксов — очистка MostRecentFixedTime в Physics GraphicsIntegration (DOTS-сглаживание), сломанная серверная сборка macOS (libMonoPosixHelper.dylib), тени ShadowCaster по Renderer Shader User Value в рантайме, iOS-аудио при Пункте управления, D-Pad/Bluetooth Xbox-контроллера под Linux; 5 блокеров. [unityreleases](https://unityreleases.com/releases/6000.5.7f1)
+- По диагонали: Gunstoppable (05.08) — Салаар Кохари, рогалик-шутер «скорость это урон» на UE 5.6; скорость как ресурс (копят/тратят на бой), почти вся механика самописная, инструменты бесплатные (UE/Blender/Audacity/DaVinci). [80.lv](https://80.lv/articles/gunstoppable-how-speed-is-damage-defined-a-roguelite-fps)
+- По диагонали: Sculptools: Palette (05.08) — ProjectArgo, бесплатный аддон Blender: радиальное меню кистей в Sculpt Mode, до 8 палитр, слайдеры радиуса/силы, свои хоткеи, импорт/экспорт пресетов. [extensions.blender.org](https://extensions.blender.org/add-ons/sculptools-palette/)
+- Из прошлого: Façade (2005, Матеас/Стерн) — интерактивная драма с вводом текста и парой Trip/Grace; понимание речи на рукописных шаблонах, провалы маскировали самопоглощёнными NPC; предок разговорных NPC, жалоба на диалог та же.
+
 ## 2026-08-05
 - Unity 6.6 beta b6 (04.08): чистка API — Component/GameObject.rigidbody удалены, 50+ методов InstanceID→EntityId устарели, Dynamic Batching выпилен; 2D-физика получила плавучесть/ветер (PhysicsBody/PhysicsWorld) + PhysicsSpace для своих broad/narrowphase; DOTS: managed-компоненты под удаление, EntityCommandBuffer только single-playback. [unityreleases](https://unityreleases.com/releases/6000.6.0b6)
 - Локальная речь-в-текст на C# (04.08): .NET Blog (Bruno Capuano) — консольное .NET 10 приложение, потоковый ASR без облака; модель NVIDIA Nemotron 0.6B (англ.), Microsoft.AI.Foundry.Local.WinML + NAudio (16кГц/16бит/моно), API совместим с OpenAI Realtime, только Windows (WinML). [.NET Blog](https://devblogs.microsoft.com/dotnet/foundry-local-live-speech-to-text-csharp/)
@@ -21,10 +28,4 @@
 - По диагонали: Big Walk (04.08) — House House (Untitled Goose Game на Unity), кооп-«гулялка» с proximity voice chat (затухание/эхо/стены/рации); PS5/Switch 2/PC, изд. Panic, день 1 в PS Plus Essential. [Big Walk](https://bigwalk.game/)
 - По диагонали: Houdini (03.08) — симуляция лесного ручья на GPU-солвере Paradigm, разбор пайплайна жидкости (Энрике Де ла Гарса). [80.lv](https://80.lv/articles/stunning-forest-stream-simulation-made-with-houdini)
 - Из прошлого: PhysX (Ageia, плата-ускоритель сер.2000-х → NVIDIA 2008) — штатный 3D-физдвижок Unity, отсюда «только выпуклые коллайдеры» для динамики.
-
-## 2026-08-03
-- Vulkan 1.4.358 (31.07): расширение VK_EXT_image_tiling_control — попиксельный выбор раскладки текстуры в памяти (память vs скорость доступа GPU); делали AMD/Valve/Samsung/NVIDIA/Intel/Nintendo; уровень API/драйвера. [Phoronix](https://www.phoronix.com/news/Vulkan-1.4.358)
-- Steam на Linux (июль): доля игроков 4,01% (+0,32 к июню 3,69%), ~22% систем — SteamOS Holo; рекорд был март 5,33%. [GamingOnLinux](https://www.gamingonlinux.com/2026/08/linux-back-over-4-percent-in-the-july-2026-steam-survey/)
-- По диагонали: Nouveau/NVK (31.07) — патч включает Vulkan Video поверх аппаратного NVDEC в открытом драйвере NVIDIA; путь к аппаратному декоду FMV под Linux. [Phoronix](https://www.phoronix.com/news/NVK-NVDEC-Vulkan-Video)
-- Из прошлого: Vulkan вырос из Mantle (AMD+DICE, 2013), переданного Khronos в 2015; Vulkan 1.0 — февраль 2016.
 
