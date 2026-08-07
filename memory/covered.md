@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-07
+- Unity 6.7 alpha 4 (06.08): 6000.7.0a4 — CoreCLR-рантайм обновлён до нового сервисного билда .NET 10 (фиксы JIT/GC); DOTS настраиваемые бюджеты аллокаторов архетипов/запросов на платформу + расход в профайлере памяти, поиск сущностей по id, Frame Selected для entity; on-tile у deferred URP, stencil в Shader Graph, Variable Set-mode; ~661 фикс. [unityreleases](https://unityreleases.com/releases/6000.7.0a4)
+- .NET Testing Platform reporting (06.08): .NET Blog (Amaury Levé) — MTP приземляет падения тестов в CI; --report-gh/--report-azdo аннотации на упавших строках; --report-azdo-flaky-history 14 делит «[flaky: 3/20 за 14д]» vs «[REGRESSION]»; TRX/HTML/JUnit/CTRF, --crashdump. Unity Test Runner на MTP не работает. [.NET Blog](https://devblogs.microsoft.com/dotnet/microsoft-testing-platform-reporting/)
+- По диагонали: Esoterica (06.08) — Бобби Ангелов (Steam/Valve) + Кирилл Баженов, открытый C++ прототип-движок: bindless DX12, AAA-граф анимации, C++-рефлексия через libclang, hot-reload, Actor/ECS, редактор Dear ImGui; не продакшен-движок, конструктор/образец. [GameFromScratch](https://gamefromscratch.com/esoterica-game-engine/)
+- По диагонали: Kidbash: Super Legend (06.08) — Unity-инди ретро-пайплайн: модели в Blender → спрайт-листы → Aseprite → Unity. [80.lv](https://80.lv/articles/interview-how-kidbash-super-legend-adapts-retro-style-graphics-with-a-modern-art-pipeline)
+- По диагонали: Tenebris Somnia (06.08) — Андрес Борги, сурвайвл-хоррор: 2D-ретро + живые FMV-вставки; движок не назван. [80.lv](https://80.lv/articles/creating-a-survival-horror-game-that-blends-a-2d-retro-style-and-live-action-cutscenes)
+- Из прошлого: Mono (де Иказа/Ximian, ~2001–2004, открытая .NET) — скриптовый рантайм Unity; из линии выросли IL2CPP и переезд на CoreCLR.
+
 ## 2026-08-06
 - SEED (Klang, 05.08): симулятор общества без прописанных NPC — каждый житель игрок или автономный ИИ-«сидлинг»; модель на базе Google Gemma дообучена и крутится на своём железе, облачный Gemini 2.0 Flash для латентных ответов, у каждого свой Knowledge Graph (память/связи субъективны), «социальная батарейка»; EA стартовал 21.07, Steam осенью; рецензии бьют по диалогам. [80.lv](https://80.lv/articles/this-new-24-7-society-simulator-is-powered-by-thousands-of-ai-controlled-npcs)
 - Unity 6000.5.7f1 (05.08): сервисный патч 6.5 LTS, 25 фиксов — очистка MostRecentFixedTime в Physics GraphicsIntegration (DOTS-сглаживание), сломанная серверная сборка macOS (libMonoPosixHelper.dylib), тени ShadowCaster по Renderer Shader User Value в рантайме, iOS-аудио при Пункте управления, D-Pad/Bluetooth Xbox-контроллера под Linux; 5 блокеров. [unityreleases](https://unityreleases.com/releases/6000.5.7f1)
@@ -20,12 +28,4 @@
 - По диагонали: NuGet (03.08) — срок жизни API-ключей режут 365→30 дней (новые с 17.08, старые off 01.11); рекомендуют Trusted Publishing (OIDC); повод — атака на NX Console. [.NET Blog](https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/)
 - По диагонали: 80.lv (04.08) — Дмитрий Безродний, персонаж Ариадны (крито-микенский стиль): MetaHuman для пропорций, одетый 3D-скан, AI-вывод → кисти ZBrush. [80.lv](https://80.lv/articles/creating-a-detailed-and-expressive-character-inspired-by-cretan-mycenaean-culture)
 - Из прошлого: XNA (Microsoft 2006–2013, C#, Xbox 360/Zune; Bastion/Terraria/Stardew) свёрнут в 2013 → MonoGame/FNA продлили API, теперь и C++-порт CNA.
-
-## 2026-08-04
-- Grabbit 2 (03.08): редакторный плагин Unity — физика Unity прямо в сцене без запуска игры, коллайдеры выпуклой декомпозицией (воксель/точность/скорость), 5 режимов, bake в рантайм, обход «только выпуклое» PhysX; Уильям Беснар/Jungle, Unity 6, Built-in/URP/HDRP, $40. [80.lv](https://80.lv/articles/how-grabbit-2-simulates-physics-inside-the-unity-editor)
-- Sedulous Engine (03.08): открытый 3D-движок с редактором на языке Beef (гибрид C#/C++), MIT; Jolt-физика, Vulkan 1.3/DX12, Forward PBR, ECS-сцена, Recast/Detour, SDL3, UI на XML+CSS; 74★, в активной разработке. [GitHub](https://github.com/SedulousWorks/SedulousEngine)
-- По диагонали: Refactor Games / Delphi Interactive (03.08) — студия FIFA World Cup: Launch Edition для Netflix закрыта через 8 недель после релиза; финансирование свёрнуто, Netflix называл «успехом». [Game Developer](https://www.gamedeveloper.com/production/report-refactor-games-shuttered-by-delphi-interactive)
-- По диагонали: Big Walk (04.08) — House House (Untitled Goose Game на Unity), кооп-«гулялка» с proximity voice chat (затухание/эхо/стены/рации); PS5/Switch 2/PC, изд. Panic, день 1 в PS Plus Essential. [Big Walk](https://bigwalk.game/)
-- По диагонали: Houdini (03.08) — симуляция лесного ручья на GPU-солвере Paradigm, разбор пайплайна жидкости (Энрике Де ла Гарса). [80.lv](https://80.lv/articles/stunning-forest-stream-simulation-made-with-houdini)
-- Из прошлого: PhysX (Ageia, плата-ускоритель сер.2000-х → NVIDIA 2008) — штатный 3D-физдвижок Unity, отсюда «только выпуклые коллайдеры» для динамики.
 
