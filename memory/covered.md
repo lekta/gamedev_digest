@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-09
+- Triton (07-08.08): открытый драйвер DirectX 11 для гостевых Windows в QEMU (osy/UTM), реализует DDI ниже уровня API (в отличие от Neptune на DXVK/Vulkan); команды → VirtIO → QEMU → virglrenderer → Mesa; собран с помощью Claude Opus 5/Fable 5. [UTM](https://blog.getutm.app/2026/introducing-triton-directx-11-driver-for-qemu/)
+- Wine 11.15 (08.08): 41 фикс, база Proton; два Wayland-фикса (двойная sRGB «вымывала» цвета, смещение 4:3 fullscreen), баг 4811 XMLDOMDocument 2006 закрыт, ARM64EC MinGW, локальная NTLM, KDF в BCrypt, конверсии WindowsCodecs. [GamingOnLinux](https://www.gamingonlinux.com/2026/08/wine-11-15-brings-improvements-for-wayland-more-format-conversions-in-windowscodecs/)
+- По диагонали: BlendKit (04.08) — 67k бесплатных CC0/RF-ассетов (22k моделей, 36k материалов, 4k HDRI, 1k кистей), экспансия на Maya/Rhino 8+/Godot 4.0+ (Godot standalone, Maya/Rhino требуют Blender); Unity-плагина нет. [CG Channel](https://www.cgchannel.com/2026/08/get-60000-free-3d-assets-for-maya-godot-and-rhino-from-blendkit/)
+- По диагонали: The Void (06.08) — соло-хоррор-FPS Джеффи Захарии (Керала) по мотивам «Мглы»; волновой сурвайвл, одно оружие, уклонение; движок не назван; релиз Q4 2026. [80.lv](https://80.lv/articles/the-void-how-to-create-a-survival-horror-fps-inspired-by-the-mist-movie)
+- По диагонали: .NET 11 «Performance Edition» (01.08, Стивен Гизель) — сводка перф-правок: рантайм-нативный async, Zstandard, JIT, поднятые мин. требования x86/Arm64. [steven-giesel.com](https://steven-giesel.com/blogPost/86620358-bb91-4295-84fc-a1329b2567ae/net-11-performance-edition)
+- Из прошлого: DXVK (Филип Ребохле, 2018) — Direct3D 9/10/11 → Vulkan; вытащила Proton в «работает почти всё», опора Steam Deck.
+
 ## 2026-08-08
 - Mesa 26.2 stable (05.08): открытый Linux-стек — NVK получил VK_EXT_mesh_shader и экспериментальный DLSS (VK_NVX_binary_import, NVK_EXPERIMENTAL=dlss, грузит CUDA-бинарники); KosmicKrisp Vulkan→Metal дорос до Vulkan 1.4; оптимизации Intel ANV/AMD RADV. Шаг к апскейл-паритету для SteamOS/Proton. [Phoronix](https://www.phoronix.com/news/Mesa-26.2-Released)
 - По диагонали: Godot 4.8 dev 3 (07.08) — снапшот редактора: подчёркивание ошибок/предупреждений GDScript по месту, Ctrl+scroll зум панели файлов, glob-поиск файлов, буфер свойств из скриптов, visionOS→модуль (задел tvOS), RigidBody get_velocity_at_position. [Godot](https://godotengine.org/article/dev-snapshot-godot-4-8-dev-3/)
@@ -20,11 +28,4 @@
 - По диагонали: Kidbash: Super Legend (06.08) — Unity-инди ретро-пайплайн: модели в Blender → спрайт-листы → Aseprite → Unity. [80.lv](https://80.lv/articles/interview-how-kidbash-super-legend-adapts-retro-style-graphics-with-a-modern-art-pipeline)
 - По диагонали: Tenebris Somnia (06.08) — Андрес Борги, сурвайвл-хоррор: 2D-ретро + живые FMV-вставки; движок не назван. [80.lv](https://80.lv/articles/creating-a-survival-horror-game-that-blends-a-2d-retro-style-and-live-action-cutscenes)
 - Из прошлого: Mono (де Иказа/Ximian, ~2001–2004, открытая .NET) — скриптовый рантайм Unity; из линии выросли IL2CPP и переезд на CoreCLR.
-
-## 2026-08-06
-- SEED (Klang, 05.08): симулятор общества без прописанных NPC — каждый житель игрок или автономный ИИ-«сидлинг»; модель на базе Google Gemma дообучена и крутится на своём железе, облачный Gemini 2.0 Flash для латентных ответов, у каждого свой Knowledge Graph (память/связи субъективны), «социальная батарейка»; EA стартовал 21.07, Steam осенью; рецензии бьют по диалогам. [80.lv](https://80.lv/articles/this-new-24-7-society-simulator-is-powered-by-thousands-of-ai-controlled-npcs)
-- Unity 6000.5.7f1 (05.08): сервисный патч 6.5 LTS, 25 фиксов — очистка MostRecentFixedTime в Physics GraphicsIntegration (DOTS-сглаживание), сломанная серверная сборка macOS (libMonoPosixHelper.dylib), тени ShadowCaster по Renderer Shader User Value в рантайме, iOS-аудио при Пункте управления, D-Pad/Bluetooth Xbox-контроллера под Linux; 5 блокеров. [unityreleases](https://unityreleases.com/releases/6000.5.7f1)
-- По диагонали: Gunstoppable (05.08) — Салаар Кохари, рогалик-шутер «скорость это урон» на UE 5.6; скорость как ресурс (копят/тратят на бой), почти вся механика самописная, инструменты бесплатные (UE/Blender/Audacity/DaVinci). [80.lv](https://80.lv/articles/gunstoppable-how-speed-is-damage-defined-a-roguelite-fps)
-- По диагонали: Sculptools: Palette (05.08) — ProjectArgo, бесплатный аддон Blender: радиальное меню кистей в Sculpt Mode, до 8 палитр, слайдеры радиуса/силы, свои хоткеи, импорт/экспорт пресетов. [extensions.blender.org](https://extensions.blender.org/add-ons/sculptools-palette/)
-- Из прошлого: Façade (2005, Матеас/Стерн) — интерактивная драма с вводом текста и парой Trip/Grace; понимание речи на рукописных шаблонах, провалы маскировали самопоглощёнными NPC; предок разговорных NPC, жалоба на диалог та же.
 
