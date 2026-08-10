@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-08-10
+- Unity → Supersonic → Tripledot ($40M, 06.08): Unity продала моб. издательский бизнес Supersonic, разворот к движку + рекламной платформе Vector; выход из наследия ironSource ($4,4 млрд, 2022). [Game Developer](https://www.gamedeveloper.com/business/unity-sells-supersonic-publishing-biz-to-tripledot-for-40m)
+- Marvel Tokon: Fighting Souls (06.08): разбитый PC-порт (стуттеры, GPU, анти-чит, обяз. вход PSN) обвалил онлайн в Steam с ~24,4k до ~7k; статус «в основном отрицательные», консоль принята тепло. [The Gamer](https://www.thegamer.com/marvel-tokon-fighting-souls-pc-version-playercount-nearly-halved/)
+- По диагонали: The Sinking City 2 (Frogwares, 07.08) — ушёл на золото, релиз 18.08 (PS5/Xbox/PC), в конце разработки переезд на Unreal Engine 5.8; студия из Украины, сдвиги из-за войны. [VGTimes](https://vgtimes.com/gaming-news/163461-the-sinking-city-2-goes-gold-ahead-of-its-august-18-release.html)
+- По диагонали (по фану): 80.lv (08.08) — оддболл-инди недели: людоед-многоножка и дед с тростью в метроидвании «между Cuphead и Hollow Knight»; движки не названы. [80.lv](https://80.lv/articles/this-metroidvania-will-have-you-playing-as-a-grandpa-fighting-with-his-cane)
+- Из прошлого: линия скупки Unity — Weta Digital tools (2021, ~$1,6 млрд) + ironSource (2022, ~$4,4 млрд) → откат к ядру в 2023–2026.
+
 ## 2026-08-09
 - Triton (07-08.08): открытый драйвер DirectX 11 для гостевых Windows в QEMU (osy/UTM), реализует DDI ниже уровня API (в отличие от Neptune на DXVK/Vulkan); команды → VirtIO → QEMU → virglrenderer → Mesa; собран с помощью Claude Opus 5/Fable 5. [UTM](https://blog.getutm.app/2026/introducing-triton-directx-11-driver-for-qemu/)
 - Wine 11.15 (08.08): 41 фикс, база Proton; два Wayland-фикса (двойная sRGB «вымывала» цвета, смещение 4:3 fullscreen), баг 4811 XMLDOMDocument 2006 закрыт, ARM64EC MinGW, локальная NTLM, KDF в BCrypt, конверсии WindowsCodecs. [GamingOnLinux](https://www.gamingonlinux.com/2026/08/wine-11-15-brings-improvements-for-wayland-more-format-conversions-in-windowscodecs/)
@@ -20,12 +27,4 @@
 - По диагонали: Ричард Бартл (07.08) — соавтор MUD1 в интервью 80.lv: free-to-play/pay-to-win/Web3 разъедают договор игрока и разработчика; линза доверия в живых сервисах. [80.lv](https://80.lv/articles/virtual-worlds-were-supposed-to-let-players-be-themselves-but-monetization-forgets-that)
 - По диагонали: BR1: INFINITE (07.08) — экстракшн-шутер Bravo Ready (Krafton/Solana Ventures): $1 за кил, ~$10/час, $1 за вход; экономика на Solana-стейблкоине, выведено >$100k. Play-to-earn с криптоворотами, много скепсиса. [Dexerto](https://www.dexerto.com/gaming/viral-extraction-shooter-says-it-will-pay-you-real-money-just-for-playing-3395532/)
 - Из прошлого: Loki Software (США, 1998–2002) — первые серьёзные Linux-порты западных игр (Civ: Call to Power, HoMM III, Quake III), не выжила коммерчески, но оставила SDL.
-
-## 2026-08-07
-- Unity 6.7 alpha 4 (06.08): 6000.7.0a4 — CoreCLR-рантайм обновлён до нового сервисного билда .NET 10 (фиксы JIT/GC); DOTS настраиваемые бюджеты аллокаторов архетипов/запросов на платформу + расход в профайлере памяти, поиск сущностей по id, Frame Selected для entity; on-tile у deferred URP, stencil в Shader Graph, Variable Set-mode; ~661 фикс. [unityreleases](https://unityreleases.com/releases/6000.7.0a4)
-- .NET Testing Platform reporting (06.08): .NET Blog (Amaury Levé) — MTP приземляет падения тестов в CI; --report-gh/--report-azdo аннотации на упавших строках; --report-azdo-flaky-history 14 делит «[flaky: 3/20 за 14д]» vs «[REGRESSION]»; TRX/HTML/JUnit/CTRF, --crashdump. Unity Test Runner на MTP не работает. [.NET Blog](https://devblogs.microsoft.com/dotnet/microsoft-testing-platform-reporting/)
-- По диагонали: Esoterica (06.08) — Бобби Ангелов (Steam/Valve) + Кирилл Баженов, открытый C++ прототип-движок: bindless DX12, AAA-граф анимации, C++-рефлексия через libclang, hot-reload, Actor/ECS, редактор Dear ImGui; не продакшен-движок, конструктор/образец. [GameFromScratch](https://gamefromscratch.com/esoterica-game-engine/)
-- По диагонали: Kidbash: Super Legend (06.08) — Unity-инди ретро-пайплайн: модели в Blender → спрайт-листы → Aseprite → Unity. [80.lv](https://80.lv/articles/interview-how-kidbash-super-legend-adapts-retro-style-graphics-with-a-modern-art-pipeline)
-- По диагонали: Tenebris Somnia (06.08) — Андрес Борги, сурвайвл-хоррор: 2D-ретро + живые FMV-вставки; движок не назван. [80.lv](https://80.lv/articles/creating-a-survival-horror-game-that-blends-a-2d-retro-style-and-live-action-cutscenes)
-- Из прошлого: Mono (де Иказа/Ximian, ~2001–2004, открытая .NET) — скриптовый рантайм Unity; из линии выросли IL2CPP и переезд на CoreCLR.
 
