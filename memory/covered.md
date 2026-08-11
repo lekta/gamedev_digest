@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-11
+- KitBash → ArtStation + Sketchfab (10.08): Epic Games продала два арт-сервиса компании KitBash3D/Greyscalegorilla; оставила себе Fab, фокус на UE6/Fortnite/EGS; обе площадки купила в 2021, свела в Fab. [Epic](https://www.epicgames.com/site/news/kitbash-acquires-artstation-and-sketchfab)
+- Machine Party (Клубника/GDeavid, Godot 4.5.2, релиз 30.07): грим-пати-сборник из 15 миниигр, 500k за неделю, 20k CCU, Very Positive 88% из ~1,1k, изд. Oro, крупный рынок Китай. [Steam](https://store.steampowered.com/app/4108000/)
+- По диагонали: ReStory (tinyBuild, 06.08) — уютный ремонт Y2K-гаджетов в Токио 2000-х; 96% крайне положительных, ~80k продаж за сутки, $3M к 10.08; движок не назван. [GamesRadar](https://www.gamesradar.com/games/simulation/chill-shop-sim-about-repairing-off-brand-ps1s-makes-its-budget-back-within-12-hours-and-earns-usd3-million-days-after-launch/)
+- По диагонали: Autodesk открыл Golaem (03.08) — Apache 2.0 плагины краудсима для Houdini/UE/USD; процедурная подгрузка кэшей толп; Unity-плагина нет. [CG Channel](https://www.cgchannel.com/2026/08/autodesk-open-sources-golaem-for-houdini-and-unreal-engine/)
+- По диагонали (РФ): Atomic Heart (03.08) в российском Steam спустя 3+ года VK Play-эксклюзива; изд. Focus, 2499 ₽, 4-е место чарта, VK Play остаётся. [ixbt.games](https://ixbt.games/en/news/2026/08/03/atomic-heart-vysla-na-pk-v-steam-v-rossii-kazaxstane-i-drugix-stranax-sng.amp.html)
+- Из прошлого: скупка Epic 2021 (ArtStation, Sketchfab, Quixel → Fab) → распродажа доноров 2026.
+
 ## 2026-08-10
 - Unity → Supersonic → Tripledot ($40M, 06.08): Unity продала моб. издательский бизнес Supersonic, разворот к движку + рекламной платформе Vector; выход из наследия ironSource ($4,4 млрд, 2022). [Game Developer](https://www.gamedeveloper.com/business/unity-sells-supersonic-publishing-biz-to-tripledot-for-40m)
 - Marvel Tokon: Fighting Souls (06.08): разбитый PC-порт (стуттеры, GPU, анти-чит, обяз. вход PSN) обвалил онлайн в Steam с ~24,4k до ~7k; статус «в основном отрицательные», консоль принята тепло. [The Gamer](https://www.thegamer.com/marvel-tokon-fighting-souls-pc-version-playercount-nearly-halved/)
@@ -20,11 +28,4 @@
 - По диагонали: The Void (06.08) — соло-хоррор-FPS Джеффи Захарии (Керала) по мотивам «Мглы»; волновой сурвайвл, одно оружие, уклонение; движок не назван; релиз Q4 2026. [80.lv](https://80.lv/articles/the-void-how-to-create-a-survival-horror-fps-inspired-by-the-mist-movie)
 - По диагонали: .NET 11 «Performance Edition» (01.08, Стивен Гизель) — сводка перф-правок: рантайм-нативный async, Zstandard, JIT, поднятые мин. требования x86/Arm64. [steven-giesel.com](https://steven-giesel.com/blogPost/86620358-bb91-4295-84fc-a1329b2567ae/net-11-performance-edition)
 - Из прошлого: DXVK (Филип Ребохле, 2018) — Direct3D 9/10/11 → Vulkan; вытащила Proton в «работает почти всё», опора Steam Deck.
-
-## 2026-08-08
-- Mesa 26.2 stable (05.08): открытый Linux-стек — NVK получил VK_EXT_mesh_shader и экспериментальный DLSS (VK_NVX_binary_import, NVK_EXPERIMENTAL=dlss, грузит CUDA-бинарники); KosmicKrisp Vulkan→Metal дорос до Vulkan 1.4; оптимизации Intel ANV/AMD RADV. Шаг к апскейл-паритету для SteamOS/Proton. [Phoronix](https://www.phoronix.com/news/Mesa-26.2-Released)
-- По диагонали: Godot 4.8 dev 3 (07.08) — снапшот редактора: подчёркивание ошибок/предупреждений GDScript по месту, Ctrl+scroll зум панели файлов, glob-поиск файлов, буфер свойств из скриптов, visionOS→модуль (задел tvOS), RigidBody get_velocity_at_position. [Godot](https://godotengine.org/article/dev-snapshot-godot-4-8-dev-3/)
-- По диагонали: Ричард Бартл (07.08) — соавтор MUD1 в интервью 80.lv: free-to-play/pay-to-win/Web3 разъедают договор игрока и разработчика; линза доверия в живых сервисах. [80.lv](https://80.lv/articles/virtual-worlds-were-supposed-to-let-players-be-themselves-but-monetization-forgets-that)
-- По диагонали: BR1: INFINITE (07.08) — экстракшн-шутер Bravo Ready (Krafton/Solana Ventures): $1 за кил, ~$10/час, $1 за вход; экономика на Solana-стейблкоине, выведено >$100k. Play-to-earn с криптоворотами, много скепсиса. [Dexerto](https://www.dexerto.com/gaming/viral-extraction-shooter-says-it-will-pay-you-real-money-just-for-playing-3395532/)
-- Из прошлого: Loki Software (США, 1998–2002) — первые серьёзные Linux-порты западных игр (Civ: Call to Power, HoMM III, Quake III), не выжила коммерчески, но оставила SDL.
 
