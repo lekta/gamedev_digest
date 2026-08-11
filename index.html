@@ -170,8 +170,12 @@ async function attachVotes(date) {
     });
   });
 
-  // «По диагонали» — пункты верхнего списка: заголовок в жирном, бар внутрь пункта
+  // «По диагонали» — пункты верхнего списка: заголовок в жирном, бар внутрь пункта.
+  // Списки ДО разделителя <hr> — это части блоков «Главного» (буллеты внутри новости),
+  // они не отдельные новости и оценку не получают: у главного блока свой бар от h3.
+  const hr = digest.querySelector(":scope > hr");
   digest.querySelectorAll(":scope > ul > li").forEach(li => {
+    if (hr && (hr.compareDocumentPosition(li.parentElement) & Node.DOCUMENT_POSITION_PRECEDING)) return;
     const headline = (li.querySelector("strong") || li).textContent;
     addBar(headline, bar => li.appendChild(bar));
   });
