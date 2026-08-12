@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-08-12
+- Torizon Telecom (Ечан Чхве/SkagoGames, Godot, интервью 11.08): текст-графический FPS, редактор карт/локализация/RL-ИИ/генератор оружия написаны нейросетью, свой рендер вместо TextMesh; 22 языка; готовность ~55–60%, демо окт., релиз к 2027. [80.lv](https://80.lv/articles/torizon-telecom-an-fps-built-entirely-out-of-letters-and-words)
+- По диагонали: Dark Ritual Studios (10.08) — экс-сотрудники Ubisoft Barcelona после сокращения 51 чел. (Black Flag Resynced) открыли инди-студию, глава Майлз Кёрвин, первая игра Puzzle Mage (2027, движок не назван). [DualShockers](https://www.dualshockers.com/ubisoft-employees-launch-new-studio-following-black-flag-resynced-layoffs/)
+- По диагонали: .NET сервисные обновления (11.08) — .NET 10.0.11/9.0.19/8.0.30 закрыли 10 CVE (в т.ч. RCE, EoP). [.NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-august-2026-servicing-updates/)
+- По диагонали: Immense Engine (Брюссе, экс-Epic/Guerrilla, весна 2026, снова в лентах) — «европейский» ИИ-агентный движок с хостингом в ЕС; новых фактов нет. [PocketGamer.biz](https://www.pocketgamer.biz/guerrilla-games-co-founder-arjan-brussee-is-building-european-alternative-to-unreal-and-unity/)
+- Из прошлого: ZZT (1991, Тим Суини, Potomac→Epic MegaGames) — текст-режим игра+редактор, ZZT-OOP; предок Epic/Unreal.
+
 ## 2026-08-11
 - KitBash → ArtStation + Sketchfab (10.08): Epic Games продала два арт-сервиса компании KitBash3D/Greyscalegorilla; оставила себе Fab, фокус на UE6/Fortnite/EGS; обе площадки купила в 2021, свела в Fab. [Epic](https://www.epicgames.com/site/news/kitbash-acquires-artstation-and-sketchfab)
 - Machine Party (Клубника/GDeavid, Godot 4.5.2, релиз 30.07): грим-пати-сборник из 15 миниигр, 500k за неделю, 20k CCU, Very Positive 88% из ~1,1k, изд. Oro, крупный рынок Китай. [Steam](https://store.steampowered.com/app/4108000/)
@@ -20,12 +27,4 @@
 - По диагонали: The Sinking City 2 (Frogwares, 07.08) — ушёл на золото, релиз 18.08 (PS5/Xbox/PC), в конце разработки переезд на Unreal Engine 5.8; студия из Украины, сдвиги из-за войны. [VGTimes](https://vgtimes.com/gaming-news/163461-the-sinking-city-2-goes-gold-ahead-of-its-august-18-release.html)
 - По диагонали (по фану): 80.lv (08.08) — оддболл-инди недели: людоед-многоножка и дед с тростью в метроидвании «между Cuphead и Hollow Knight»; движки не названы. [80.lv](https://80.lv/articles/this-metroidvania-will-have-you-playing-as-a-grandpa-fighting-with-his-cane)
 - Из прошлого: линия скупки Unity — Weta Digital tools (2021, ~$1,6 млрд) + ironSource (2022, ~$4,4 млрд) → откат к ядру в 2023–2026.
-
-## 2026-08-09
-- Triton (07-08.08): открытый драйвер DirectX 11 для гостевых Windows в QEMU (osy/UTM), реализует DDI ниже уровня API (в отличие от Neptune на DXVK/Vulkan); команды → VirtIO → QEMU → virglrenderer → Mesa; собран с помощью Claude Opus 5/Fable 5. [UTM](https://blog.getutm.app/2026/introducing-triton-directx-11-driver-for-qemu/)
-- Wine 11.15 (08.08): 41 фикс, база Proton; два Wayland-фикса (двойная sRGB «вымывала» цвета, смещение 4:3 fullscreen), баг 4811 XMLDOMDocument 2006 закрыт, ARM64EC MinGW, локальная NTLM, KDF в BCrypt, конверсии WindowsCodecs. [GamingOnLinux](https://www.gamingonlinux.com/2026/08/wine-11-15-brings-improvements-for-wayland-more-format-conversions-in-windowscodecs/)
-- По диагонали: BlendKit (04.08) — 67k бесплатных CC0/RF-ассетов (22k моделей, 36k материалов, 4k HDRI, 1k кистей), экспансия на Maya/Rhino 8+/Godot 4.0+ (Godot standalone, Maya/Rhino требуют Blender); Unity-плагина нет. [CG Channel](https://www.cgchannel.com/2026/08/get-60000-free-3d-assets-for-maya-godot-and-rhino-from-blendkit/)
-- По диагонали: The Void (06.08) — соло-хоррор-FPS Джеффи Захарии (Керала) по мотивам «Мглы»; волновой сурвайвл, одно оружие, уклонение; движок не назван; релиз Q4 2026. [80.lv](https://80.lv/articles/the-void-how-to-create-a-survival-horror-fps-inspired-by-the-mist-movie)
-- По диагонали: .NET 11 «Performance Edition» (01.08, Стивен Гизель) — сводка перф-правок: рантайм-нативный async, Zstandard, JIT, поднятые мин. требования x86/Arm64. [steven-giesel.com](https://steven-giesel.com/blogPost/86620358-bb91-4295-84fc-a1329b2567ae/net-11-performance-edition)
-- Из прошлого: DXVK (Филип Ребохле, 2018) — Direct3D 9/10/11 → Vulkan; вытащила Proton в «работает почти всё», опора Steam Deck.
 
