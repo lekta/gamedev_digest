@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-13
+- .NET 11 Preview 7 (Microsoft, 11.08): runtime-async tiering + tail-await, NativeAOT CLI и MSBuild server по умолчанию; C# labeled break/continue, union-паттерны, exhaustiveness для closed-типов; dotnet test --timeout/--maximum-failed-tests; Complex<T>, IEEE754 decimal, STJ closed-полиморфизм; GA ноябрь. [.NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-7/)
+- Unity 6.7 главная панель (Томас Лопес, анонс 07.08): MainToolbarCustomElement стал public API, свои кнопки через наследование MainToolbarButton + ExecuteMenuItem(), любимые MenuItem на панель через QuickSearch без кода, группы/тоглы визуально отличимы. [Unity Discussions](https://discussions.unity.com/t/customizable-main-toolbar-unity-6-7-improvements/1733331)
+- По диагонали: BALL x PIT (Кенни Сан/Devolver, Unity, релиз окт.2025) — брик-брейкер-рогалик перевалил 2 млн копий <за год, вышло финальное бесплатное обновление Naturalist. [Push Square](https://www.pushsquare.com/news/2026/08/devolvers-brilliant-roguelite-dopamine-factory-ball-x-pit-is-a-smash-hit-at-2-million-sales)
+- По диагонали: Gamescom Dev опрос (12.08) — 100 спикеров, 83% ждут влияния ИИ на команды/продуктивность, 36% «изменит роли, не срежет штат», 33% меньше команды; ИИ в коде/продакшене 34%, 30% за минимум ИИ; год к году без сдвига. [Game Developer](https://www.gamedeveloper.com/business/developers-expect-generative-ai-to-impact-roles-and-team-sizes-in-the-next-three-years)
+- По диагонали: Amazon Games (12.08) выходит из издания Lost Ark и Throne and Liberty на Западе — TL к Q4 2026 к NC (FirstSpark), Lost Ark к нач.2027 к Smilegate; игры/аккаунты остаются. [Massively OP](https://massivelyop.com/2026/08/12/amazon-will-cease-publishing-lost-ark-and-throne-liberty-sending-them-back-to-smilegate-and-ncsoft/)
+- Из прошлого: async/await появились в C# 5.0 / .NET Framework 4.5 (август 2012), конечный автомат генерировал компилятор → .NET 11 встраивает async в рантайм.
+
 ## 2026-08-12
 - Torizon Telecom (Ечан Чхве/SkagoGames, Godot, интервью 11.08): текст-графический FPS, редактор карт/локализация/RL-ИИ/генератор оружия написаны нейросетью, свой рендер вместо TextMesh; 22 языка; готовность ~55–60%, демо окт., релиз к 2027. [80.lv](https://80.lv/articles/torizon-telecom-an-fps-built-entirely-out-of-letters-and-words)
 - По диагонали: Dark Ritual Studios (10.08) — экс-сотрудники Ubisoft Barcelona после сокращения 51 чел. (Black Flag Resynced) открыли инди-студию, глава Майлз Кёрвин, первая игра Puzzle Mage (2027, движок не назван). [DualShockers](https://www.dualshockers.com/ubisoft-employees-launch-new-studio-following-black-flag-resynced-layoffs/)
@@ -20,11 +28,3 @@
 - По диагонали: Autodesk открыл Golaem (03.08) — Apache 2.0 плагины краудсима для Houdini/UE/USD; процедурная подгрузка кэшей толп; Unity-плагина нет. [CG Channel](https://www.cgchannel.com/2026/08/autodesk-open-sources-golaem-for-houdini-and-unreal-engine/)
 - По диагонали (РФ): Atomic Heart (03.08) в российском Steam спустя 3+ года VK Play-эксклюзива; изд. Focus, 2499 ₽, 4-е место чарта, VK Play остаётся. [ixbt.games](https://ixbt.games/en/news/2026/08/03/atomic-heart-vysla-na-pk-v-steam-v-rossii-kazaxstane-i-drugix-stranax-sng.amp.html)
 - Из прошлого: скупка Epic 2021 (ArtStation, Sketchfab, Quixel → Fab) → распродажа доноров 2026.
-
-## 2026-08-10
-- Unity → Supersonic → Tripledot ($40M, 06.08): Unity продала моб. издательский бизнес Supersonic, разворот к движку + рекламной платформе Vector; выход из наследия ironSource ($4,4 млрд, 2022). [Game Developer](https://www.gamedeveloper.com/business/unity-sells-supersonic-publishing-biz-to-tripledot-for-40m)
-- Marvel Tokon: Fighting Souls (06.08): разбитый PC-порт (стуттеры, GPU, анти-чит, обяз. вход PSN) обвалил онлайн в Steam с ~24,4k до ~7k; статус «в основном отрицательные», консоль принята тепло. [The Gamer](https://www.thegamer.com/marvel-tokon-fighting-souls-pc-version-playercount-nearly-halved/)
-- По диагонали: The Sinking City 2 (Frogwares, 07.08) — ушёл на золото, релиз 18.08 (PS5/Xbox/PC), в конце разработки переезд на Unreal Engine 5.8; студия из Украины, сдвиги из-за войны. [VGTimes](https://vgtimes.com/gaming-news/163461-the-sinking-city-2-goes-gold-ahead-of-its-august-18-release.html)
-- По диагонали (по фану): 80.lv (08.08) — оддболл-инди недели: людоед-многоножка и дед с тростью в метроидвании «между Cuphead и Hollow Knight»; движки не названы. [80.lv](https://80.lv/articles/this-metroidvania-will-have-you-playing-as-a-grandpa-fighting-with-his-cane)
-- Из прошлого: линия скупки Unity — Weta Digital tools (2021, ~$1,6 млрд) + ironSource (2022, ~$4,4 млрд) → откат к ядру в 2023–2026.
-
