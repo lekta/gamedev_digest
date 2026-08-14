@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-14
+- Netflix закрывает Night School Studio (Oxenfree на Unity, Oxenfree II, Unhinged) + Moonloot Games (13.08); Night School — первая покупка Netflix (сен.2021), Unhinged хвалили за месяц до конца; подписочный капкан как у Refactor/FIFA World Cup — «успех на сервисе» ≠ выживание. [PC Gamer](https://www.pcgamer.com/gaming-industry/netflix-closes-oxenfree-developer-night-school-just-a-month-after-praising-its-new-game-as-one-of-the-companys-most-successful-cloud-game-debuts/)
+- Microsoft.Extensions.AI 10.9.0+ (Джошуа Юэ, 13.08): экспериментальные RoutingChatClient / SemanticRoutingChatClient (эмбеддинги) / FailoverChatClient(+Ordered), атрибут Experimental MEAI001; маршрут по стоимости/смыслу + резерв при сбое провайдера; .NET 8+, в Unity-Mono не из коробки (ждёт CoreCLR-плеер). [.NET Blog](https://devblogs.microsoft.com/dotnet/routing-and-failover-for-microsoft-extensions-ai/)
+- По диагонали: Saber Interactive (13.08) согласилась добавить ИИ-дисклеймер в Rideshare Simulator после критики, сначала отрицав «замену сценаристов ИИ»; маркировка то за студию, то против. [Game Developer](https://www.gamedeveloper.com/business/saber-interactive-to-add-rideshare-stimulator-ai-disclosure-after-public-controversy)
+- По диагонали: Meccha Chameleon (Lemorion_1224/Haganeiro, UE5, 12.08) — 20 млн продаж за 2 мес (было 7 млн/2 нед); концепт из Fortnite UEFN → свой Steam-релиз; у Unity своего UGC-маркетплейса под этот путь нет. [Game Developer](https://www.gamedeveloper.com/business/meccha-chameleon-sells-7m-copies-in-first-two-weeks)
+- По диагонали: 2K / Small Axe Studios (13.08) — новая ванкуверская студия под спортивный ААА, глава Аарон Макхарди (экс-EP Madden/FIFA, ~18 лет в EA); движок не назван; контрбаланс к закрытиям. [Inven Global](https://www.invenglobal.com/articles/24778/2k-establishes-new-sports-studio-with-former-fifa-developers)
+- Из прошлого: Night School (осн.2014 экс-Telltale/Disney), дебют Oxenfree (2016, Unity) с «живым» диалогом по рации → куплена Netflix первой в сен.2021 → закрыта 5 лет спустя.
+
 ## 2026-08-13
 - .NET 11 Preview 7 (Microsoft, 11.08): runtime-async tiering + tail-await, NativeAOT CLI и MSBuild server по умолчанию; C# labeled break/continue, union-паттерны, exhaustiveness для closed-типов; dotnet test --timeout/--maximum-failed-tests; Complex<T>, IEEE754 decimal, STJ closed-полиморфизм; GA ноябрь. [.NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-7/)
 - Unity 6.7 главная панель (Томас Лопес, анонс 07.08): MainToolbarCustomElement стал public API, свои кнопки через наследование MainToolbarButton + ExecuteMenuItem(), любимые MenuItem на панель через QuickSearch без кода, группы/тоглы визуально отличимы. [Unity Discussions](https://discussions.unity.com/t/customizable-main-toolbar-unity-6-7-improvements/1733331)
@@ -20,11 +28,3 @@
 - По диагонали: .NET сервисные обновления (11.08) — .NET 10.0.11/9.0.19/8.0.30 закрыли 10 CVE (в т.ч. RCE, EoP). [.NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-august-2026-servicing-updates/)
 - По диагонали: Immense Engine (Брюссе, экс-Epic/Guerrilla, весна 2026, снова в лентах) — «европейский» ИИ-агентный движок с хостингом в ЕС; новых фактов нет. [PocketGamer.biz](https://www.pocketgamer.biz/guerrilla-games-co-founder-arjan-brussee-is-building-european-alternative-to-unreal-and-unity/)
 - Из прошлого: ZZT (1991, Тим Суини, Potomac→Epic MegaGames) — текст-режим игра+редактор, ZZT-OOP; предок Epic/Unreal.
-
-## 2026-08-11
-- KitBash → ArtStation + Sketchfab (10.08): Epic Games продала два арт-сервиса компании KitBash3D/Greyscalegorilla; оставила себе Fab, фокус на UE6/Fortnite/EGS; обе площадки купила в 2021, свела в Fab. [Epic](https://www.epicgames.com/site/news/kitbash-acquires-artstation-and-sketchfab)
-- Machine Party (Клубника/GDeavid, Godot 4.5.2, релиз 30.07): грим-пати-сборник из 15 миниигр, 500k за неделю, 20k CCU, Very Positive 88% из ~1,1k, изд. Oro, крупный рынок Китай. [Steam](https://store.steampowered.com/app/4108000/)
-- По диагонали: ReStory (tinyBuild, 06.08) — уютный ремонт Y2K-гаджетов в Токио 2000-х; 96% крайне положительных, ~80k продаж за сутки, $3M к 10.08; движок не назван. [GamesRadar](https://www.gamesradar.com/games/simulation/chill-shop-sim-about-repairing-off-brand-ps1s-makes-its-budget-back-within-12-hours-and-earns-usd3-million-days-after-launch/)
-- По диагонали: Autodesk открыл Golaem (03.08) — Apache 2.0 плагины краудсима для Houdini/UE/USD; процедурная подгрузка кэшей толп; Unity-плагина нет. [CG Channel](https://www.cgchannel.com/2026/08/autodesk-open-sources-golaem-for-houdini-and-unreal-engine/)
-- По диагонали (РФ): Atomic Heart (03.08) в российском Steam спустя 3+ года VK Play-эксклюзива; изд. Focus, 2499 ₽, 4-е место чарта, VK Play остаётся. [ixbt.games](https://ixbt.games/en/news/2026/08/03/atomic-heart-vysla-na-pk-v-steam-v-rossii-kazaxstane-i-drugix-stranax-sng.amp.html)
-- Из прошлого: скупка Epic 2021 (ArtStation, Sketchfab, Quixel → Fab) → распродажа доноров 2026.
