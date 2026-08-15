@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-15
+- Visual Studio 2026 18.9 (11.08): у Copilot переключатель усилия низкий/средний/высокий + цена/окно контекста моделей, рабочие деревья Git, свои агенты на уровне организации, проверка незакоммиченного кода агентом. [Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/releases/2026/release-notes)
+- VS Code 1.133 (12.08): окно агентов по своему ключу Claude без входа в GitHub, смена провайдера между ходами (Anthropic/Copilot рядом), один сеанс на несколько окон (Agent Host Protocol). [VS Code](https://code.visualstudio.com/updates)
+- По диагонали: Instructions Hygiene (.NET Blog, Уэнди Брайдинг, 12.08) — файл инструкций для ИИ-агента как бюджет контекста: держать только неочевидное/проверенное, ревизия «оставить/убрать/перенести/проверить»; принцип общий. [.NET Blog](https://devblogs.microsoft.com/dotnet/instructions-hygiene-what-frontier-models-still-need-you-to-say/)
+- По диагонали: Phantom Blade Zero (S-GAME, 14.08) — боёвку строили из mocap Донни Йена на полной скорости, реакции боссов проектировали под длину комбо; движок не назван. [80.lv](https://80.lv/articles/phantom-blade-zero-uses-authentic-kung-fu-motion-capture)
+- По диагонали: Downtown Generator V2 (Мохамед Эльшериф, 14.08) — процедурный центр города для Blender 5.0+, облегчённый режим, 180+ зданий и 50+ пропсов. [80.lv](https://80.lv/articles/procedural-american-downtown-generator-for-blender)
+- Из прошлого: IntelliSense (Visual Basic 5.0 / Visual C++ 5.0, 1997) — автодополнение по членам типа; 29 лет спустя та же подсказка в VS получила переключатель усилия и ценник в токенах.
+
 ## 2026-08-14
 - Netflix закрывает Night School Studio (Oxenfree на Unity, Oxenfree II, Unhinged) + Moonloot Games (13.08); Night School — первая покупка Netflix (сен.2021), Unhinged хвалили за месяц до конца; подписочный капкан как у Refactor/FIFA World Cup — «успех на сервисе» ≠ выживание. [PC Gamer](https://www.pcgamer.com/gaming-industry/netflix-closes-oxenfree-developer-night-school-just-a-month-after-praising-its-new-game-as-one-of-the-companys-most-successful-cloud-game-debuts/)
 - Microsoft.Extensions.AI 10.9.0+ (Джошуа Юэ, 13.08): экспериментальные RoutingChatClient / SemanticRoutingChatClient (эмбеддинги) / FailoverChatClient(+Ordered), атрибут Experimental MEAI001; маршрут по стоимости/смыслу + резерв при сбое провайдера; .NET 8+, в Unity-Mono не из коробки (ждёт CoreCLR-плеер). [.NET Blog](https://devblogs.microsoft.com/dotnet/routing-and-failover-for-microsoft-extensions-ai/)
@@ -21,10 +29,3 @@
 - По диагонали: Gamescom Dev опрос (12.08) — 100 спикеров, 83% ждут влияния ИИ на команды/продуктивность, 36% «изменит роли, не срежет штат», 33% меньше команды; ИИ в коде/продакшене 34%, 30% за минимум ИИ; год к году без сдвига. [Game Developer](https://www.gamedeveloper.com/business/developers-expect-generative-ai-to-impact-roles-and-team-sizes-in-the-next-three-years)
 - По диагонали: Amazon Games (12.08) выходит из издания Lost Ark и Throne and Liberty на Западе — TL к Q4 2026 к NC (FirstSpark), Lost Ark к нач.2027 к Smilegate; игры/аккаунты остаются. [Massively OP](https://massivelyop.com/2026/08/12/amazon-will-cease-publishing-lost-ark-and-throne-liberty-sending-them-back-to-smilegate-and-ncsoft/)
 - Из прошлого: async/await появились в C# 5.0 / .NET Framework 4.5 (август 2012), конечный автомат генерировал компилятор → .NET 11 встраивает async в рантайм.
-
-## 2026-08-12
-- Torizon Telecom (Ечан Чхве/SkagoGames, Godot, интервью 11.08): текст-графический FPS, редактор карт/локализация/RL-ИИ/генератор оружия написаны нейросетью, свой рендер вместо TextMesh; 22 языка; готовность ~55–60%, демо окт., релиз к 2027. [80.lv](https://80.lv/articles/torizon-telecom-an-fps-built-entirely-out-of-letters-and-words)
-- По диагонали: Dark Ritual Studios (10.08) — экс-сотрудники Ubisoft Barcelona после сокращения 51 чел. (Black Flag Resynced) открыли инди-студию, глава Майлз Кёрвин, первая игра Puzzle Mage (2027, движок не назван). [DualShockers](https://www.dualshockers.com/ubisoft-employees-launch-new-studio-following-black-flag-resynced-layoffs/)
-- По диагонали: .NET сервисные обновления (11.08) — .NET 10.0.11/9.0.19/8.0.30 закрыли 10 CVE (в т.ч. RCE, EoP). [.NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-august-2026-servicing-updates/)
-- По диагонали: Immense Engine (Брюссе, экс-Epic/Guerrilla, весна 2026, снова в лентах) — «европейский» ИИ-агентный движок с хостингом в ЕС; новых фактов нет. [PocketGamer.biz](https://www.pocketgamer.biz/guerrilla-games-co-founder-arjan-brussee-is-building-european-alternative-to-unreal-and-unity/)
-- Из прошлого: ZZT (1991, Тим Суини, Potomac→Epic MegaGames) — текст-режим игра+редактор, ZZT-OOP; предок Epic/Unreal.
