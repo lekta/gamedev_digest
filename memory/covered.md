@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-16
+- Unity 6.6 beta (снапшот 6000.6.0b8, 12.08): Compute GPU Light Baker (компьют-шейдеры + аппаратный RT, эмуляция без RT), Mesh LOD GPU Instancing, плавучесть/ветер в 2D-физике (PhysicsBody.BuoyancyInput/WindInput), on-tile постобработка, GetInstanceID()→GetEntityId() в Physics/Raycast, managed-компоненты и мульти-playback ECB под удаление. [Unity Releases](https://unityreleases.com/releases/6000.6.0b8)
+- NuGet: ключи публикации 30 дней (анонс .NET Team 03.08, дедлайн 17.08): новые ключи ≤30 дн, 365-дн опция убрана, старые умрут 01.11; альтернатива — Trusted Publishing (OIDC, GitHub Actions/GitLab; Azure DevOps нет). [.NET Blog](https://devblogs.microsoft.com/dotnet/strengthening-nuget-supply-chain-security-reducing-api-key-lifetime/)
+- По диагонали: Memoirium (80.lv, 12.08) — соло PS1-Souls за 3–4 года, Blender-ассеты 256×256, анимации с Unreal Marketplace, издатель Outersloth; движок не назван. [80.lv](https://80.lv/articles/memoirium-building-a-soulslike-retro-game-as-a-solo-developer)
+- По диагонали: SpriteLoop (Balkan Ram Games, 13.08) — бесплатный cut-out аниматор Win/Mac/Linux, экспорт спрайтшитов/GIF/WebP, рантайм под Defold, в Unity через спрайтшиты; урезанный Spriter/Spine. [GameFromScratch](https://gamefromscratch.com/spriteloop-free-2d-animation-tool/)
+- По диагонали: Godot 4.8 dev3 (10.08) — 176 фиксов/91 контрибьютор после GodotCon Boston, visionOS в XR-подсистему, high-polling мышь на Windows, не для прода. [Godot](https://godotengine.org/article/dev-snapshot-godot-4-8-dev-3/)
+- Из прошлого: эволюция запекания света Unity — Beast → Enlighten → Progressive Lightmapper → Compute GPU Light Baker.
+
 ## 2026-08-15
 - Visual Studio 2026 18.9 (11.08): у Copilot переключатель усилия низкий/средний/высокий + цена/окно контекста моделей, рабочие деревья Git, свои агенты на уровне организации, проверка незакоммиченного кода агентом. [Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/releases/2026/release-notes)
 - VS Code 1.133 (12.08): окно агентов по своему ключу Claude без входа в GitHub, смена провайдера между ходами (Anthropic/Copilot рядом), один сеанс на несколько окон (Agent Host Protocol). [VS Code](https://code.visualstudio.com/updates)
@@ -21,11 +29,3 @@
 - По диагонали: Meccha Chameleon (Lemorion_1224/Haganeiro, UE5, 12.08) — 20 млн продаж за 2 мес (было 7 млн/2 нед); концепт из Fortnite UEFN → свой Steam-релиз; у Unity своего UGC-маркетплейса под этот путь нет. [Game Developer](https://www.gamedeveloper.com/business/meccha-chameleon-sells-7m-copies-in-first-two-weeks)
 - По диагонали: 2K / Small Axe Studios (13.08) — новая ванкуверская студия под спортивный ААА, глава Аарон Макхарди (экс-EP Madden/FIFA, ~18 лет в EA); движок не назван; контрбаланс к закрытиям. [Inven Global](https://www.invenglobal.com/articles/24778/2k-establishes-new-sports-studio-with-former-fifa-developers)
 - Из прошлого: Night School (осн.2014 экс-Telltale/Disney), дебют Oxenfree (2016, Unity) с «живым» диалогом по рации → куплена Netflix первой в сен.2021 → закрыта 5 лет спустя.
-
-## 2026-08-13
-- .NET 11 Preview 7 (Microsoft, 11.08): runtime-async tiering + tail-await, NativeAOT CLI и MSBuild server по умолчанию; C# labeled break/continue, union-паттерны, exhaustiveness для closed-типов; dotnet test --timeout/--maximum-failed-tests; Complex<T>, IEEE754 decimal, STJ closed-полиморфизм; GA ноябрь. [.NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-7/)
-- Unity 6.7 главная панель (Томас Лопес, анонс 07.08): MainToolbarCustomElement стал public API, свои кнопки через наследование MainToolbarButton + ExecuteMenuItem(), любимые MenuItem на панель через QuickSearch без кода, группы/тоглы визуально отличимы. [Unity Discussions](https://discussions.unity.com/t/customizable-main-toolbar-unity-6-7-improvements/1733331)
-- По диагонали: BALL x PIT (Кенни Сан/Devolver, Unity, релиз окт.2025) — брик-брейкер-рогалик перевалил 2 млн копий <за год, вышло финальное бесплатное обновление Naturalist. [Push Square](https://www.pushsquare.com/news/2026/08/devolvers-brilliant-roguelite-dopamine-factory-ball-x-pit-is-a-smash-hit-at-2-million-sales)
-- По диагонали: Gamescom Dev опрос (12.08) — 100 спикеров, 83% ждут влияния ИИ на команды/продуктивность, 36% «изменит роли, не срежет штат», 33% меньше команды; ИИ в коде/продакшене 34%, 30% за минимум ИИ; год к году без сдвига. [Game Developer](https://www.gamedeveloper.com/business/developers-expect-generative-ai-to-impact-roles-and-team-sizes-in-the-next-three-years)
-- По диагонали: Amazon Games (12.08) выходит из издания Lost Ark и Throne and Liberty на Западе — TL к Q4 2026 к NC (FirstSpark), Lost Ark к нач.2027 к Smilegate; игры/аккаунты остаются. [Massively OP](https://massivelyop.com/2026/08/12/amazon-will-cease-publishing-lost-ark-and-throne-liberty-sending-them-back-to-smilegate-and-ncsoft/)
-- Из прошлого: async/await появились в C# 5.0 / .NET Framework 4.5 (август 2012), конечный автомат генерировал компилятор → .NET 11 встраивает async в рантайм.
