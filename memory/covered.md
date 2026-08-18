@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-08-18
+- Forbidden Solitaire (Grey Alien Games, постмортем Game Developer 17.08): хоррор-пасьянс на собственном пасьянсном движке студии (16 игр) + боёвка из Shadowhand/Ancient Enemy, раскладка tri-peaks/golf вместо Клондайка, обёртка «запрещённая сатанинская игра из 90-х» (визуал Night Signal); релиз 30.04, 10k копий/48ч, пик 880 vs 98 (Regency Solitaire II)/20 (Shadowhand Solitaire), «крайне положительные» 96% из ~2000. [Game Developer](https://www.gamedeveloper.com/design/how-forbidden-solitaire-brought-solitaire-games-to-the-forefront)
+- Claude Code 2.1.234 (17.08): отклонение путей NT-namespace `\??\` при чтении файлов/восстановлении сессий (защита от утечки NTLM-учёток на Windows), фикс потери ответов на запросы прав во время фоновых подагентов, бейдж статуса GitLab MR в статусной строке, авто-продолжение сессии после сброса лимитов Claude.ai. [changelog](https://code.claude.com/docs/en/changelog)
+- По диагонали: Plushie Dreadfuls (American McGee/Stunt Puppet Pictures, 80.lv 17.08) — стоп-моушен-пайплайн Dragonframe→After Effects→Photoshop, проволочные скелеты в куклах, ~3с анимации/смену при 24 к/с; текущий Spare Hearts на Godot, крупный Dreadfuland планируют на Unreal. [80.lv](https://80.lv/articles/creating-stop-motion-animation-for-american-mcgee-s-plushie-dreadfuls)
+- По диагонали: Mortal Shell II (Cold Symmetry, ранний доступ 17.08, релиз 20.08) — соулслайк на UE5 (1-я часть UE4), пик ~20k, ~80% положительных на старте, «выдержка» вместо стамины, RTX 5090 4K/ultra с RT ~80–90 к/с. [Hardcore Gamer](https://hardcoregamer.com/mortal-shell-ii-review/)
+- По диагонали: ядро Linux 7.2 (16.08) — прирост Intel Arc B390, HDMI 2.1 FRL в AMDGPU, ускорение poll/IO; фон для SteamOS/Proton-сборок. [Phoronix](https://www.phoronix.com/news/Linux-7.2-Released)
+- Из прошлого: Windows Solitaire (1990, Windows 3.0) — положили в комплект как тренажёр drag-and-drop мышью, не ради игры.
+
 ## 2026-08-17
 - Hell Let Loose: Vietnam (Expression Games/Team17, релиз 13.08): пик ~30574 CCU, но отзывы «смешанные» 60% из ~4,6k; AMD-вылеты лечатся флагом `-dx12` (баг в одном граф-бэкенде), отказ VOIP, трение VIP-слотов; хотфикс к выходным. [Steam](https://store.steampowered.com/app/3079210/)
 - GunZ: The Duel (Masangsoft, F2P рестарт классики 2013, релиз 13.08): «смешанные» 40% (449/1102), ~1,8k CCU; жалобы — предположительно ИИ-ассеты (иконки/текстуры/карты), пинг, сломанные механики/тикрейт из беты, читеры; фан-серверы лучше официального. [Steam](https://store.steampowered.com/app/3139440/)
@@ -21,11 +29,3 @@
 - По диагонали: SpriteLoop (Balkan Ram Games, 13.08) — бесплатный cut-out аниматор Win/Mac/Linux, экспорт спрайтшитов/GIF/WebP, рантайм под Defold, в Unity через спрайтшиты; урезанный Spriter/Spine. [GameFromScratch](https://gamefromscratch.com/spriteloop-free-2d-animation-tool/)
 - По диагонали: Godot 4.8 dev3 (10.08) — 176 фиксов/91 контрибьютор после GodotCon Boston, visionOS в XR-подсистему, high-polling мышь на Windows, не для прода. [Godot](https://godotengine.org/article/dev-snapshot-godot-4-8-dev-3/)
 - Из прошлого: эволюция запекания света Unity — Beast → Enlighten → Progressive Lightmapper → Compute GPU Light Baker.
-
-## 2026-08-15
-- Visual Studio 2026 18.9 (11.08): у Copilot переключатель усилия низкий/средний/высокий + цена/окно контекста моделей, рабочие деревья Git, свои агенты на уровне организации, проверка незакоммиченного кода агентом. [Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/releases/2026/release-notes)
-- VS Code 1.133 (12.08): окно агентов по своему ключу Claude без входа в GitHub, смена провайдера между ходами (Anthropic/Copilot рядом), один сеанс на несколько окон (Agent Host Protocol). [VS Code](https://code.visualstudio.com/updates)
-- По диагонали: Instructions Hygiene (.NET Blog, Уэнди Брайдинг, 12.08) — файл инструкций для ИИ-агента как бюджет контекста: держать только неочевидное/проверенное, ревизия «оставить/убрать/перенести/проверить»; принцип общий. [.NET Blog](https://devblogs.microsoft.com/dotnet/instructions-hygiene-what-frontier-models-still-need-you-to-say/)
-- По диагонали: Phantom Blade Zero (S-GAME, 14.08) — боёвку строили из mocap Донни Йена на полной скорости, реакции боссов проектировали под длину комбо; движок не назван. [80.lv](https://80.lv/articles/phantom-blade-zero-uses-authentic-kung-fu-motion-capture)
-- По диагонали: Downtown Generator V2 (Мохамед Эльшериф, 14.08) — процедурный центр города для Blender 5.0+, облегчённый режим, 180+ зданий и 50+ пропсов. [80.lv](https://80.lv/articles/procedural-american-downtown-generator-for-blender)
-- Из прошлого: IntelliSense (Visual Basic 5.0 / Visual C++ 5.0, 1997) — автодополнение по членам типа; 29 лет спустя та же подсказка в VS получила переключатель усилия и ценник в токенах.
