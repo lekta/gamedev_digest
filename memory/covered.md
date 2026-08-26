@@ -6,6 +6,15 @@
 
 ---
 
+## 2026-08-26
+- C# 15 (Microsoft, devblog 24.08): официальный разбор перед релизом с .NET 11 — union-типы, closed-иерархии, новая модель unsafe (указатели/&/sizeof без unsafe, разыменование в unsafe), with(...) в коллекц. выражениях, расширяющие индексаторы, labeled break/continue; GA 10.11. [.NET Blog](https://devblogs.microsoft.com/dotnet/explore-csharp-15/)
+- Ichor Online (инди FR3NKD+LeoDev, 80.lv 24.08): экшн-MMO в духе WoW/RuneScape на открытом стеке Godot + SpacetimeDB + Blender; без квест-маркеров/pay-to-win/подписки; неткод не раскрыт. [80.lv](https://80.lv/articles/indie-devs-show-action-mmorpg-built-with-open-source-software)
+- Combos (Converge.AI, Gamescom 25.08): браузерные игры генерит ИИ-агент Boo по тексту (дизайн/ассеты/звук/публикация); 300k+ создателей, 110+ стран, 10k+ игр; стенд 26–30.08; один тайтл собран через GB Studio на Game Boy. [PR Newswire](https://www.prnewswire.com/news-releases/combos-makes-its-global-debut-at-gamescom-bringing-ai-created-games-by-everyday-creators-302859934.html)
+- По диагонали: How to Fish (Dazed Games/изд. Landfall, 25.08) — физ ко-оп рыбалка дуэта, пик 356 099 CCU, ~1M продаж за 48ч, 94% (18 088/19 151); патчи лобби 4→8, приватные лобби, закрыт грифинг; движок не назван. [activeplayer](https://activeplayer.io/how-to-fish-player-count-hits-356k/)
+- По диагонали: DXVK-Sarek 1.13.0 «Pacemaker» (24.08) — форк DXVK для старых GPU; DXVK_FRAME_PACE, дефолт dyasync-шейдеры против статтеров, динамич. аллокатор против OOM на iGPU; сверка для Unity DirectX под Proton. [GamingOnLinux](https://www.gamingonlinux.com/2026/08/dxvk-sarek-1-13-0-is-a-big-release-for-older-gpus-to-play-modern-games-on-linux/)
+- По диагонали: LLVM/Clang 23.1 (25.08) — Zen 6 + AVX-512 BMM, частичный C++26, AMDGPU/RISC-V; косвенно Burst(LLVM)/IL2CPP. [Phoronix](https://www.phoronix.com/news/LLVM-23.1-Released)
+- По диагонали: Marathon (Bungie, 24.08) — онлайн впервые <1000 (мин 987 CCU, ~1015 час. среднее); ретеншен-дно без разбора причин студией. [OpenCritic](https://opencritic.com/news/35695/concern-for-marathon-grows-as-pc-player-count-drops-to-triple-digits)
+
 ## 2026-08-25
 - DLSS 4.5 Ray Reconstruction (NVIDIA, Gamescom 25.08): трансформер 2-го поколения слил денойз трассировки и апскейл в одну модель; +35% вычислений/+20% параметров при той же скорости; все RTX 20–50, 27 игр, раздача через приложение NVIDIA, денойз в Blender 5.3 осенью. [NVIDIA](https://www.nvidia.com/en-us/geforce/news/dlss-4-5-ray-reconstruction-1000-rtx-games-apps-out-now/)
 - Roblox open-source модерация (ROOST, 19.08): три модели — PII Classifier v2.0 (189 языков, F1 63,41→90,52), Sentinel v2 (~70% ранних детектов, ROC-AUC 0,996), голосовой v3 (30 языков, 8 категорий, 61% полноты при 1% FP); Hugging Face/GitHub. [Roblox](https://about.roblox.com/newsroom/2026/08/roblox-open-source-safety-models-roost)
@@ -25,12 +34,3 @@
 - По диагонали: Grow a Garden (август) — лаг-дюп редких питомцев (Kitsune) обвалил экономику, Jandel отключил дарение 2-й раз, обещана система обмена; нет проверки провенанса. [Distractify](https://www.distractify.com/p/why-is-pet-gifting-disabled-in-grow-a-garden)
 - По диагонали: Aerial_Knight's MrFreezy (демо 20.08) — пазл про выстраивание голов в ряд и снос топором за лимит ходов, ч/б подача; релиз 1.09. [aftermath](https://aftermath.site/mrfreezy-demo-impressions/)
 - По диагонали: Proton 11.0-2 (21.08) — Wine 11.0, обновлены VKD3D-Proton/DXVK, фиксы регрессий; точка сверки для DirectX-сборок на SteamOS/Steam Machine. [GamingOnLinux](https://www.gamingonlinux.com/2026/08/proton-11-0-2-is-out-with-lots-of-gaming-fixes-for-linux-steamos-steam-deck-steam-machine/)
-
-## 2026-08-23
-- Big Walk (House House, Unity, GameDiscoverCo 21.08): кооп-«болталка» на Unity ~1 млн копий за 6 дней, пик 46k CCU, ~1 млн вишлистов, всего 6% пересечения с Untitled Goose Game; кооп 2–12, изд. Panic, $20, «крайне положительные» 95%/15,9k. [GameDiscoverCo](https://newsletter.gamediscover.co/p/will-big-walks-1m-sales-usher-in)
-- Stars Reach (Playable Worlds/Раф Костер, EA 18.08): сырой старт, «резинение» от серверной утечки памяти, хотфикс + система мониторинга инцидентов; «смешанные» 51%/~250, онлайн <1000; движок — своя облачная симуляция. [MassivelyOP](https://massivelyop.com/2026/08/22/stars-reach-puts-out-a-hotfix-that-attacks-a-wide-list-of-bugs-and-issues/)
-- Visual Studio Copilot modernization agent (Microsoft, 21.08): агент тащит .NET Framework→.NET 10 пошагово, «направляемый» режим с чекпойнтами и md-отчётом в VCS = точки отката; пример System.Web.Mvc→ASP.NET Core, EF6→EF Core. [VS Blog](https://devblogs.microsoft.com/visualstudio/today-i-will-modernize-a-net-application/)
-- По диагонали: Battlefield 6 (DICE, апдейт 1.4.2.0 18.08) — авиарежимы «Top Gun» + возврат Wake Island + бесплатный триал до 25.08 подняли онлайн, пик ~69k, рост в топе Steam. [Steam](https://store.steampowered.com/news/app/2807960/view/685261553769906387)
-- По диагонали: Cursor (19.08) — облачные агенты «всегда на связи», команда /goal, субагенты на своих машинах. [Cursor](https://cursor.com/changelog)
-- По диагонали: Neuron Activation (80.lv 22.08) — «цифровой фиджет-бокс», тактильные микровзаимодействия, механика Neuron Activation сбрасывает поле и множит счёт; движок не назван, релиз конец 2026. [80.lv](https://80.lv/articles/this-digital-fidget-box-game-has-a-lot-of-satisfying-tactile-interactions)
-- По диагонали: Monsters & Memories (MassivelyOP 21.08) — реворк двух классов + новые данжи сдвигают пати-мету в forced-grouping MMO. [MassivelyOP](https://massivelyop.com/2026/08/21/monsters-and-memories-revamps-two-classes-launches-new-dungeons-and-applies-multiple-fixes-and-tweaks/)
