@@ -1,0 +1,14 @@
+# Единый перевод строки в репозитории: LF.
+# Рабочая копия на Windows раньше держала CRLF, из-за чего git показывал
+# изменёнными почти все файлы, а diff давал ~1400 строк шума.
+* text=auto eol=lf
+
+# Бинарники не трогать
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff  binary
+*.woff2 binary
