@@ -49,7 +49,7 @@ jobs:
           # contents:write, а сборка час читает недоверенный веб — это готовая
           # поверхность для инъекции. Вместо этого расширен список простых команд,
           # а в промпте запрещены циклы и пайплайны.
-          claude_args: '--model claude-opus-4-8 --allowedTools "Read,Write,Edit,Glob,Grep,Task,WebSearch,WebFetch,Bash(grep:*),Bash(date:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(find:*),Bash(TZ=Europe/Moscow date:*)"'
+          claude_args: '--model claude-opus-5 --allowedTools "Read,Write,Edit,Glob,Grep,Task,WebSearch,WebFetch,Bash(grep:*),Bash(date:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(find:*),Bash(TZ=Europe/Moscow date:*)"'
           prompt: |
             Собери сегодняшний выпуск GameDev Digest — ежедневной сводки новостей геймдева для Unity/C#-разработчика. Ты находишься в корне репозитория дайджеста.
 
@@ -129,19 +129,44 @@ jobs:
           retention-days: 14
           if-no-files-found: warn
 
-      # Claude может завершиться «успешно», не записав ни одного файла (так пропал выпуск 01.08.2026):
-      # тогда коммитить нечего, а job остаётся зелёным. Ловим это явно.
+      # Claude может завершиться «успешно», не записав ни одного файла (так пропал выпуск 01.08.2026)
+      # или записав файл-заглушку и оборвав ход (так пропал выпуск 30.08.2026: 160 байт с пометкой
+      # «ЧЕРНОВИК», прогон зелёный, заглушка уехала в фид). Проверка `-s` такое пропускает, поэтому
+      # смотрим не факт существования файла, а его содержимое. Провал здесь останавливает и сборку
+      # фида, и коммит: у следующих шагов условие без status-функции, значит действует неявный
+      # success() — черновик до репозитория не доедет.
       - name: Проверить, что выпуск записан
         if: steps.guard.outputs.skip != 'true'
         run: |
           TODAY="${{ steps.guard.outputs.today }}"
-          if [ ! -s "digests/${TODAY}.md" ]; then
-            echo "::error::Claude отработал, но digests/${TODAY}.md не создан или пуст. Смотри артефакт claude-log-${TODAY}."
-            echo "--- что вообще изменилось в рабочей копии ---"
+          FILE="digests/${TODAY}.md"
+          MIN_BYTES=2500   # самый короткий настоящий выпуск за всю историю — 3413 байт
+          MIN_LINKS=2      # в каждом выпуске есть ссылки на первоисточники
+          fail() {
+            echo "::error::$1 Смотри артефакт claude-log-${TODAY}."
+            echo "--- что изменилось в рабочей копии ---"
             git status --porcelain
+            if [ -f "$FILE" ]; then
+              echo "--- начало ${FILE} ---"
+              head -40 "$FILE"
+            fi
             exit 1
+          }
+          if [ ! -s "$FILE" ]; then
+            fail "Claude отработал, но ${FILE} не создан или пуст."
           fi
-          echo "digests/${TODAY}.md: $(wc -c < "digests/${TODAY}.md") байт"
+          SIZE=$(wc -c < "$FILE")
+          if [ "$SIZE" -lt "$MIN_BYTES" ]; then
+            fail "${FILE} — всего ${SIZE} байт при минимуме ${MIN_BYTES}: это заглушка, а не выпуск."
+          fi
+          if grep -qiE '<!--[^>]*([Чч][Ее][Рр][Нн][Оо][Вв][Ии][Кк]|draft|[Зз]аглушка|placeholder|[Пп]ерезапис)' "$FILE"; then
+            fail "В ${FILE} осталась пометка черновика — выпуск не доведён до конца."
+          fi
+          LINKS=$(grep -c 'http' "$FILE" || true)
+          if [ "$LINKS" -lt "$MIN_LINKS" ]; then
+            fail "В ${FILE} строк со ссылками: ${LINKS} при минимуме ${MIN_LINKS} — первоисточники не проставлены."
+          fi
+          echo "${FILE}: ${SIZE} байт, ${LINKS} строк со ссылками — ок"
 
       - name: Собрать RSS-фид
         if: steps.guard.outputs.skip != 'true'
