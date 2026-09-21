@@ -31,14 +31,20 @@
   header img { width: 28px; height: 28px; border-radius: 7px; }
   header h1 { font-size: 22px; margin: 0; }
   header .sub { color: var(--muted); font-size: 14px; }
-  nav { margin: 12px 0 24px; display: flex; gap: 8px; flex-wrap: wrap; }
+  /* Переключатель выпусков: « + 10 дат + » — сетка из 12 равных ячеек, на узких экранах 6×2 */
+  nav { margin: 12px 0 24px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 6px; }
   nav button {
     background: var(--card); color: var(--fg); border: 1px solid var(--border);
-    border-radius: 8px; padding: 4px 12px; font-size: 13px; cursor: pointer;
+    border-radius: 8px; padding: 4px 0; font-size: 13px; cursor: pointer;
+    min-width: 0; white-space: nowrap; text-align: center; font-variant-numeric: tabular-nums;
   }
   nav button.active { border-color: var(--accent); color: var(--accent); }
-  nav button.pg { font-weight: bold; padding: 4px 9px; }
+  nav button.pg { font-weight: bold; }
+  nav button.pg:last-child { grid-column: -2 / -1; } /* «»» всегда в последней ячейке, даже если дат меньше 10 */
   nav button:disabled { opacity: .35; cursor: default; }
+  @media (max-width: 600px) {
+    nav { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  }
   #digest { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 8px 28px 20px; }
   #digest h1 { font-size: 24px; } #digest h2 { font-size: 19px; margin-top: 28px; }
   #digest h3 { font-size: 16px; }
