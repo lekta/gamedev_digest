@@ -64,6 +64,7 @@
   footer button:hover { color: var(--accent); border-color: var(--accent); }
   footer a.rss { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--muted); }
   footer a.rss:hover { color: var(--accent); border-color: var(--accent); }
+  footer #topBtn { margin-left: auto; }
   dialog#about {
     max-width: 560px; padding: 24px 28px; font-size: 14.5px; line-height: 1.6;
     background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 14px;
@@ -102,6 +103,7 @@
     <span>© <span id="year">2026</span> GameDev Digest — Lekta</span>
     <button id="aboutBtn" type="button">О проекте</button>
     <a class="rss" href="feed.xml">RSS</a>
+    <button id="topBtn" type="button" title="Вернуться к списку выпусков">↑ К выпускам</button>
   </footer>
   <dialog id="about">
     <button class="close" type="button" aria-label="Закрыть">✕</button>
@@ -280,6 +282,8 @@ async function main() {
 main();
 
 document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("topBtn").onclick = () =>
+  document.getElementById("issues").scrollIntoView({ behavior: "smooth", block: "start" });
 const about = document.getElementById("about");
 document.getElementById("aboutBtn").onclick = () => about.showModal();
 about.querySelector(".close").onclick = () => about.close();
