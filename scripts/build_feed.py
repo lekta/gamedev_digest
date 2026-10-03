@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Собирает feed.xml (RSS 2.0) из последних выпусков в digests/."""
+"""Собирает feed.xml (RSS 2.0) из последних выпусков в digests/
+и digests/index.json — список всех выпусков для сайта (без GitHub API)."""
 import datetime
 import email.utils
 import glob
+import json
 import os
 
 import markdown
@@ -42,3 +44,13 @@ feed = (
 with open("feed.xml", "w", encoding="utf-8") as fh:
     fh.write(feed)
 print(f"feed.xml: {len(items)} выпусков")
+
+# Список выпусков для index.html: сайт читает его со своего же домена,
+# не завися от api.github.com (лимит 60 запросов/час на IP, у мобильных операторов общий).
+dates = sorted(
+    (os.path.basename(p)[:-3] for p in glob.glob("digests/[0-9]*.md")), reverse=True
+)
+with open("digests/index.json", "w", encoding="utf-8") as fh:
+    json.dump(dates, fh)
+    fh.write("\n")
+print(f"digests/index.json: {len(dates)} выпусков")

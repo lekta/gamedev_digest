@@ -204,12 +204,38 @@ async function attachVotes(date) {
   } catch {}
 }
 
+// fetch с таймаутом: на слабой мобильной сети запрос может повиснуть навсегда,
+// и страница вечно «загружает» без ошибки
+async function fetchT(url, opts = {}, ms = 10000) {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), ms);
+  try { return await fetch(url, { ...opts, signal: ctl.signal }); }
+  catch (e) { throw new Error(e.name === "AbortError" ? "таймаут " + url : e.message); }
+  finally { clearTimeout(t); }
+}
+
+const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/digests/`;
+
+// Список выпусков: сначала digests/index.json со своего домена (собирает build_feed.py),
+// запасной путь — GitHub API (лимит 60/час на IP, на мобильном операторе легко выбить)
+async function listIssues() {
+  try {
+    const r = await fetchT("digests/index.json", { cache: "no-store" });
+    if (!r.ok) throw new Error();
+    const dates = await r.json();
+    if (!Array.isArray(dates) || !dates.length) throw new Error();
+    return dates.map(d => ({ name: d + ".md", download_url: RAW + d + ".md" }));
+  } catch {
+    const r = await fetchT(`https://api.github.com/repos/${REPO}/contents/digests?ref=${BRANCH}`);
+    if (!r.ok) throw new Error("GitHub API: " + r.status);
+    return r.json();
+  }
+}
+
 async function main() {
   const status = document.getElementById("status");
   try {
-    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/digests?ref=${BRANCH}`);
-    if (!r.ok) throw new Error("GitHub API: " + r.status);
-    const files = (await r.json())
+    const files = (await listIssues())
       .filter(f => /^\d{4}-\d{2}-\d{2}\.md$/.test(f.name))
       .sort((a, b) => b.name.localeCompare(a.name));
     if (!files.length) throw new Error("В digests/ пока нет выпусков");
@@ -257,11 +283,16 @@ async function main() {
       status.textContent = "Загружаю " + file.name + "…";
       let md;
       try { // сначала относительный путь (на Pages — тот же сайт, всегда свежее)
-        const r = await fetch("digests/" + file.name, { cache: "no-store" });
+        const r = await fetchT("digests/" + file.name, { cache: "no-store" });
         if (!r.ok) throw new Error();
         md = await r.text();
       } catch { // локальный file:// или сбой — забрать с GitHub напрямую
-        md = await (await fetch(file.download_url)).text();
+        try {
+          md = await (await fetchT(file.download_url)).text();
+        } catch (e) {
+          status.textContent = "Не получилось загрузить " + file.name + ": " + e.message;
+          return;
+        }
       }
       document.getElementById("digest").innerHTML = marked.parse(md);
       document.querySelectorAll("#digest img").forEach(img => {
