@@ -40,6 +40,8 @@
     min-width: 0; white-space: nowrap; text-align: center; font-variant-numeric: tabular-nums;
   }
   nav button.active { border-color: var(--accent); color: var(--accent); }
+  nav button.read { opacity: .5; }                                   /* дочитан до конца */
+  nav button.last { box-shadow: inset 0 -3px 0 var(--accent); opacity: 1; } /* начат и не дочитан */
   nav button.pg { font-weight: bold; }
   nav button.pg:last-child { grid-column: -2 / -1; } /* «»» всегда в последней ячейке, даже если дат меньше 10 */
   nav button:disabled { opacity: .35; cursor: default; }
@@ -56,6 +58,7 @@
   #digest img { display: block; width: 100%; max-height: 220px; object-fit: cover; border-radius: 10px; margin: 12px 0 6px; }
   #digest .outro { color: var(--muted); font-size: 13.5px; }
   #digest h2.outro { font-size: 14px; margin-top: 24px; }
+  #digest .sign { text-align: right; }
   #status { color: var(--muted); padding: 24px 0; }
   footer { margin-top: 28px; color: var(--muted); font-size: 13px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   footer button {
@@ -115,6 +118,7 @@
     <p><strong>Темы:</strong> Unity (релизы, DOTS/ECS, поведение на новом железе, политика компании), C#/.NET, инженерные кейсы студий и постмортемы, заметные события в играх и сообществах, AI-инструменты в разработке.</p>
     <p><strong>Источники:</strong> официальные блоги и патчноуты, посты разработчиков, релизы на GitHub, отраслевая пресса, SteamDB и сообщества. Приоритет — первоисточники, а не пересказы.</p>
     <p><strong>Как собирается:</strong> у каждой новости проверяется дата события (не старая ли волна подана как свежая) и правдоподобие фактов; к главным новостям — вывод «что это значит для разработчика»; повторы отсекаются трёхдневным кулдауном. Выпуск собирает автоматика (Claude + GitHub Actions) каждое утро.</p>
+    <p>Место, на котором вы остановились, и прочитанные выпуски запоминаются только в этом браузере — на сервер это не уходит.</p>
     <p>Архив и устройство проекта — <a href="https://github.com/lekta/gamedev_digest">в репозитории</a>. Подписка — <a href="feed.xml">RSS</a>.</p>
   </dialog>
 </div>
@@ -244,6 +248,61 @@ async function main() {
     if (!files.length) throw new Error("В digests/ пока нет выпусков");
 
     const nav = document.getElementById("issues");
+    const digest = document.getElementById("digest");
+
+    // Память чтения: на каком месте остановился в каждом выпуске и какие выпуски дочитаны.
+    // localStorage — данные не покидают браузер, на сервер ничего не уходит, cookies нет.
+    // Нужна потому, что мобильный Chrome выгружает вкладку и при возврате грузит страницу с нуля.
+    const mem = {
+      get(k, d) { try { const v = localStorage.getItem("gd_" + k); return v ? JSON.parse(v) : d; } catch { return d; } },
+      set(k, v) { try { localStorage.setItem("gd_" + k, JSON.stringify(v)); } catch {} }
+    };
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual"; // место восстанавливаем сами
+    let ready = false;      // выпуск отрисован и место восстановлено — можно запоминать прокрутку
+    let touched = false;    // читатель уже сам двигал страницу после загрузки выпуска
+    const dateOf = f => f.name.replace(".md", "");
+
+    // Место = номер верхнего видимого блока выпуска + сколько пикселей от него уже прокручено.
+    // Пиксели от начала страницы не годятся: картинки и кнопки оценок догружаются и сдвигают текст.
+    function savePos() {
+      if (!ready || !current) return;
+      const date = dateOf(current), pos = mem.get("pos", {});
+      const box = digest.getBoundingClientRect();
+      if (box.bottom < innerHeight + 60) {            // дочитал до конца
+        const read = mem.get("read", []);
+        if (!read.includes(date)) { read.push(date); mem.set("read", read.sort().slice(-120)); }
+        delete pos[date];
+      } else if (box.top > -40) {
+        return;                                       // у шапки (например, пришёл переключить выпуск) — прежнее место не трогаем
+      } else {
+        const kids = digest.children;
+        let i = 0;
+        while (i < kids.length - 1 && kids[i].getBoundingClientRect().bottom <= 0) i++;
+        pos[date] = [i, Math.round(-kids[i].getBoundingClientRect().top)];
+      }
+      const keep = Object.keys(pos).sort().slice(-30);
+      mem.set("pos", Object.fromEntries(keep.map(k => [k, pos[k]])));
+      markNav();
+    }
+    function restorePos() {
+      const p = mem.get("pos", {})[dateOf(current)];
+      const el = p && digest.children[p[0]];
+      if (el) window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top + p[1]);
+    }
+    // Отметки в переключателе: дочитанные приглушены, начатые и недочитанные подчёркнуты
+    function markNav() {
+      const read = mem.get("read", []), pos = mem.get("pos", {});
+      nav.querySelectorAll("button[data-date]").forEach(b => {
+        b.classList.toggle("read", read.includes(b.dataset.date));
+        b.classList.toggle("last", b.dataset.date in pos);
+      });
+    }
+    let saveTimer = 0;
+    window.addEventListener("scroll", () => { clearTimeout(saveTimer); saveTimer = setTimeout(savePos, 250); }, { passive: true });
+    document.addEventListener("visibilitychange", () => { if (document.hidden) savePos(); });
+    window.addEventListener("pagehide", savePos);
+    ["touchstart", "wheel", "keydown", "mousedown"].forEach(ev =>
+      window.addEventListener(ev, () => { touched = true; }, { passive: true }));
     let offset = 0;        // с какого выпуска (от самого свежего) начинается окно кнопок
     let current = null;    // открытый выпуск
 
@@ -276,11 +335,13 @@ async function main() {
         const [y, m, d] = f.name.replace(".md", "").split("-");
         b.textContent = `${d}.${m}`;
         b.title = f.name;
+        b.dataset.date = dateOf(f);
         if (f === current) b.classList.add("active");
         b.onclick = () => show(f);
         nav.appendChild(b);
       });
       nav.appendChild(older);
+      markNav();
     }
     show(byHash());
 
@@ -291,6 +352,8 @@ async function main() {
       const hash = file === files[0] ? "" : "#" + date;
       if (location.hash !== hash)
         history.replaceState(null, "", location.pathname + location.search + hash);
+      savePos();           // место в выпуске, с которого уходим
+      ready = false; touched = false;
       current = file;
       offset = Math.floor(files.indexOf(file) / SHOWN) * SHOWN; // окно кнопок — туда, где открытая дата
       renderNav();
@@ -308,17 +371,29 @@ async function main() {
           return;
         }
       }
-      document.getElementById("digest").innerHTML = marked.parse(md);
-      document.querySelectorAll("#digest img").forEach(img => {
-        img.loading = "lazy";
-        img.onerror = () => img.remove(); // не загрузилась — тихо убрать, без битых квадратов
+      if (file !== current) return; // пока грузился этот выпуск, открыли другой
+      digest.innerHTML = marked.parse(md);
+      // Картинок в выпуске 1–3, грузим сразу: ленивая догрузка сдвигала бы текст после восстановления места.
+      // Пока читатель сам не тронул страницу — после каждой картинки возвращаем его на сохранённое место.
+      const settle = () => { if (!touched && file === current) restorePos(); };
+      digest.querySelectorAll("img").forEach(img => {
+        img.onload = settle;
+        img.onerror = () => { img.remove(); settle(); }; // не загрузилась — тихо убрать, без битых квадратов
       });
-      // финальный блок («На горизонте» / старое «На разбор дальше») — приглушить
-      const hz = [...document.querySelectorAll("#digest h2")]
-        .find(h => /горизонте|разбор/i.test(h.textContent));
+      // Финал — всё после второго разделителя; в старых выпусках — от заголовка «На горизонте» / «На разбор дальше».
+      // Его приглушаем, а подпись ведущего (последний абзац из одного курсива) уводим вправо.
+      const hrs = digest.querySelectorAll(":scope > hr");
+      const hz = hrs.length > 1 ? hrs[hrs.length - 1]
+        : [...digest.querySelectorAll("h2")].find(h => /горизонте|разбор/i.test(h.textContent));
       for (let el = hz; el; el = el.nextElementSibling) el.classList.add("outro");
+      const sign = digest.lastElementChild;
+      if (sign && sign.tagName === "P" && sign.children.length === 1 && sign.firstElementChild.tagName === "EM"
+          && sign.textContent.trim() === sign.firstElementChild.textContent.trim()) sign.classList.add("sign");
       attachVotes(date);
       status.textContent = "";
+      restorePos();
+      ready = true;
+      markNav();
     }
   } catch (e) {
     status.textContent = "Не получилось загрузить выпуск: " + e.message;
