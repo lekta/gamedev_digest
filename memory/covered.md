@@ -6,6 +6,16 @@
 
 ---
 
+## 2026-11-19
+- Unity: 7000.0.0a20 (Unity.Animation, surface shaders off, XR Foundation), 6000.7.0b10, 6000.6.10f1, 6000.3.29f1 (19.11). [Unity](https://unity.com/releases/editor/whats-new/7000.0.0a20)
+- Rockstar: суд по 34 уволенным членам IWGB закончен, вердикт ждут; голосование за профсоюз 12–26.11 (18.11). [Aftermath](https://aftermath.site/gta-6-release-rockstar-workers-tribunal-union-vote/)
+- GTA 6: Series S 720p и до 18–19 fps, без режима производительности; рекорд стримов 6,38 млн (18.11). [Kotaku](https://kotaku.com/grand-theft-auto-6-gta6-performance-framerate-ps5-xbox-series-x-s-2000758096)
+- Embark, The Finals: ИИ-голоса вместо кастеров в ролике, извинение (18.11). [PC Gamer](https://www.pcgamer.com/software/ai/embark-studios-apologizes-for-replacing-esports-casters-with-ai-voices-in-now-deleted-the-finals-video/)
+- NuGet.org: поэтапная публикация пакетов (17.11). [.NET Blog](https://devblogs.microsoft.com/dotnet/nuget-staged-publishing/)
+- GitHub Copilot для JetBrains: облачная песочница, Claude и Codex выключены в Enterprise по умолчанию (17.11). [GitHub](https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases)
+- Россия: Foxhound («Командиры бездорожья») — долги ~175 млн руб., продаёт до 60% студии (19.11). [App2Top](https://app2top.ru/news/smi-u-avtorov-komandirov-bezdorozh-ya-nakopilis-mnogomillionny-e-dolgi-chast-studii-hotyat-prodat-245653.html)
+- Россия: МТС «Глобальный доступ» на большинстве тарифов (19.11). [CNews](https://www.cnews.ru/news/line/2026-11-19_mts_otkryla_dostup_k_populyarnym)
+
 ## 2026-11-18
 - Unity: Unite Tokyo — ECS for All, Surface Cache GI, Neural Texture Compression, UGK (17.11). [Unity](https://unity.com/blog/unite-tokyo-2026-keynote-recap)
 - Firaxis: сокращение почти трети (~60 человек), уходит Хизер Хейзен, проблемы новой XCOM (17.11). [Game Developer](https://www.gamedeveloper.com/business/take-two-lays-off-firaxis-employees-on-eve-of-grand-theft-auto-vi-launch)
@@ -25,13 +35,3 @@
 - Netflix Games: новые сокращения, осталась одна внутренняя студия Next Games (17.11). [Vertical Slice](https://www.verticalslice.news/report-netflix-games-workers-are-being-laid-off/)
 - Crystal Dynamics: пятая волна сокращений за два года (17.11). [Vertical Slice](https://www.verticalslice.news/report-embracer-studio-crystal-dynamics-has-seemingly-begun-its-fifth-layoff-round-in-two-years/)
 - Россия: RuStore обязателен для предустановки на умные ТВ (16.11). [3DNews](https://3dnews.ru/1151350/rustore-stanet-obyazatelnim-dlya-predustanovki-na-vse-umnie-televizori-v-rossii)
-
-## 2026-11-16
-- Unity: UnGodly от Azra Games на 6.3 LTS под складной iPhone Duo (11.11). [Unity](https://unity.com/blog/ungodly-azra-games-mobile-rpg-unity)
-- Mass Effect, BioWare: кексы в EA (13.11). [Kotaku](https://kotaku.com/mass-effect-fans-send-protest-cupcakes-to-ea-in-tribute-to-movement-that-successfully-altered-mass-effect-3-ending-2000757106)
-- Xbox: Project Helix — консоль с ПК-играми (16.11). [VGC](https://www.videogameschronicle.com/news/xbox-says-project-helix-is-a-console-that-can-play-pc-games-not-a-pc-that-can-play-console-games/)
-- Pearl Abyss: ИИ для проверки механик до производства (14.11). [DTF](https://dtf.ru/gameindustry/5411910-pearl-abyss-ispolzuet-ii-dlya-razrabotki-igr)
-- Roblox: ребёнок потратил около 20 тыс. долларов, возврата нет (15.11). [Kotaku](https://kotaku.com/halifax-parents-hoping-to-reverse-nine-year-olds-20000-roblox-bill-2000757111)
-- Россия: продажи консолей за 9 месяцев — 1,05 млн (16.11). [App2Top](https://app2top.ru/news/gta-vi-ne-dala-upast-prodazham-konsolej-v-rossii-po-itogam-yanvarya-sentyabrya-2026-go-245508.html)
-- GameDiscoverCo: продвижение ПК-игр в Китае, Heybox, Bilibili (13.11). [GameDiscoverCo](https://newsletter.gamediscover.co/p/whats-your-china-playbook-for-pc)
-- Queen's Domain: 200 тыс. копий за две недели, студия из двух человек (13.11). [App2Top](https://app2top.ru/news/glavnoe-za-vy-hodny-e-14-15-noyabrya-245502.html)
