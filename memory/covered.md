@@ -6,6 +6,16 @@
 
 ---
 
+## 2026-11-20
+- Unity Editor Software Terms: до 3 экземпляров редактора на место (было 1), агенты и тесты через Build Server (16.11). [GitHub](https://github.com/Unity-Technologies/TermsOfService/commit/afcab2f4deeb7ddbef714952b22af602605ad245)
+- Ubisoft: 166 сокращений в Монреале и Квебеке, ИИ-дочка Motherbrain, слияние творческих домов 3 и 5 (19.11). [Game Developer](https://www.gamedeveloper.com/business/ubiosft-lays-off-166-in-canada)
+- Valve: закрыт лист ожидания Steam Machine 2 ТБ, возможное подорожание, новости в январе (19.11). [Vertical Slice](https://www.verticalslice.news/we-are-continuing-to-encounter-supply-constraints-valve-closes-waitlist-for-2tb-steam-machine-because-it-cannot-meet-demand/)
+- Free Lives: как выбрали Dressmaker по прототипу на itch.io (19.11). [Game Developer](https://www.gamedeveloper.com/marketing/why-greenlighting-dressmaker-wasn-t-an-easy-decision-to-make)
+- Nvidia: драйверы 621.14/621.24 пишут логи на SSD в простое (20.11). [PC Gamer](https://www.pcgamer.com/hardware/graphics-cards/pc-gamers-notice-nvidias-drivers-hammering-their-ssds-with-tens-of-gb-hr-of-unnecessary-writes-revert-to-621-01-asap/)
+- Infinity Nikki: бойкот из-за рекламы с Мэй Маск (19.11). [Kotaku](https://kotaku.com/infinity-nikki-players-are-planning-to-girl-cott-the-game-over-maye-musk-ad-2000758410)
+- Джон Ромеро: игры делать проще, большинство — мусор (20.11). [VGC](https://www.videogameschronicle.com/news/now-more-than-ever-its-about-design-john-romero-loves-that-games-are-easier-to-make-but-warns-most-are-trash/)
+- Россия: VK делает собственные мини-игры, 5 млн игроков за 72 часа (20.11). [CNews](https://www.cnews.ru/news/line/2026-11-20_vkontakte_zapustila_sobstvennye)
+
 ## 2026-11-19
 - Unity: 7000.0.0a20 (Unity.Animation, surface shaders off, XR Foundation), 6000.7.0b10, 6000.6.10f1, 6000.3.29f1 (19.11). [Unity](https://unity.com/releases/editor/whats-new/7000.0.0a20)
 - Rockstar: суд по 34 уволенным членам IWGB закончен, вердикт ждут; голосование за профсоюз 12–26.11 (18.11). [Aftermath](https://aftermath.site/gta-6-release-rockstar-workers-tribunal-union-vote/)
@@ -25,13 +35,3 @@
 - Build A Rocket Boy: долг ~62 млн фунтов, иск против кампании отзывов о MindsEye (18.11). [Kotaku](https://kotaku.com/build-a-rocket-boy-mindseye-debt-creditors-netease-legal-action-2000757975)
 - Россия: GFA Games не платит зарплату части сотрудников с февраля (17.11). [App2Top](https://app2top.ru/news/gfa-games-vse-eshhe-ne-pogasila-zadolzhennost-po-zarplate-pered-rossijskimi-sotrudnikami-245537.html)
 - Россия: опрос ВЦИОМ, 42% считают игры вредными (17.11). [App2Top](https://app2top.ru/news/vtsiom-pochti-polovina-oproshenny-h-rossiyan-otnositsya-k-videoigram-s-neodobreniem-245546.html)
-
-## 2026-11-17
-- Unity: покупка Synty Studios, 70 тыс. ассетов для генеративной платформы Unity Spark (16.11). [Unity](https://unity.com/blog/synty-studios-acquisition)
-- Bravarda: закрытие, переход с Unity на Godot, Extremely Powerful Capybaras не окупилась (17.11). [GI.biz](https://www.gamesindustry.biz/lisbon-based-studio-bravarda-closes-down-after-failing-to-recoup-dev-costs-on-its-most-recent-title-extremely-powerful-capybaras)
-- WoW: Forever: эксплойт с золотом в Blackmaw Hold, игроки требуют отката (17.11). [Eurogamer](https://www.eurogamer.net/world-of-warcraft-forever-gold-farm-exploit)
-- Unity Fellowship: до $50 тыс. десяти инди-играм, санкционные регионы исключены (16.11). [Unity](https://unity.com/news/unity-launches-the-unity-fellowship-to-support-indie-studios)
-- GitHub Copilot: отключены Opus 4.8, Opus 5, GPT-5.6 Terra; Local harness в VS Code уходит в феврале 2027 (16.11). [GitHub](https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026)
-- Netflix Games: новые сокращения, осталась одна внутренняя студия Next Games (17.11). [Vertical Slice](https://www.verticalslice.news/report-netflix-games-workers-are-being-laid-off/)
-- Crystal Dynamics: пятая волна сокращений за два года (17.11). [Vertical Slice](https://www.verticalslice.news/report-embracer-studio-crystal-dynamics-has-seemingly-begun-its-fifth-layoff-round-in-two-years/)
-- Россия: RuStore обязателен для предустановки на умные ТВ (16.11). [3DNews](https://3dnews.ru/1151350/rustore-stanet-obyazatelnim-dlya-predustanovki-na-vse-umnie-televizori-v-rossii)
