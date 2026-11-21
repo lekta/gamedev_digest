@@ -6,6 +6,15 @@
 
 ---
 
+## 2026-11-21
+- Steam: напоминание о правилах Artwork Override — только играбельный контент, без скидок и призывов (19.11). [Steam](https://store.steampowered.com/news/group/4145017/view/696529069521503099)
+- One-armed Robber: украденный ключ Steamworks API, возвраты и баны игрокам (20.11). [Dexerto](https://www.dexerto.com/gaming/devs-of-steam-heist-game-robbed-irl-as-hacker-refunds-players-in-game-purchases-3430127/)
+- .NET MAUI: агенты переписали Barista Notes в нативные iOS и Android, 616 против 209 минут моделей (20.11). [.NET Blog](https://devblogs.microsoft.com/dotnet/ai-cross-platform-decision-matrix/)
+- Россия: иностранных игр и приложений в RuStore в 1,5 раза больше за год (19.11). [App2Top](https://app2top.ru/news/chislo-inostranny-h-igr-i-prilozhenij-v-rustore-podskochilo-v-1-5-raza-za-god-245642.html)
+- Roblox: слушания в Сенате США, законопроект против принудительного арбитража (19.11). [GamesIndustry.biz](https://www.gamesindustry.biz/us-senate-hearing-examines-child-safety-on-roblox-considers-bipartisan-bill-to-bypass-forced-arbitration)
+- DevGAMM Awards: Phonopolis — главный приз, Tempus Vitae — лучшая на Unity (20.11). [GamesIndustry.biz](https://www.gamesindustry.biz/phonopolis-from-amanita-design-wins-grand-prize-at-the-devgamm-awards)
+- Россия: для ТСПУ ищут снятые с производства Baikal-T (20.11). [CNews](https://www.cnews.ru/news/top/2026-11-20_sozdateli_reshenij_dlya_blokirovok)
+
 ## 2026-11-20
 - Unity Editor Software Terms: до 3 экземпляров редактора на место (было 1), агенты и тесты через Build Server (16.11). [GitHub](https://github.com/Unity-Technologies/TermsOfService/commit/afcab2f4deeb7ddbef714952b22af602605ad245)
 - Ubisoft: 166 сокращений в Монреале и Квебеке, ИИ-дочка Motherbrain, слияние творческих домов 3 и 5 (19.11). [Game Developer](https://www.gamedeveloper.com/business/ubiosft-lays-off-166-in-canada)
@@ -25,13 +34,3 @@
 - GitHub Copilot для JetBrains: облачная песочница, Claude и Codex выключены в Enterprise по умолчанию (17.11). [GitHub](https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases)
 - Россия: Foxhound («Командиры бездорожья») — долги ~175 млн руб., продаёт до 60% студии (19.11). [App2Top](https://app2top.ru/news/smi-u-avtorov-komandirov-bezdorozh-ya-nakopilis-mnogomillionny-e-dolgi-chast-studii-hotyat-prodat-245653.html)
 - Россия: МТС «Глобальный доступ» на большинстве тарифов (19.11). [CNews](https://www.cnews.ru/news/line/2026-11-19_mts_otkryla_dostup_k_populyarnym)
-
-## 2026-11-18
-- Unity: Unite Tokyo — ECS for All, Surface Cache GI, Neural Texture Compression, UGK (17.11). [Unity](https://unity.com/blog/unite-tokyo-2026-keynote-recap)
-- Firaxis: сокращение почти трети (~60 человек), уходит Хизер Хейзен, проблемы новой XCOM (17.11). [Game Developer](https://www.gamedeveloper.com/business/take-two-lays-off-firaxis-employees-on-eve-of-grand-theft-auto-vi-launch)
-- Sony: суд в Лондоне отклонил иск Алекс Нил за цены PlayStation Store (17.11). [Eurogamer](https://www.eurogamer.net/playstation-store-pricing-uk-class-action-lawsuit-result)
-- Unity CLI 1.0: выход из беты, 98% запусков от агентов, Build Server для агентов (17.11). [Unity](https://unity.com/the-unity-cli-1.0-is-here)
-- Stardock: сокращения после Ashes of the Singularity II (18.11). [Vertical Slice](https://www.verticalslice.news/report-stardock-is-making-layoffs-days-after-launching-ashes-of-the-singularity-ii/)
-- Build A Rocket Boy: долг ~62 млн фунтов, иск против кампании отзывов о MindsEye (18.11). [Kotaku](https://kotaku.com/build-a-rocket-boy-mindseye-debt-creditors-netease-legal-action-2000757975)
-- Россия: GFA Games не платит зарплату части сотрудников с февраля (17.11). [App2Top](https://app2top.ru/news/gfa-games-vse-eshhe-ne-pogasila-zadolzhennost-po-zarplate-pered-rossijskimi-sotrudnikami-245537.html)
-- Россия: опрос ВЦИОМ, 42% считают игры вредными (17.11). [App2Top](https://app2top.ru/news/vtsiom-pochti-polovina-oproshenny-h-rossiyan-otnositsya-k-videoigram-s-neodobreniem-245546.html)
