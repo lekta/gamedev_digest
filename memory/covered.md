@@ -6,6 +6,15 @@
 
 ---
 
+## 2026-11-22
+- Unity: Docker-образ unity/editor-base для Headless Editor 6.7, бета, только Licensing Server (20.11). [Unity Discussions](https://discussions.unity.com/t/build-unity-projects-in-docker-with-the-new-unity-editor-base-image-beta-now-available/1742375)
+- The Binding of Isaac: Repentance+: музыка Suno в забеге Vice City, 9% отзывов, Nicalis убрала патчем (22.11). [Eurogamer](https://www.eurogamer.net/binding-of-isaac-repentance-plus-ai-music-removed)
+- Phasmophobia: обновление Resonance 24.11, переход на Unity 6 (21.11). [Eurogamer](https://www.eurogamer.net/phasmophobia-resonance-update-release-date-dowsing-rods-unity-6)
+- Clash Royale: Supercell взяла автора ИИ-бота делать античит (21.11). [Dexerto](https://www.dexerto.com/gaming/clash-royale-recruits-creator-of-ai-cheating-tool-to-help-catch-cheaters-3430356/)
+- Profile Analyzer 1.5.0: минимум Unity 6.0 (20.11). [Unity Discussions](https://discussions.unity.com/t/profile-analyzer-1-5-0-released/1742367)
+- Говард Скотт Уоршо: поток ИИ-игр как перед кризисом 1983 (20.11). [GamesIndustry.biz](https://www.gamesindustry.biz/the-creator-of-et-on-the-atari-2600-likens-the-deluge-of-ai-made-games-to-the-glut-of-poor-quality-titles-released-ahead-of-the-us-video-game-crash-of-1983)
+- Россия: «Дальнобойщики 3» выйдут в Steam полным изданием, Fulqrum Publishing (20.11). [3DNews](https://3dnews.ru/1151619/v-steam-viydet-samoe-polnoe-izdanie-dalnoboyshchikov-3-pokorenie-ameriki-s-poddergkoy-russkogo-yazika-i-nedostupnim-pregde-kontentom)
+
 ## 2026-11-21
 - Steam: напоминание о правилах Artwork Override — только играбельный контент, без скидок и призывов (19.11). [Steam](https://store.steampowered.com/news/group/4145017/view/696529069521503099)
 - One-armed Robber: украденный ключ Steamworks API, возвраты и баны игрокам (20.11). [Dexerto](https://www.dexerto.com/gaming/devs-of-steam-heist-game-robbed-irl-as-hacker-refunds-players-in-game-purchases-3430127/)
@@ -24,13 +33,3 @@
 - Infinity Nikki: бойкот из-за рекламы с Мэй Маск (19.11). [Kotaku](https://kotaku.com/infinity-nikki-players-are-planning-to-girl-cott-the-game-over-maye-musk-ad-2000758410)
 - Джон Ромеро: игры делать проще, большинство — мусор (20.11). [VGC](https://www.videogameschronicle.com/news/now-more-than-ever-its-about-design-john-romero-loves-that-games-are-easier-to-make-but-warns-most-are-trash/)
 - Россия: VK делает собственные мини-игры, 5 млн игроков за 72 часа (20.11). [CNews](https://www.cnews.ru/news/line/2026-11-20_vkontakte_zapustila_sobstvennye)
-
-## 2026-11-19
-- Unity: 7000.0.0a20 (Unity.Animation, surface shaders off, XR Foundation), 6000.7.0b10, 6000.6.10f1, 6000.3.29f1 (19.11). [Unity](https://unity.com/releases/editor/whats-new/7000.0.0a20)
-- Rockstar: суд по 34 уволенным членам IWGB закончен, вердикт ждут; голосование за профсоюз 12–26.11 (18.11). [Aftermath](https://aftermath.site/gta-6-release-rockstar-workers-tribunal-union-vote/)
-- GTA 6: Series S 720p и до 18–19 fps, без режима производительности; рекорд стримов 6,38 млн (18.11). [Kotaku](https://kotaku.com/grand-theft-auto-6-gta6-performance-framerate-ps5-xbox-series-x-s-2000758096)
-- Embark, The Finals: ИИ-голоса вместо кастеров в ролике, извинение (18.11). [PC Gamer](https://www.pcgamer.com/software/ai/embark-studios-apologizes-for-replacing-esports-casters-with-ai-voices-in-now-deleted-the-finals-video/)
-- NuGet.org: поэтапная публикация пакетов (17.11). [.NET Blog](https://devblogs.microsoft.com/dotnet/nuget-staged-publishing/)
-- GitHub Copilot для JetBrains: облачная песочница, Claude и Codex выключены в Enterprise по умолчанию (17.11). [GitHub](https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases)
-- Россия: Foxhound («Командиры бездорожья») — долги ~175 млн руб., продаёт до 60% студии (19.11). [App2Top](https://app2top.ru/news/smi-u-avtorov-komandirov-bezdorozh-ya-nakopilis-mnogomillionny-e-dolgi-chast-studii-hotyat-prodat-245653.html)
-- Россия: МТС «Глобальный доступ» на большинстве тарифов (19.11). [CNews](https://www.cnews.ru/news/line/2026-11-19_mts_otkryla_dostup_k_populyarnym)
