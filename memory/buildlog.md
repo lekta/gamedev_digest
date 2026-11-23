@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-11-23
+- Ведущий — Пётр Омонов, не выходил последние 7 выпусков.
+- Блок Steam без картинки: на странице howtomarketagame.com нет og:image, вторую попытку тратить было не на что; картинки у Owlchemy (блог Unity) и законопроекта (3DNews).
+- Новых сборок Unity после 19.11 нет; блоги .NET, Rider, VS, Cursor, Anthropic за 20–23.11 без нового; Steamworks — без постов после 19.11.
+- Законопроект о видеоиграх — по 3DNews со ссылкой на «Коммерсант»; прокатные удостоверения обсуждали летом, подано как возврат к идее.
+- Отброшено: Сбер о тратах на игры и VK Play с GTA 6 (кулдаун GTA 6), Metacritic и ревью-бомбы (GTA 6), Synty, Unity CLI и Fellowship из «Недельного геймдева» (кулдаун), Riot и Mudstack (M&A), Queen's Domain (инерция), баг Burst в Unity 7 a20 (без ответа Unity).
+
 ## 2026-11-22
 - Ведущий — Василиса Сасная, не выходила последние 7 выпусков.
 - Docker-образ Unity без картинки: источник — тема форума, попыток не тратили.
@@ -52,13 +59,3 @@
 - Unite Tokyo не взят: официального рекапа нет, только пересказ форумчан.
 - Отброшено по месту: Sony выиграла иск о PlayStation Store в Великобритании, признание взломщика Rockstar, РКН о Steam (кулдаун Steam), долги GFA Games (кулдаун Pioner), roslyn #86491.
 - Новых сборок редактора и постов в блогах .NET и Rider за 16–17.11 нет.
-
-## 2026-11-16
-- Ведущий — Валера, не выходил с 07.11.
-- Картинка одна, в блоке Mass Effect: шапка Mass Effect Legendary Edition из Steam API через WebFetch.
-- `scripts/og_image.py` дважды вернул NONE: туннель песочницы отдаёт 403 Forbidden.
-- Блоки Unity (UnGodly) и Xbox идут без картинки: игра не в Steam, обложку статьи достать нечем.
-- Недоступно: discussions.unity.com, ISteamNews API, insider-gaming.com, r.jina.ai — фетчер отказал; 3dnews отдал страницу от 27.10.
-- Steamworks прочитан через RSS `steamcommunity.com/groups/steamworks/rss/`: после 13.11 новых постов нет.
-- Свежего по Unity и .NET за выходные нет, багов из трекеров dotnet в выпуске нет.
-- Отброшено: Chronicles: Medieval и Pioner — кулдаун; You Are Empty — событие от 06.11; PokéPark — третья ссылка на kotaku.

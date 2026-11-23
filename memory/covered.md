@@ -6,6 +6,16 @@
 
 ---
 
+## 2026-11-23
+- Owlchemy Labs: Hyper Visor на Unity 6.5, PhysicsScene и часы на каждый мир, DSL уровней вместо domain reload (23.11). [Unity Blog](https://unity.com/blog/hyper-visor-xreal-aura-physics-scenes)
+- Россия: законопроект о видеоиграх — прокатные удостоверения, реестр ОРИ, СОРМ, первое чтение до конца 2026 (23.11). [3DNews](https://3dnews.ru/1151663/igri-pod-kolpakom-roskomnadzora-vlasti-snova-obsugdayut-dlya-nih-prokatnie-udostovereniya-reestr-ori-i-podklyuchenie-k-sorm)
+- Steam: очередь проверки — 47 дней на новый аккаунт, 15 на билд, трекер Зуковски (19.11). [How To Market A Game](https://howtomarketagame.com/2026/11/19/3-new-steam-tools/)
+- Jam City: сокращение около 10%, третья волна с 2022 (23.11). [Vertical Slice](https://www.verticalslice.news/jam-city-eliminates-10-percent-of-workforce-in-third-round-of-mass-layoffs-since-2022/)
+- Activision: патент на NPC, обучаемых по голосовому чату игроков (22.11). [Dexerto](https://www.dexerto.com/gaming/activision-patent-would-let-npcs-learn-to-trash-talk-from-players-voice-chat-3430416/)
+- Unity 6.7: модульная локализация закрыла ActiveSettings и CreateCollection, Unity вернёт (23.11). [Unity Discussions](https://discussions.unity.com/t/1742525)
+- Fenris Creations: CORTAO, AO из EVE Frontier в открытом коде (23.11). [Game Developer](https://www.gamedeveloper.com/programming/devs-can-now-utilize-high-end-ambient-occlusion-technique-seen-in-eve-frontier)
+- Magic Caves: найдена текстовая адвенчура 1977 года (22.11). [Kotaku](https://kotaku.com/physicists-long-lost-1977-fantasy-text-adventure-discovered-on-hard-drive-2000759290)
+
 ## 2026-11-22
 - Unity: Docker-образ unity/editor-base для Headless Editor 6.7, бета, только Licensing Server (20.11). [Unity Discussions](https://discussions.unity.com/t/build-unity-projects-in-docker-with-the-new-unity-editor-base-image-beta-now-available/1742375)
 - The Binding of Isaac: Repentance+: музыка Suno в забеге Vice City, 9% отзывов, Nicalis убрала патчем (22.11). [Eurogamer](https://www.eurogamer.net/binding-of-isaac-repentance-plus-ai-music-removed)
@@ -23,13 +33,3 @@
 - Roblox: слушания в Сенате США, законопроект против принудительного арбитража (19.11). [GamesIndustry.biz](https://www.gamesindustry.biz/us-senate-hearing-examines-child-safety-on-roblox-considers-bipartisan-bill-to-bypass-forced-arbitration)
 - DevGAMM Awards: Phonopolis — главный приз, Tempus Vitae — лучшая на Unity (20.11). [GamesIndustry.biz](https://www.gamesindustry.biz/phonopolis-from-amanita-design-wins-grand-prize-at-the-devgamm-awards)
 - Россия: для ТСПУ ищут снятые с производства Baikal-T (20.11). [CNews](https://www.cnews.ru/news/top/2026-11-20_sozdateli_reshenij_dlya_blokirovok)
-
-## 2026-11-20
-- Unity Editor Software Terms: до 3 экземпляров редактора на место (было 1), агенты и тесты через Build Server (16.11). [GitHub](https://github.com/Unity-Technologies/TermsOfService/commit/afcab2f4deeb7ddbef714952b22af602605ad245)
-- Ubisoft: 166 сокращений в Монреале и Квебеке, ИИ-дочка Motherbrain, слияние творческих домов 3 и 5 (19.11). [Game Developer](https://www.gamedeveloper.com/business/ubiosft-lays-off-166-in-canada)
-- Valve: закрыт лист ожидания Steam Machine 2 ТБ, возможное подорожание, новости в январе (19.11). [Vertical Slice](https://www.verticalslice.news/we-are-continuing-to-encounter-supply-constraints-valve-closes-waitlist-for-2tb-steam-machine-because-it-cannot-meet-demand/)
-- Free Lives: как выбрали Dressmaker по прототипу на itch.io (19.11). [Game Developer](https://www.gamedeveloper.com/marketing/why-greenlighting-dressmaker-wasn-t-an-easy-decision-to-make)
-- Nvidia: драйверы 621.14/621.24 пишут логи на SSD в простое (20.11). [PC Gamer](https://www.pcgamer.com/hardware/graphics-cards/pc-gamers-notice-nvidias-drivers-hammering-their-ssds-with-tens-of-gb-hr-of-unnecessary-writes-revert-to-621-01-asap/)
-- Infinity Nikki: бойкот из-за рекламы с Мэй Маск (19.11). [Kotaku](https://kotaku.com/infinity-nikki-players-are-planning-to-girl-cott-the-game-over-maye-musk-ad-2000758410)
-- Джон Ромеро: игры делать проще, большинство — мусор (20.11). [VGC](https://www.videogameschronicle.com/news/now-more-than-ever-its-about-design-john-romero-loves-that-games-are-easier-to-make-but-warns-most-are-trash/)
-- Россия: VK делает собственные мини-игры, 5 млн игроков за 72 часа (20.11). [CNews](https://www.cnews.ru/news/line/2026-11-20_vkontakte_zapustila_sobstvennye)
