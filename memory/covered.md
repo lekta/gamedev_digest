@@ -6,6 +6,16 @@
 
 ---
 
+## 2026-11-24
+- Epic: UE6 без Blueprints и Actor Gameplay Framework даже в Early Access, ИИ перевёл 20 тыс. Blueprints Fortnite в Verse (20.11). [Epic](https://www.unrealengine.com/news/an-update-on-blueprints-and-the-path-to-ue6)
+- Google Play: Великобритания, 260 млн фунтов по иску Барри Роджера, заявки до 24.03.2027 (24.11). [GamesIndustry.biz](https://www.gamesindustry.biz/uk-mobile-developers-can-now-apply-for-their-share-of-a-260-million-google-settlement)
+- Unity 7 a21: jobs из jobs, IL2CPP LTO Mode, P2P через STUN в Transport, DisposeSentinel устарел (24.11). [Unity](https://storage.googleapis.com/live-platform-resources-prd/templates/assets/7000_0_0a21_3dd2fa8e27/7000_0_0a21_3dd2fa8e27.md)
+- Евросоюз: обсуждение Digital Fairness Act до 14.01.2027 — лутбоксы, валюты, pay-to-win (23.11). [GamesIndustry.biz](https://www.gamesindustry.biz/eu-opens-consultation-on-digital-fairness-act)
+- Steam Community Market: своя комиссия разработчика с потолком, Watchlist (23.11). [Steam](https://steamcommunity.com/ogg/593110/announcements/detail/678515036155545444)
+- Star Citizen: бонусы подписчикам в PTU 5.0, CIG отрицает планы (23.11). [Massively OP](https://massivelyop.com/2026/11/23/star-citizen-fans-start-an-uproar-over-datamined-subscriber-benefits-found-in-alpha-5-0s-test-build/)
+- Темми Чанг: Of the World на GB Studio, itch.io (22.11). [itch.io](https://tuyoki.itch.io/of-the-world)
+- Россия: ЦБ передаёт в ФНС данные о регулярных поступлениях от физлиц с 01.01.2027 (24.11). [Хабр](https://habr.com/ru/articles/1111846/)
+
 ## 2026-11-23
 - Owlchemy Labs: Hyper Visor на Unity 6.5, PhysicsScene и часы на каждый мир, DSL уровней вместо domain reload (23.11). [Unity Blog](https://unity.com/blog/hyper-visor-xreal-aura-physics-scenes)
 - Россия: законопроект о видеоиграх — прокатные удостоверения, реестр ОРИ, СОРМ, первое чтение до конца 2026 (23.11). [3DNews](https://3dnews.ru/1151663/igri-pod-kolpakom-roskomnadzora-vlasti-snova-obsugdayut-dlya-nih-prokatnie-udostovereniya-reestr-ori-i-podklyuchenie-k-sorm)
@@ -24,12 +34,3 @@
 - Profile Analyzer 1.5.0: минимум Unity 6.0 (20.11). [Unity Discussions](https://discussions.unity.com/t/profile-analyzer-1-5-0-released/1742367)
 - Говард Скотт Уоршо: поток ИИ-игр как перед кризисом 1983 (20.11). [GamesIndustry.biz](https://www.gamesindustry.biz/the-creator-of-et-on-the-atari-2600-likens-the-deluge-of-ai-made-games-to-the-glut-of-poor-quality-titles-released-ahead-of-the-us-video-game-crash-of-1983)
 - Россия: «Дальнобойщики 3» выйдут в Steam полным изданием, Fulqrum Publishing (20.11). [3DNews](https://3dnews.ru/1151619/v-steam-viydet-samoe-polnoe-izdanie-dalnoboyshchikov-3-pokorenie-ameriki-s-poddergkoy-russkogo-yazika-i-nedostupnim-pregde-kontentom)
-
-## 2026-11-21
-- Steam: напоминание о правилах Artwork Override — только играбельный контент, без скидок и призывов (19.11). [Steam](https://store.steampowered.com/news/group/4145017/view/696529069521503099)
-- One-armed Robber: украденный ключ Steamworks API, возвраты и баны игрокам (20.11). [Dexerto](https://www.dexerto.com/gaming/devs-of-steam-heist-game-robbed-irl-as-hacker-refunds-players-in-game-purchases-3430127/)
-- .NET MAUI: агенты переписали Barista Notes в нативные iOS и Android, 616 против 209 минут моделей (20.11). [.NET Blog](https://devblogs.microsoft.com/dotnet/ai-cross-platform-decision-matrix/)
-- Россия: иностранных игр и приложений в RuStore в 1,5 раза больше за год (19.11). [App2Top](https://app2top.ru/news/chislo-inostranny-h-igr-i-prilozhenij-v-rustore-podskochilo-v-1-5-raza-za-god-245642.html)
-- Roblox: слушания в Сенате США, законопроект против принудительного арбитража (19.11). [GamesIndustry.biz](https://www.gamesindustry.biz/us-senate-hearing-examines-child-safety-on-roblox-considers-bipartisan-bill-to-bypass-forced-arbitration)
-- DevGAMM Awards: Phonopolis — главный приз, Tempus Vitae — лучшая на Unity (20.11). [GamesIndustry.biz](https://www.gamesindustry.biz/phonopolis-from-amanita-design-wins-grand-prize-at-the-devgamm-awards)
-- Россия: для ТСПУ ищут снятые с производства Baikal-T (20.11). [CNews](https://www.cnews.ru/news/top/2026-11-20_sozdateli_reshenij_dlya_blokirovok)
