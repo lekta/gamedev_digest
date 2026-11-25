@@ -6,6 +6,16 @@
 
 ---
 
+## 2026-11-25
+- Gravity Well: спячка после потери финансирования, месяц назад сокращены 40 человек (24.11). [Vertical Slice](https://www.verticalslice.news/gravity-well-enters-hibernation-one-month-after-cutting-40-jobs/)
+- Java4Shell CVE-2026-114938: исправлено в Rider и ReSharper 2026.3.0.2, OpenJDK 17.0.21+9 из Unity Hub уязвим (24.11). [Unity Issue Tracker](https://issuetracker.unity.com/issues/27470)
+- Atari Homebrew Awards: премию приостановили из-за потока игр с ИИ (24.11). [Kotaku](https://kotaku.com/atari-homebrew-awards-canceled-over-torrent-of-ai-games-i-saw-no-path-forward-2001000096)
+- Unity: бесплатный проект Atrio, URP без лайтмапов, Building Blocks (25.11). [Unity Discussions](https://discussions.unity.com/t/atrio-is-here-a-new-sample-project-announced-during-unite-tokyo-2026/1742672)
+- Visual Studio 2026 18.12: Copilot Chat на Copilot SDK, Change Groups (24.11). [Visual Studio Blog](https://devblogs.microsoft.com/visualstudio/visual-studio-november-update-faster-workflows-better-reviews/)
+- Muv-Luv Girls Gaiden: в английском тексте остались отказы ИИ-переводчика (25.11). [Kotaku](https://kotaku.com/the-japanese-erotic-visual-novel-thats-filled-with-ais-prudish-refusals-to-translate-explicit-sexual-content-2001000228)
+- EA Sports FC 27: голос Джона Мотсона воссоздали с ИИ, выйдет 26.11 (25.11). [VGC](https://www.videogameschronicle.com/news/ea-sports-fc-27-is-adding-an-ai-generated-john-motson-to-its-commentary-team-three-years-after-his-death/)
+- Россия: Beget вернули аккредитацию регистратора .RU и .РФ (25.11). [Хабр](https://habr.com/ru/articles/1112348/)
+
 ## 2026-11-24
 - Epic: UE6 без Blueprints и Actor Gameplay Framework даже в Early Access, ИИ перевёл 20 тыс. Blueprints Fortnite в Verse (20.11). [Epic](https://www.unrealengine.com/news/an-update-on-blueprints-and-the-path-to-ue6)
 - Google Play: Великобритания, 260 млн фунтов по иску Барри Роджера, заявки до 24.03.2027 (24.11). [GamesIndustry.biz](https://www.gamesindustry.biz/uk-mobile-developers-can-now-apply-for-their-share-of-a-260-million-google-settlement)
@@ -25,12 +35,3 @@
 - Unity 6.7: модульная локализация закрыла ActiveSettings и CreateCollection, Unity вернёт (23.11). [Unity Discussions](https://discussions.unity.com/t/1742525)
 - Fenris Creations: CORTAO, AO из EVE Frontier в открытом коде (23.11). [Game Developer](https://www.gamedeveloper.com/programming/devs-can-now-utilize-high-end-ambient-occlusion-technique-seen-in-eve-frontier)
 - Magic Caves: найдена текстовая адвенчура 1977 года (22.11). [Kotaku](https://kotaku.com/physicists-long-lost-1977-fantasy-text-adventure-discovered-on-hard-drive-2000759290)
-
-## 2026-11-22
-- Unity: Docker-образ unity/editor-base для Headless Editor 6.7, бета, только Licensing Server (20.11). [Unity Discussions](https://discussions.unity.com/t/build-unity-projects-in-docker-with-the-new-unity-editor-base-image-beta-now-available/1742375)
-- The Binding of Isaac: Repentance+: музыка Suno в забеге Vice City, 9% отзывов, Nicalis убрала патчем (22.11). [Eurogamer](https://www.eurogamer.net/binding-of-isaac-repentance-plus-ai-music-removed)
-- Phasmophobia: обновление Resonance 24.11, переход на Unity 6 (21.11). [Eurogamer](https://www.eurogamer.net/phasmophobia-resonance-update-release-date-dowsing-rods-unity-6)
-- Clash Royale: Supercell взяла автора ИИ-бота делать античит (21.11). [Dexerto](https://www.dexerto.com/gaming/clash-royale-recruits-creator-of-ai-cheating-tool-to-help-catch-cheaters-3430356/)
-- Profile Analyzer 1.5.0: минимум Unity 6.0 (20.11). [Unity Discussions](https://discussions.unity.com/t/profile-analyzer-1-5-0-released/1742367)
-- Говард Скотт Уоршо: поток ИИ-игр как перед кризисом 1983 (20.11). [GamesIndustry.biz](https://www.gamesindustry.biz/the-creator-of-et-on-the-atari-2600-likens-the-deluge-of-ai-made-games-to-the-glut-of-poor-quality-titles-released-ahead-of-the-us-video-game-crash-of-1983)
-- Россия: «Дальнобойщики 3» выйдут в Steam полным изданием, Fulqrum Publishing (20.11). [3DNews](https://3dnews.ru/1151619/v-steam-viydet-samoe-polnoe-izdanie-dalnoboyshchikov-3-pokorenie-ameriki-s-poddergkoy-russkogo-yazika-i-nedostupnim-pregde-kontentom)
